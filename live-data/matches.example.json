@@ -1,0 +1,33 @@
+{
+  "matches": [
+    {
+      "id": "example-1",
+      "match": "Example Team A vs Example Team B",
+      "status": "Completed",
+      "format": "T20",
+      "players": [
+        {
+          "id": "player-1",
+          "name": "Rohit Sharma",
+          "team": "Example Team A",
+          "role": "batter",
+          "inPlayingXI": true,
+          "runs": 55,
+          "ballsFaced": 34,
+          "fours": 6,
+          "sixes": 2,
+          "isOutForDuck": false,
+          "wickets": 0,
+          "maidenOvers": 0,
+          "lbwBowledWickets": 0,
+          "catches": 1,
+          "stumpings": 0,
+          "directRunOuts": 0,
+          "indirectRunOuts": 0,
+          "oversBowled": 0,
+          "runsConceded": 0
+        }
+      ]
+    }
+  ]
+}

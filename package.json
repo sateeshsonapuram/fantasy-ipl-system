@@ -1,0 +1,12 @@
+{
+  "name": "fantasy-ipl-system",
+  "version": "1.0.0",
+  "description": "Mock fantasy cricket points calculator",
+  "main": "src/app/index.js",
+  "scripts": {
+    "start": "node src/app/index.js",
+    "update:matches": "node src/app/updateMatches.js",
+    "refresh": "node src/app/refreshLeaderboard.js"
+  },
+  "license": "MIT"
+}
