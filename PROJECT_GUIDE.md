@@ -86,13 +86,6 @@ This is the best command for daily use.
 - [matches.json](e:/Sateesh%20Project/fantasy-ipl-system/src/data/generated/matches.json)
   Auto-generated normalized match data used by the app when available.
 
-- [matches.json](e:/Sateesh%20Project/fantasy-ipl-system/live-data/matches.json)
-  Input file for live/daily updates.
-  This is the file you replace with the latest match payload.
-
-- [matches.example.json](e:/Sateesh%20Project/fantasy-ipl-system/live-data/matches.example.json)
-  Example format showing how the live input JSON should look.
-
 ### Service files
 
 - [pointsCalculator.js](e:/Sateesh%20Project/fantasy-ipl-system/src/services/pointsCalculator.js)
@@ -108,13 +101,13 @@ This is the best command for daily use.
   Picks the highest-scoring `teamSize` players for each owner.
 
 - [liveMatchSource.js](e:/Sateesh%20Project/fantasy-ipl-system/src/services/liveMatchSource.js)
-  Reads and normalizes live match data from a local JSON file or an HTTP JSON source.
+  Reads and normalizes live match data from CREX scraping or an HTTP JSON source.
 
 ## Data Flow
 
 The project’s data flow is:
 
-`live-data/matches.json`
+`CREX matches page or configured JSON source`
 -> [updateMatches.js](e:/Sateesh%20Project/fantasy-ipl-system/src/app/updateMatches.js)
 -> [liveMatchSource.js](e:/Sateesh%20Project/fantasy-ipl-system/src/services/liveMatchSource.js)
 -> [matches.json](e:/Sateesh%20Project/fantasy-ipl-system/src/data/generated/matches.json)
@@ -137,9 +130,8 @@ This usually means the latest match payload does not include that player yet.
 
 For daily updates after each match:
 
-1. Replace [matches.json](e:/Sateesh%20Project/fantasy-ipl-system/live-data/matches.json) with the latest match payload
-2. Run `npm run refresh`
-3. Check [owners.html](e:/Sateesh%20Project/fantasy-ipl-system/owners.html)
+1. Run `npm run score`
+2. Check [owners.html](e:/Sateesh%20Project/fantasy-ipl-system/owners.html)
 
 ## Future Automation
 

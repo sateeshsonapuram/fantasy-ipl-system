@@ -3,7 +3,9 @@ const path = require("path");
 const { spawn } = require("child_process");
 const { fetchMatches } = require("../data/matches");
 const { fetchOwners } = require("../data/owners");
-const { aggregatePlayerPoints } = require("../services/playerAggregation");
+const {
+  aggregatePlayerPointsIncrementally
+} = require("../services/playerAggregation");
 const { calculateOwnerLeaderboard } = require("../services/ownerLeaderboard");
 
 function escapeHtml(value) {
@@ -17,6 +19,13 @@ function escapeHtml(value) {
 
 function normalizePlayerName(name) {
   return String(name).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+}
+
+function slugify(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 }
 
 const overseasPlayers = new Set(
@@ -66,10 +75,63 @@ function isOverseasPlayer(playerName) {
   return overseasPlayers.has(normalizePlayerName(playerName));
 }
 
+function buildTrackedPlayers(ownerLeaderboard) {
+  const trackedPlayersByKey = new Map();
+
+  ownerLeaderboard.forEach((owner) => {
+    owner.squadPlayers.forEach((player) => {
+      const playerKey =
+        player.id && !String(player.id).startsWith("missing-")
+          ? `id:${player.id}`
+          : `name:${String(player.team || "UNKNOWN").toUpperCase()}|${normalizePlayerName(player.name)}`;
+
+      if (trackedPlayersByKey.has(playerKey)) {
+        return;
+      }
+
+      trackedPlayersByKey.set(playerKey, {
+        id: player.id,
+        name: player.name,
+        team: player.team || "Unknown",
+        totalPoints: player.totalPoints || 0,
+        matchesPlayed: player.matchesPlayed || 0,
+        matchBreakdowns: [...(player.matchBreakdowns || [])],
+        isMissingStat: Boolean(player.isMissingStat)
+      });
+    });
+  });
+
+  return Array.from(trackedPlayersByKey.values()).sort(
+    (firstPlayer, secondPlayer) => secondPlayer.totalPoints - firstPlayer.totalPoints
+  );
+}
+
 function buildOwnersHtml(ownerLeaderboard) {
   const alphabeticalTeams = [...ownerLeaderboard].sort((firstOwner, secondOwner) =>
     firstOwner.name.localeCompare(secondOwner.name)
   );
+  const trackedPlayers = buildTrackedPlayers(ownerLeaderboard);
+  const teamColorMap = {
+    CSK: "#fdb913",
+    MI: "#004ba0",
+    RCB: "#d71920",
+    SRH: "#f26522",
+    KKR: "#3b215d",
+    RR: "#ea1a85",
+    GT: "#1c2c5b",
+    PBKS: "#dd1f2d",
+    DC: "#17479e",
+    LSG: "#00a6e2"
+  };
+  const availableTeams = Array.from(
+    new Set(
+      ownerLeaderboard.flatMap((owner) =>
+        owner.squadPlayers.map((player) => String(player.team || "").toUpperCase())
+      )
+    )
+  )
+    .filter((teamCode) => teamCode && teamCode !== "UNKNOWN")
+    .sort();
   const longestPlayerNameLength = alphabeticalTeams.reduce((longestLength, owner) => {
     const ownerLongest = owner.squadPlayers.reduce(
       (teamLongest, player) => Math.max(teamLongest, player.name.length),
@@ -95,12 +157,53 @@ function buildOwnersHtml(ownerLeaderboard) {
       `
     )
     .join("");
+  const playerPointRows = trackedPlayers
+    .map(
+      (player, index) => `
+        <tr>
+          <td>${index + 1}</td>
+          <td>${escapeHtml(player.team)}</td>
+          <td>${escapeHtml(player.name)}</td>
+          <td>${player.totalPoints}</td>
+        </tr>
+      `
+    )
+    .join("");
+  const teamPointRows = Array.from(
+    trackedPlayers.reduce((totalsByTeam, player) => {
+      const teamCode = String(player.team || "Unknown").toUpperCase();
+      const existing = totalsByTeam.get(teamCode) || {
+        team: teamCode,
+        points: 0,
+        players: 0
+      };
+      existing.points += player.totalPoints || 0;
+      existing.players += 1;
+      totalsByTeam.set(teamCode, existing);
+      return totalsByTeam;
+    }, new Map()).values()
+  )
+    .sort((firstTeam, secondTeam) => secondTeam.points - firstTeam.points)
+    .map(
+      (teamEntry, index) => `
+        <tr>
+          <td>${index + 1}</td>
+          <td>${escapeHtml(teamEntry.team)}</td>
+          <td>${teamEntry.players}</td>
+          <td>${teamEntry.points}</td>
+        </tr>
+      `
+    )
+    .join("");
 
   const teamTables = alphabeticalTeams
     .map((owner) => {
       const selectedPlayerIds = new Set(owner.selectedPlayers.map((player) => player.id));
+      const sortedSquadPlayers = [...owner.squadPlayers].sort(
+        (firstPlayer, secondPlayer) => secondPlayer.totalPoints - firstPlayer.totalPoints
+      );
       const playerRows = Array.from({ length: maxSquadSize }, (_, index) => {
-        const player = owner.squadPlayers[index];
+        const player = sortedSquadPlayers[index];
 
         if (!player) {
           return `
@@ -118,9 +221,11 @@ function buildOwnersHtml(ownerLeaderboard) {
             : "";
 
           return `
-            <tr class="${isSelected ? "selected-player" : ""}">
+            <tr class="${isSelected ? "selected-player" : ""}" data-team="${escapeHtml(
+              String(player.team || "").toUpperCase()
+            )}">
               <td>${index + 1}</td>
-              <td>${escapeHtml(player.name)} ${overseasBadge}</td>
+              <td><span>${escapeHtml(player.name)}</span> ${overseasBadge}</td>
               <td>${player.totalPoints}</td>
             </tr>
           `;
@@ -156,6 +261,15 @@ function buildOwnersHtml(ownerLeaderboard) {
       `;
     })
     .join("");
+  const teamFilters = availableTeams
+    .map((teamCode) => {
+      const teamColor = teamColorMap[teamCode] || "#475569";
+      return `<button class="team-filter" type="button" data-team-filter="${escapeHtml(
+        teamCode
+      )}" style="--team-filter-color: ${teamColor};">${escapeHtml(teamCode)}</button>`;
+    })
+    .join("");
+  const teamColorScript = JSON.stringify(teamColorMap);
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -461,6 +575,14 @@ function buildOwnersHtml(ownerLeaderboard) {
         font-weight: 700;
       }
 
+      .team-highlight td {
+        background: color-mix(in srgb, var(--team-highlight-color, #fde68a) 24%, white);
+      }
+
+      .team-highlight.selected-player td {
+        background: color-mix(in srgb, var(--team-highlight-color, #fde68a) 34%, white);
+      }
+
       .empty-row td {
         color: transparent;
       }
@@ -485,6 +607,120 @@ function buildOwnersHtml(ownerLeaderboard) {
         background: rgba(255, 255, 255, 0.8);
         color: var(--muted);
         font-size: 0.64rem;
+        text-align: right;
+      }
+
+      .team-filters {
+        margin-top: 8px;
+        padding: 10px;
+        border: 1px solid rgba(139, 92, 246, 0.14);
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.82);
+      }
+
+      .team-filters-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .team-filters-title {
+        margin: 0;
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: var(--text);
+      }
+
+      .team-filters-help {
+        margin: 0;
+        font-size: 0.62rem;
+        color: var(--muted);
+      }
+
+      .team-filters-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .team-filter-actions {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 8px;
+      }
+
+      .team-filter {
+        appearance: none;
+        border: 1px solid color-mix(in srgb, var(--team-filter-color) 40%, white);
+        background: color-mix(in srgb, var(--team-filter-color) 12%, white);
+        color: #111827;
+        border-radius: 999px;
+        padding: 6px 10px;
+        font-size: 0.66rem;
+        font-weight: 800;
+        cursor: pointer;
+        transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      }
+
+      .team-filter:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+      }
+
+      .team-filter.active {
+        background: var(--team-filter-color);
+        border-color: var(--team-filter-color);
+        color: white;
+        box-shadow: 0 6px 14px color-mix(in srgb, var(--team-filter-color) 30%, transparent);
+      }
+
+      .clear-filters {
+        appearance: none;
+        border: 1px solid rgba(31, 41, 55, 0.16);
+        background: white;
+        color: var(--text);
+        border-radius: 999px;
+        padding: 6px 10px;
+        font-size: 0.64rem;
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      .stats-section {
+        margin-top: 8px;
+        padding: 10px;
+        border: 1px solid rgba(139, 92, 246, 0.14);
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.82);
+      }
+
+      .stats-section h2 {
+        margin: 0 0 8px;
+        font-size: 0.82rem;
+      }
+
+      .stats-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.66rem;
+        background: white;
+      }
+
+      .stats-table th,
+      .stats-table td {
+        border: 1px solid var(--border);
+        padding: 4px 6px;
+      }
+
+      .stats-table thead th {
+        background: var(--header);
+        text-align: left;
+      }
+
+      .stats-table td:last-child,
+      .stats-table th:last-child {
         text-align: right;
       }
 
@@ -536,6 +772,8 @@ function buildOwnersHtml(ownerLeaderboard) {
       </section>
       <section class="top-ribbon">
         <nav class="ribbon-nav" aria-label="Info links">
+          <a href="#player-points">Player Points</a>
+          <a href="#team-points">Team Totals</a>
           <a href="#points-system">Points System</a>
           <a href="#rules">Rules</a>
           <a href="#injury-replacements">Injury Replacements</a>
@@ -561,7 +799,57 @@ function buildOwnersHtml(ownerLeaderboard) {
       <section id="overseas" class="footer-note">
         ✈ = overseas player
       </section>
+      <section class="team-filters">
+        <div class="team-filters-header">
+          <p class="team-filters-title">Highlight Teams</p>
+          <p class="team-filters-help">Click one or more teams to highlight their players across all owners.</p>
+        </div>
+        <div class="team-filters-grid">
+          ${teamFilters}
+        </div>
+      </section>
     </main>
+    <script>
+      const TEAM_COLORS = ${teamColorScript};
+      const activeTeams = new Set();
+      const filterButtons = Array.from(document.querySelectorAll("[data-team-filter]"));
+      const playerRows = Array.from(document.querySelectorAll("tr[data-team]"));
+
+      function applyTeamHighlights() {
+        playerRows.forEach((row) => {
+          const teamCode = (row.dataset.team || "").toUpperCase();
+          if (activeTeams.has(teamCode)) {
+            row.classList.add("team-highlight");
+            row.style.setProperty("--team-highlight-color", TEAM_COLORS[teamCode] || "#fde68a");
+          } else {
+            row.classList.remove("team-highlight");
+            row.style.removeProperty("--team-highlight-color");
+          }
+        });
+
+        filterButtons.forEach((button) => {
+          const teamCode = (button.dataset.teamFilter || "").toUpperCase();
+          button.classList.toggle("active", activeTeams.has(teamCode));
+        });
+      }
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const teamCode = (button.dataset.teamFilter || "").toUpperCase();
+          if (!teamCode) {
+            return;
+          }
+
+          if (activeTeams.has(teamCode)) {
+            activeTeams.delete(teamCode);
+          } else {
+            activeTeams.add(teamCode);
+          }
+
+          applyTeamHighlights();
+        });
+      });
+    </script>
   </body>
 </html>`;
 }
@@ -571,6 +859,262 @@ function writeOwnersHtml(ownerLeaderboard) {
   const html = buildOwnersHtml(ownerLeaderboard);
   fs.writeFileSync(htmlPath, html, "utf8");
   return htmlPath;
+}
+
+function buildTrackedPlayers(ownerLeaderboard) {
+  const trackedPlayersByKey = new Map();
+
+  ownerLeaderboard.forEach((owner) => {
+    owner.squadPlayers.forEach((player) => {
+      const playerKey =
+        player.id && !String(player.id).startsWith("missing-")
+          ? `id:${player.id}`
+          : `name:${String(player.team || "UNKNOWN").toUpperCase()}|${normalizePlayerName(player.name)}`;
+
+      if (trackedPlayersByKey.has(playerKey)) {
+        return;
+      }
+
+      trackedPlayersByKey.set(playerKey, {
+        id: player.id,
+        name: player.name,
+        team: player.team || "Unknown",
+        totalPoints: player.totalPoints || 0,
+        matchesPlayed: player.matchesPlayed || 0,
+        matchBreakdowns: [...(player.matchBreakdowns || [])],
+        isMissingStat: Boolean(player.isMissingStat)
+      });
+    });
+  });
+
+  return Array.from(trackedPlayersByKey.values()).sort(
+    (firstPlayer, secondPlayer) => secondPlayer.totalPoints - firstPlayer.totalPoints
+  );
+}
+
+function buildPlayerDetailsHtml(players) {
+  const sortedPlayers = [...players].sort(
+    (firstPlayer, secondPlayer) => secondPlayer.totalPoints - firstPlayer.totalPoints
+  );
+
+  const playerSections = sortedPlayers
+    .map((player) => {
+      const matchCards = [...player.matchBreakdowns]
+        .sort((firstMatch, secondMatch) => secondMatch.matchId.localeCompare(firstMatch.matchId))
+        .map((matchBreakdown) => {
+          const items = [
+            ["Starting XI", matchBreakdown.breakdown.startingXI],
+            ["Runs", matchBreakdown.breakdown.runs],
+            ["4s", matchBreakdown.breakdown.fours],
+            ["6s", matchBreakdown.breakdown.sixes],
+            ["Bat Bonus", matchBreakdown.breakdown.battingBonus],
+            ["Duck", matchBreakdown.breakdown.duckPenalty],
+            ["Wickets", matchBreakdown.breakdown.wickets],
+            ["LBW/Bowled", matchBreakdown.breakdown.lbwBowledBonus],
+            ["Maiden", matchBreakdown.breakdown.maidenOvers],
+            ["Wkt Bonus", matchBreakdown.breakdown.wicketBonus],
+            ["Catches", matchBreakdown.breakdown.catches],
+            ["3 Catch Bonus", matchBreakdown.breakdown.catchBonus],
+            ["Stumpings", matchBreakdown.breakdown.stumpings],
+            ["Direct RO", matchBreakdown.breakdown.directRunOuts],
+            ["Indirect RO", matchBreakdown.breakdown.indirectRunOuts],
+            ["S/R", matchBreakdown.breakdown.strikeRate],
+            ["E/R", matchBreakdown.breakdown.economyRate]
+          ]
+            .filter(([, value]) => value !== 0)
+            .map(
+              ([label, value]) =>
+                `<span class="breakdown-chip"><strong>${escapeHtml(label)}</strong> ${value}</span>`
+            )
+            .join("");
+
+          return `
+            <details class="match-card">
+              <summary>
+                <span class="match-name">${escapeHtml(matchBreakdown.match)}</span>
+                <span class="match-points">${matchBreakdown.points} pts</span>
+              </summary>
+              <div class="match-meta">${escapeHtml(matchBreakdown.status)}</div>
+              <div class="breakdown-grid">${items || '<span class="breakdown-chip">No scoring events</span>'}</div>
+            </details>
+          `;
+        })
+        .join("");
+
+      return `
+        <section id="${slugify(`${player.team}-${player.name}`)}" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>${escapeHtml(player.name)}</h2>
+              <p>${escapeHtml(player.team)} · Matches ${player.matchesPlayed}</p>
+            </div>
+            <div class="player-total">${player.totalPoints} pts</div>
+          </div>
+          ${matchCards}
+        </section>
+      `;
+    })
+    .join("");
+
+  return `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Player Match Points</title>
+    <style>
+      :root {
+        --bg: #f6f2e8;
+        --surface: #ffffff;
+        --text: #172033;
+        --muted: #667085;
+        --accent: #0f766e;
+        --accent-soft: #ccfbf1;
+        --border: #d9e3ea;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, #fef3c7 0%, transparent 22%),
+          radial-gradient(circle at top right, #bfdbfe 0%, transparent 24%),
+          linear-gradient(180deg, #fffaf4 0%, var(--bg) 100%);
+      }
+      .page { max-width: 1200px; margin: 0 auto; padding: 16px; }
+      .header {
+        margin-bottom: 14px;
+        padding: 14px 16px;
+        border: 1px solid rgba(15, 118, 110, 0.15);
+        border-radius: 14px;
+        background: rgba(255,255,255,0.88);
+      }
+      .header h1 { margin: 0 0 4px; font-size: 1.35rem; }
+      .header p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+      .nav-link {
+        display: inline-block;
+        margin-top: 10px;
+        color: var(--accent);
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .players-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 12px;
+      }
+      .player-card {
+        padding: 14px;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        background: var(--surface);
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+      }
+      .player-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+      .player-top h2 { margin: 0 0 2px; font-size: 1.05rem; }
+      .player-top p { margin: 0; color: var(--muted); font-size: 0.86rem; }
+      .player-total {
+        min-width: 76px;
+        padding: 8px 10px;
+        border-radius: 12px;
+        background: var(--accent-soft);
+        color: #115e59;
+        font-weight: 800;
+        text-align: center;
+      }
+      .match-card {
+        margin-top: 8px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+        background: #fcfdfd;
+      }
+      .match-card summary {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 10px 12px;
+        cursor: pointer;
+        list-style: none;
+        font-weight: 700;
+      }
+      .match-meta {
+        padding: 0 12px 8px;
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+      .breakdown-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        padding: 0 12px 12px;
+      }
+      .breakdown-chip {
+        display: inline-flex;
+        gap: 4px;
+        padding: 6px 8px;
+        border-radius: 999px;
+        background: #eef7f6;
+        color: #164e63;
+        font-size: 0.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="header">
+        <h1>Player Match Points</h1>
+        <p>Match-by-match fantasy points and scoring breakdown for every player processed so far.</p>
+        <a class="nav-link" href="./owners.html">Back to Owners</a>
+      </section>
+      <section class="players-grid">
+        ${playerSections}
+      </section>
+    </main>
+  </body>
+</html>`;
+}
+
+function writePlayerDetailsHtml(players) {
+  const htmlPath = path.resolve(__dirname, "../../player-details.html");
+  const html = buildPlayerDetailsHtml(players);
+  fs.writeFileSync(htmlPath, html, "utf8");
+  return htmlPath;
+}
+
+function readExistingPlayerPointsJson() {
+  const inputPath = path.resolve(__dirname, "../data/generated/player-points.json");
+
+  if (!fs.existsSync(inputPath)) {
+    return null;
+  }
+
+  try {
+    return JSON.parse(fs.readFileSync(inputPath, "utf8"));
+  } catch (error) {
+    console.warn(`Unable to read existing player points: ${error.message}`);
+    return null;
+  }
+}
+
+function writeIncrementalPlayerPointsJson(result) {
+  const outputPath = path.resolve(__dirname, "../data/generated/player-points.json");
+  const payload = {
+    updatedAt: new Date().toISOString(),
+    playerCount: result.players.length,
+    processedMatchIds: result.processedMatchIds,
+    players: result.players
+  };
+
+  fs.writeFileSync(outputPath, JSON.stringify(payload, null, 2), "utf8");
+  return outputPath;
 }
 
 function openHtmlInBrowser(htmlPath) {
@@ -619,17 +1163,28 @@ function openHtmlInBrowser(htmlPath) {
 
 function printLeaderboard() {
   const matches = fetchMatches();
-  const seasonLeaderboard = aggregatePlayerPoints(matches);
+  const existingPlayerPoints = readExistingPlayerPointsJson();
+  const incrementalResult = aggregatePlayerPointsIncrementally(existingPlayerPoints, matches);
+  const seasonLeaderboard = incrementalResult.players;
   const owners = fetchOwners();
   const teamSize = 11;
   const ownerLeaderboard = calculateOwnerLeaderboard(owners, seasonLeaderboard, teamSize);
+  const trackedPlayers = buildTrackedPlayers(ownerLeaderboard);
   const htmlPath = writeOwnersHtml(ownerLeaderboard);
+  const playerPointsPath = writeIncrementalPlayerPointsJson({
+    ...incrementalResult,
+    players: trackedPlayers
+  });
+  const playerDetailsPath = writePlayerDetailsHtml(trackedPlayers);
   const openedIn = openHtmlInBrowser(htmlPath);
 
   console.log(`Matches Processed: ${matches.length}`);
   console.log(`Owner Teams Processed: ${owners.length}`);
   console.log(`Selected Team Size Per Owner: ${teamSize}`);
   console.log(`Owners HTML Generated: ${htmlPath}`);
+  console.log(`Player Points JSON Generated: ${playerPointsPath}`);
+  console.log(`Player Details HTML Generated: ${playerDetailsPath}`);
+  console.log(`New Matches Added To Player Cache: ${incrementalResult.newMatchIds.length}`);
   console.log(
     `Owners HTML Opened In: ${openedIn === "chrome" ? "Google Chrome" : "default browser"}`
   );

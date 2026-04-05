@@ -1,0 +1,2649 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Player Match Points</title>
+    <style>
+      :root {
+        --bg: #f6f2e8;
+        --surface: #ffffff;
+        --text: #172033;
+        --muted: #667085;
+        --accent: #0f766e;
+        --accent-soft: #ccfbf1;
+        --border: #d9e3ea;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, #fef3c7 0%, transparent 22%),
+          radial-gradient(circle at top right, #bfdbfe 0%, transparent 24%),
+          linear-gradient(180deg, #fffaf4 0%, var(--bg) 100%);
+      }
+      .page { max-width: 1200px; margin: 0 auto; padding: 16px; }
+      .header {
+        margin-bottom: 14px;
+        padding: 14px 16px;
+        border: 1px solid rgba(15, 118, 110, 0.15);
+        border-radius: 14px;
+        background: rgba(255,255,255,0.88);
+      }
+      .header h1 { margin: 0 0 4px; font-size: 1.35rem; }
+      .header p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+      .nav-link {
+        display: inline-block;
+        margin-top: 10px;
+        color: var(--accent);
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .players-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 12px;
+      }
+      .player-card {
+        padding: 14px;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        background: var(--surface);
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+      }
+      .player-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+      .player-top h2 { margin: 0 0 2px; font-size: 1.05rem; }
+      .player-top p { margin: 0; color: var(--muted); font-size: 0.86rem; }
+      .player-total {
+        min-width: 76px;
+        padding: 8px 10px;
+        border-radius: 12px;
+        background: var(--accent-soft);
+        color: #115e59;
+        font-weight: 800;
+        text-align: center;
+      }
+      .match-card {
+        margin-top: 8px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+        background: #fcfdfd;
+      }
+      .match-card summary {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 10px 12px;
+        cursor: pointer;
+        list-style: none;
+        font-weight: 700;
+      }
+      .match-meta {
+        padding: 0 12px 8px;
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+      .breakdown-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        padding: 0 12px 12px;
+      }
+      .breakdown-chip {
+        display: inline-flex;
+        gap: 4px;
+        padding: 6px 8px;
+        border-radius: 999px;
+        background: #eef7f6;
+        color: #164e63;
+        font-size: 0.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="header">
+        <h1>Player Match Points</h1>
+        <p>Match-by-match fantasy points and scoring breakdown for every player processed so far.</p>
+        <a class="nav-link" href="./owners.html">Back to Owners</a>
+      </section>
+      <section class="players-grid">
+        
+        <section id="rr-dhruv-jurel-wk" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Dhruv Jurel(WK)</h2>
+              <p>RR · Matches 2</p>
+            </div>
+            <div class="player-total">170 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs RR, 9th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">122 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 6 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 75</span><span class="breakdown-chip"><strong>4s</strong> 5</span><span class="breakdown-chip"><strong>6s</strong> 10</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 8</span><span class="breakdown-chip"><strong>Catches</strong> 8</span><span class="breakdown-chip"><strong>Indirect RO</strong> 6</span><span class="breakdown-chip"><strong>S/R</strong> 6</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs RR, 3rd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">48 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 8 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 18</span><span class="breakdown-chip"><strong>4s</strong> 4</span><span class="breakdown-chip"><strong>Catches</strong> 16</span><span class="breakdown-chip"><strong>Indirect RO</strong> 6</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="mi-rohit-sharma" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Rohit Sharma</h2>
+              <p>MI · Matches 2</p>
+            </div>
+            <div class="player-total">166 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs MI, 2nd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">114 pts</span>
+              </summary>
+              <div class="match-meta">Mumbai Indians won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 78</span><span class="breakdown-chip"><strong>4s</strong> 6</span><span class="breakdown-chip"><strong>6s</strong> 12</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 8</span><span class="breakdown-chip"><strong>S/R</strong> 6</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs MI, 8th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">52 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 35</span><span class="breakdown-chip"><strong>4s</strong> 5</span><span class="breakdown-chip"><strong>6s</strong> 2</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 4</span><span class="breakdown-chip"><strong>S/R</strong> 2</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="kkr-angkrish-raghuvanshi-wk" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Angkrish Raghuvanshi(WK)</h2>
+              <p>KKR · Matches 2</p>
+            </div>
+            <div class="player-total">159 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs SRH, 6th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">80 pts</span>
+              </summary>
+              <div class="match-meta">Sunrisers Hyderabad won by 65 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 52</span><span class="breakdown-chip"><strong>4s</strong> 6</span><span class="breakdown-chip"><strong>6s</strong> 4</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 8</span><span class="breakdown-chip"><strong>S/R</strong> 6</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs MI, 2nd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">79 pts</span>
+              </summary>
+              <div class="match-meta">Mumbai Indians won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 51</span><span class="breakdown-chip"><strong>4s</strong> 6</span><span class="breakdown-chip"><strong>6s</strong> 4</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 8</span><span class="breakdown-chip"><strong>S/R</strong> 6</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="rr-ravi-bishnoi" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Ravi Bishnoi</h2>
+              <p>RR · Matches 2</p>
+            </div>
+            <div class="player-total">159 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs RR, 9th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">110 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 6 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 100</span><span class="breakdown-chip"><strong>Wkt Bonus</strong> 8</span><span class="breakdown-chip"><strong>E/R</strong> -2</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs RR, 3rd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">49 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 8 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 25</span><span class="breakdown-chip"><strong>Catches</strong> 16</span><span class="breakdown-chip"><strong>E/R</strong> 4</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="srh-ishan-kishan-c-wk" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Ishan Kishan(C)(WK)</h2>
+              <p>SRH · Matches 2</p>
+            </div>
+            <div class="player-total">153 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">RCB Vs SRH, 1st T20, IPL 2026 Scorecard</span>
+                <span class="match-points">116 pts</span>
+              </summary>
+              <div class="match-meta">RCB won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 80</span><span class="breakdown-chip"><strong>4s</strong> 8</span><span class="breakdown-chip"><strong>6s</strong> 10</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 8</span><span class="breakdown-chip"><strong>S/R</strong> 6</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs SRH, 6th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">37 pts</span>
+              </summary>
+              <div class="match-meta">Sunrisers Hyderabad won by 65 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 14</span><span class="breakdown-chip"><strong>4s</strong> 3</span><span class="breakdown-chip"><strong>Catches</strong> 16</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="rr-yashasvi-jaiswal" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Yashasvi Jaiswal</h2>
+              <p>RR · Matches 2</p>
+            </div>
+            <div class="player-total">142 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs RR, 9th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">83 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 6 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 55</span><span class="breakdown-chip"><strong>4s</strong> 6</span><span class="breakdown-chip"><strong>6s</strong> 6</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 8</span><span class="breakdown-chip"><strong>S/R</strong> 4</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs RR, 3rd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">59 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 8 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 38</span><span class="breakdown-chip"><strong>4s</strong> 3</span><span class="breakdown-chip"><strong>6s</strong> 2</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 4</span><span class="breakdown-chip"><strong>Catches</strong> 8</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="mi-ryan-rickelton-wk" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Ryan Rickelton(WK)</h2>
+              <p>MI · Matches 2</p>
+            </div>
+            <div class="player-total">142 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs MI, 2nd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">119 pts</span>
+              </summary>
+              <div class="match-meta">Mumbai Indians won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 81</span><span class="breakdown-chip"><strong>4s</strong> 4</span><span class="breakdown-chip"><strong>6s</strong> 16</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 8</span><span class="breakdown-chip"><strong>S/R</strong> 6</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs MI, 8th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">23 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 9</span><span class="breakdown-chip"><strong>4s</strong> 2</span><span class="breakdown-chip"><strong>Catches</strong> 8</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="rr-vaibhav-sooryavanshi" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Vaibhav Sooryavanshi</h2>
+              <p>RR · Matches 2</p>
+            </div>
+            <div class="player-total">136 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs RR, 9th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">52 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 6 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 31</span><span class="breakdown-chip"><strong>4s</strong> 5</span><span class="breakdown-chip"><strong>6s</strong> 2</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 4</span><span class="breakdown-chip"><strong>S/R</strong> 6</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs RR, 3rd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">84 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 8 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 52</span><span class="breakdown-chip"><strong>4s</strong> 4</span><span class="breakdown-chip"><strong>6s</strong> 10</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 8</span><span class="breakdown-chip"><strong>S/R</strong> 6</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="srh-heinrich-klaasen" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Heinrich Klaasen</h2>
+              <p>SRH · Matches 2</p>
+            </div>
+            <div class="player-total">133 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">RCB Vs SRH, 1st T20, IPL 2026 Scorecard</span>
+                <span class="match-points">61 pts</span>
+              </summary>
+              <div class="match-meta">RCB won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 31</span><span class="breakdown-chip"><strong>4s</strong> 2</span><span class="breakdown-chip"><strong>6s</strong> 2</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 4</span><span class="breakdown-chip"><strong>Catches</strong> 16</span><span class="breakdown-chip"><strong>S/R</strong> 2</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs SRH, 6th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">72 pts</span>
+              </summary>
+              <div class="match-meta">Sunrisers Hyderabad won by 65 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 52</span><span class="breakdown-chip"><strong>4s</strong> 4</span><span class="breakdown-chip"><strong>6s</strong> 2</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 8</span><span class="breakdown-chip"><strong>S/R</strong> 2</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="dc-lungi-ngidi" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Lungi Ngidi</h2>
+              <p>DC · Matches 2</p>
+            </div>
+            <div class="player-total">128 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs MI, 8th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">37 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 25</span><span class="breakdown-chip"><strong>LBW/Bowled</strong> 8</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs LSG, 5th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">91 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 75</span><span class="breakdown-chip"><strong>LBW/Bowled</strong> 8</span><span class="breakdown-chip"><strong>Wkt Bonus</strong> 4</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="pbks-prabhsimran-singh-wk" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Prabhsimran Singh(WK)</h2>
+              <p>PBKS · Matches 2</p>
+            </div>
+            <div class="player-total">125 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs PBKS, 4th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">58 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 3 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 37</span><span class="breakdown-chip"><strong>4s</strong> 1</span><span class="breakdown-chip"><strong>6s</strong> 8</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 4</span><span class="breakdown-chip"><strong>S/R</strong> 4</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs PBKS, 7th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">67 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 5 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 43</span><span class="breakdown-chip"><strong>4s</strong> 6</span><span class="breakdown-chip"><strong>6s</strong> 2</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 4</span><span class="breakdown-chip"><strong>Catches</strong> 8</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="kkr-rinku-singh" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Rinku Singh</h2>
+              <p>KKR · Matches 2</p>
+            </div>
+            <div class="player-total">124 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs SRH, 6th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">67 pts</span>
+              </summary>
+              <div class="match-meta">Sunrisers Hyderabad won by 65 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 35</span><span class="breakdown-chip"><strong>4s</strong> 4</span><span class="breakdown-chip"><strong>6s</strong> 2</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 4</span><span class="breakdown-chip"><strong>Catches</strong> 16</span><span class="breakdown-chip"><strong>S/R</strong> 2</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs MI, 2nd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">57 pts</span>
+              </summary>
+              <div class="match-meta">Mumbai Indians won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 33</span><span class="breakdown-chip"><strong>4s</strong> 4</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 4</span><span class="breakdown-chip"><strong>Catches</strong> 8</span><span class="breakdown-chip"><strong>S/R</strong> 4</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="gt-b-sai-sudharsan" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>B Sai Sudharsan</h2>
+              <p>GT · Matches 2</p>
+            </div>
+            <div class="player-total">123 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs RR, 9th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">104 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 6 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 73</span><span class="breakdown-chip"><strong>4s</strong> 9</span><span class="breakdown-chip"><strong>6s</strong> 6</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 8</span><span class="breakdown-chip"><strong>S/R</strong> 4</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs PBKS, 4th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">19 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 3 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 13</span><span class="breakdown-chip"><strong>4s</strong> 2</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="rcb-devdutt-padikkal" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Devdutt Padikkal</h2>
+              <p>RCB · Matches 1</p>
+            </div>
+            <div class="player-total">122 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">RCB Vs SRH, 1st T20, IPL 2026 Scorecard</span>
+                <span class="match-points">122 pts</span>
+              </summary>
+              <div class="match-meta">RCB won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 61</span><span class="breakdown-chip"><strong>4s</strong> 7</span><span class="breakdown-chip"><strong>6s</strong> 8</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 8</span><span class="breakdown-chip"><strong>Catches</strong> 24</span><span class="breakdown-chip"><strong>3 Catch Bonus</strong> 4</span><span class="breakdown-chip"><strong>S/R</strong> 6</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="gt-prasidh-krishna" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Prasidh Krishna</h2>
+              <p>GT · Matches 2</p>
+            </div>
+            <div class="player-total">118 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs RR, 9th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">27 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 6 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 25</span><span class="breakdown-chip"><strong>E/R</strong> -2</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs PBKS, 4th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">91 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 3 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 75</span><span class="breakdown-chip"><strong>Wkt Bonus</strong> 4</span><span class="breakdown-chip"><strong>Catches</strong> 8</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="pbks-shreyas-iyer-c" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Shreyas Iyer(C)</h2>
+              <p>PBKS · Matches 2</p>
+            </div>
+            <div class="player-total">116 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs PBKS, 4th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">38 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 3 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 18</span><span class="breakdown-chip"><strong>6s</strong> 4</span><span class="breakdown-chip"><strong>Catches</strong> 8</span><span class="breakdown-chip"><strong>S/R</strong> 4</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs PBKS, 7th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">78 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 5 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 50</span><span class="breakdown-chip"><strong>4s</strong> 4</span><span class="breakdown-chip"><strong>6s</strong> 6</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 8</span><span class="breakdown-chip"><strong>S/R</strong> 6</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="kkr-ajinkya-rahane-c" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Ajinkya Rahane(C)</h2>
+              <p>KKR · Matches 2</p>
+            </div>
+            <div class="player-total">116 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs SRH, 6th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">20 pts</span>
+              </summary>
+              <div class="match-meta">Sunrisers Hyderabad won by 65 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 8</span><span class="breakdown-chip"><strong>Catches</strong> 8</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs MI, 2nd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">96 pts</span>
+              </summary>
+              <div class="match-meta">Mumbai Indians won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 67</span><span class="breakdown-chip"><strong>4s</strong> 3</span><span class="breakdown-chip"><strong>6s</strong> 10</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 8</span><span class="breakdown-chip"><strong>S/R</strong> 4</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="gt-kagiso-rabada" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Kagiso Rabada</h2>
+              <p>GT · Matches 2</p>
+            </div>
+            <div class="player-total">115 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs RR, 9th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">90 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 6 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 23</span><span class="breakdown-chip"><strong>4s</strong> 1</span><span class="breakdown-chip"><strong>6s</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 50</span><span class="breakdown-chip"><strong>LBW/Bowled</strong> 8</span><span class="breakdown-chip"><strong>S/R</strong> 2</span><span class="breakdown-chip"><strong>E/R</strong> -2</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs PBKS, 4th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">25 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 3 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 25</span><span class="breakdown-chip"><strong>E/R</strong> -4</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="dc-t-natarajan" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>T Natarajan</h2>
+              <p>DC · Matches 2</p>
+            </div>
+            <div class="player-total">112 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs MI, 8th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">29 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 25</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs LSG, 5th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">83 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 75</span><span class="breakdown-chip"><strong>Wkt Bonus</strong> 4</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="srh-nitish-kumar-reddy" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Nitish Kumar Reddy</h2>
+              <p>SRH · Matches 2</p>
+            </div>
+            <div class="player-total">112 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">RCB Vs SRH, 1st T20, IPL 2026 Scorecard</span>
+                <span class="match-points">5 pts</span>
+              </summary>
+              <div class="match-meta">RCB won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 1</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs SRH, 6th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">107 pts</span>
+              </summary>
+              <div class="match-meta">Sunrisers Hyderabad won by 65 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 39</span><span class="breakdown-chip"><strong>4s</strong> 4</span><span class="breakdown-chip"><strong>6s</strong> 2</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 50</span><span class="breakdown-chip"><strong>S/R</strong> 4</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="gt-jos-buttler-wk" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Jos Buttler(WK)</h2>
+              <p>GT · Matches 2</p>
+            </div>
+            <div class="player-total">110 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs RR, 9th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">49 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 6 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 26</span><span class="breakdown-chip"><strong>4s</strong> 5</span><span class="breakdown-chip"><strong>Catches</strong> 8</span><span class="breakdown-chip"><strong>S/R</strong> 6</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs PBKS, 4th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">61 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 3 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 38</span><span class="breakdown-chip"><strong>4s</strong> 3</span><span class="breakdown-chip"><strong>6s</strong> 4</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 4</span><span class="breakdown-chip"><strong>Catches</strong> 8</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="rcb-virat-kohli" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Virat Kohli</h2>
+              <p>RCB · Matches 1</p>
+            </div>
+            <div class="player-total">110 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">RCB Vs SRH, 1st T20, IPL 2026 Scorecard</span>
+                <span class="match-points">110 pts</span>
+              </summary>
+              <div class="match-meta">RCB won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 69</span><span class="breakdown-chip"><strong>4s</strong> 5</span><span class="breakdown-chip"><strong>6s</strong> 10</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 8</span><span class="breakdown-chip"><strong>Catches</strong> 8</span><span class="breakdown-chip"><strong>S/R</strong> 6</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="csk-ayush-mhatre" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Ayush Mhatre</h2>
+              <p>CSK · Matches 2</p>
+            </div>
+            <div class="player-total">107 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs RR, 3rd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">2 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 8 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Duck</strong> -2</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs PBKS, 7th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">105 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 5 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 73</span><span class="breakdown-chip"><strong>4s</strong> 6</span><span class="breakdown-chip"><strong>6s</strong> 10</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 8</span><span class="breakdown-chip"><strong>S/R</strong> 4</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="kkr-finn-allen" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Finn Allen</h2>
+              <p>KKR · Matches 2</p>
+            </div>
+            <div class="player-total">107 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs SRH, 6th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">46 pts</span>
+              </summary>
+              <div class="match-meta">Sunrisers Hyderabad won by 65 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 28</span><span class="breakdown-chip"><strong>4s</strong> 4</span><span class="breakdown-chip"><strong>6s</strong> 4</span><span class="breakdown-chip"><strong>S/R</strong> 6</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs MI, 2nd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">61 pts</span>
+              </summary>
+              <div class="match-meta">Mumbai Indians won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 37</span><span class="breakdown-chip"><strong>4s</strong> 6</span><span class="breakdown-chip"><strong>6s</strong> 4</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 4</span><span class="breakdown-chip"><strong>S/R</strong> 6</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="gt-rashid-khan-c" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Rashid Khan(C)</h2>
+              <p>GT · Matches 2</p>
+            </div>
+            <div class="player-total">97 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs RR, 9th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">60 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 6 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 24</span><span class="breakdown-chip"><strong>4s</strong> 3</span><span class="breakdown-chip"><strong>Wickets</strong> 25</span><span class="breakdown-chip"><strong>S/R</strong> 4</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs PBKS, 4th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">37 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 3 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 25</span><span class="breakdown-chip"><strong>Catches</strong> 8</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="mi-suryakumar-yadav-c" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Suryakumar Yadav(C)</h2>
+              <p>MI · Matches 2</p>
+            </div>
+            <div class="player-total">95 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs MI, 2nd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">23 pts</span>
+              </summary>
+              <div class="match-meta">Mumbai Indians won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 16</span><span class="breakdown-chip"><strong>4s</strong> 3</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs MI, 8th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">72 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 51</span><span class="breakdown-chip"><strong>4s</strong> 3</span><span class="breakdown-chip"><strong>6s</strong> 4</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 8</span><span class="breakdown-chip"><strong>S/R</strong> 2</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="pbks-yuzvendra-chahal" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Yuzvendra Chahal</h2>
+              <p>PBKS · Matches 2</p>
+            </div>
+            <div class="player-total">91 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs PBKS, 4th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">54 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 3 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 50</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs PBKS, 7th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">37 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 5 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 25</span><span class="breakdown-chip"><strong>Catches</strong> 8</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="srh-travis-head" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Travis Head</h2>
+              <p>SRH · Matches 2</p>
+            </div>
+            <div class="player-total">89 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">RCB Vs SRH, 1st T20, IPL 2026 Scorecard</span>
+                <span class="match-points">17 pts</span>
+              </summary>
+              <div class="match-meta">RCB won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 11</span><span class="breakdown-chip"><strong>4s</strong> 2</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs SRH, 6th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">72 pts</span>
+              </summary>
+              <div class="match-meta">Sunrisers Hyderabad won by 65 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 46</span><span class="breakdown-chip"><strong>4s</strong> 6</span><span class="breakdown-chip"><strong>6s</strong> 6</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 4</span><span class="breakdown-chip"><strong>S/R</strong> 6</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="rr-jofra-archer" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Jofra Archer</h2>
+              <p>RR · Matches 2</p>
+            </div>
+            <div class="player-total">89 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs RR, 9th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">21 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 6 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 1</span><span class="breakdown-chip"><strong>Catches</strong> 16</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs RR, 3rd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">68 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 8 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 50</span><span class="breakdown-chip"><strong>LBW/Bowled</strong> 8</span><span class="breakdown-chip"><strong>E/R</strong> 6</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="pbks-marco-jansen" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Marco Jansen</h2>
+              <p>PBKS · Matches 2</p>
+            </div>
+            <div class="player-total">87 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs PBKS, 4th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">52 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 3 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 9</span><span class="breakdown-chip"><strong>6s</strong> 2</span><span class="breakdown-chip"><strong>Wickets</strong> 25</span><span class="breakdown-chip"><strong>Catches</strong> 8</span><span class="breakdown-chip"><strong>E/R</strong> 4</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs PBKS, 7th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">35 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 5 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 25</span><span class="breakdown-chip"><strong>LBW/Bowled</strong> 8</span><span class="breakdown-chip"><strong>E/R</strong> -2</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="srh-abhishek-sharma" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Abhishek Sharma</h2>
+              <p>SRH · Matches 2</p>
+            </div>
+            <div class="player-total">87 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">RCB Vs SRH, 1st T20, IPL 2026 Scorecard</span>
+                <span class="match-points">13 pts</span>
+              </summary>
+              <div class="match-meta">RCB won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 7</span><span class="breakdown-chip"><strong>6s</strong> 2</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs SRH, 6th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">74 pts</span>
+              </summary>
+              <div class="match-meta">Sunrisers Hyderabad won by 65 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 48</span><span class="breakdown-chip"><strong>4s</strong> 4</span><span class="breakdown-chip"><strong>6s</strong> 8</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 4</span><span class="breakdown-chip"><strong>S/R</strong> 6</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="rr-ravindra-jadeja" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Ravindra Jadeja</h2>
+              <p>RR · Matches 2</p>
+            </div>
+            <div class="player-total">84 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs RR, 9th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">20 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 6 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 7</span><span class="breakdown-chip"><strong>4s</strong> 1</span><span class="breakdown-chip"><strong>Catches</strong> 8</span><span class="breakdown-chip"><strong>Indirect RO</strong> 6</span><span class="breakdown-chip"><strong>E/R</strong> -6</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs RR, 3rd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">64 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 8 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 50</span><span class="breakdown-chip"><strong>LBW/Bowled</strong> 8</span><span class="breakdown-chip"><strong>E/R</strong> 2</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="dc-tristan-stubbs" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Tristan Stubbs</h2>
+              <p>DC · Matches 2</p>
+            </div>
+            <div class="player-total">83 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs MI, 8th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">15 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 3</span><span class="breakdown-chip"><strong>Catches</strong> 8</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs LSG, 5th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">68 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 39</span><span class="breakdown-chip"><strong>4s</strong> 3</span><span class="breakdown-chip"><strong>6s</strong> 2</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 4</span><span class="breakdown-chip"><strong>Catches</strong> 16</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="kkr-vaibhav-arora" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Vaibhav Arora</h2>
+              <p>KKR · Matches 2</p>
+            </div>
+            <div class="player-total">82 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs SRH, 6th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">59 pts</span>
+              </summary>
+              <div class="match-meta">Sunrisers Hyderabad won by 65 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 1</span><span class="breakdown-chip"><strong>Wickets</strong> 50</span><span class="breakdown-chip"><strong>LBW/Bowled</strong> 8</span><span class="breakdown-chip"><strong>E/R</strong> -4</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs MI, 2nd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">23 pts</span>
+              </summary>
+              <div class="match-meta">Mumbai Indians won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 25</span><span class="breakdown-chip"><strong>E/R</strong> -6</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="dc-axar-patel-c" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Axar Patel(C)</h2>
+              <p>DC · Matches 2</p>
+            </div>
+            <div class="player-total">80 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs MI, 8th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">41 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 25</span><span class="breakdown-chip"><strong>Catches</strong> 8</span><span class="breakdown-chip"><strong>E/R</strong> 4</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs LSG, 5th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">39 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Duck</strong> -2</span><span class="breakdown-chip"><strong>Wickets</strong> 25</span><span class="breakdown-chip"><strong>LBW/Bowled</strong> 8</span><span class="breakdown-chip"><strong>E/R</strong> 4</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="rcb-romario-shepherd" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Romario Shepherd</h2>
+              <p>RCB · Matches 1</p>
+            </div>
+            <div class="player-total">77 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">RCB Vs SRH, 1st T20, IPL 2026 Scorecard</span>
+                <span class="match-points">77 pts</span>
+              </summary>
+              <div class="match-meta">RCB won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 75</span><span class="breakdown-chip"><strong>Wkt Bonus</strong> 4</span><span class="breakdown-chip"><strong>E/R</strong> -6</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="pbks-priyansh-arya" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Priyansh Arya</h2>
+              <p>PBKS · Matches 2</p>
+            </div>
+            <div class="player-total">77 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs PBKS, 4th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">13 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 3 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 7</span><span class="breakdown-chip"><strong>6s</strong> 2</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs PBKS, 7th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">64 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 5 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 39</span><span class="breakdown-chip"><strong>4s</strong> 3</span><span class="breakdown-chip"><strong>6s</strong> 8</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 4</span><span class="breakdown-chip"><strong>S/R</strong> 6</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="csk-shivam-dube" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Shivam Dube</h2>
+              <p>CSK · Matches 2</p>
+            </div>
+            <div class="player-total">76 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs RR, 3rd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">12 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 8 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 6</span><span class="breakdown-chip"><strong>6s</strong> 2</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs PBKS, 7th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">64 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 5 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 45</span><span class="breakdown-chip"><strong>4s</strong> 5</span><span class="breakdown-chip"><strong>6s</strong> 2</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 4</span><span class="breakdown-chip"><strong>S/R</strong> 4</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="dc-kuldeep-yadav" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Kuldeep Yadav</h2>
+              <p>DC · Matches 2</p>
+            </div>
+            <div class="player-total">72 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs MI, 8th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">2 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>E/R</strong> -2</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs LSG, 5th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">70 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 50</span><span class="breakdown-chip"><strong>Catches</strong> 16</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="gt-shubman-gill-c" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Shubman Gill(C)</h2>
+              <p>GT · Matches 1</p>
+            </div>
+            <div class="player-total">71 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs PBKS, 4th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">71 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 3 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 39</span><span class="breakdown-chip"><strong>4s</strong> 6</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 4</span><span class="breakdown-chip"><strong>Catches</strong> 16</span><span class="breakdown-chip"><strong>S/R</strong> 2</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="csk-matt-henry" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Matt Henry</h2>
+              <p>CSK · Matches 2</p>
+            </div>
+            <div class="player-total">68 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs RR, 3rd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">4 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 8 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 5</span><span class="breakdown-chip"><strong>4s</strong> 1</span><span class="breakdown-chip"><strong>E/R</strong> -6</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs PBKS, 7th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">64 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 5 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 50</span><span class="breakdown-chip"><strong>LBW/Bowled</strong> 8</span><span class="breakdown-chip"><strong>Catches</strong> 8</span><span class="breakdown-chip"><strong>E/R</strong> -6</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="dc-pathum-nissanka" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Pathum Nissanka</h2>
+              <p>DC · Matches 2</p>
+            </div>
+            <div class="player-total">67 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs MI, 8th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">62 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 44</span><span class="breakdown-chip"><strong>4s</strong> 6</span><span class="breakdown-chip"><strong>6s</strong> 2</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 4</span><span class="breakdown-chip"><strong>S/R</strong> 2</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs LSG, 5th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">5 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 1</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="gt-washington-sundar" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Washington Sundar</h2>
+              <p>GT · Matches 2</p>
+            </div>
+            <div class="player-total">66 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs RR, 9th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">9 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 6 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 4</span><span class="breakdown-chip"><strong>4s</strong> 1</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs PBKS, 4th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">57 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 3 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 18</span><span class="breakdown-chip"><strong>4s</strong> 2</span><span class="breakdown-chip"><strong>Wickets</strong> 25</span><span class="breakdown-chip"><strong>Catches</strong> 8</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="rr-riyan-parag-c" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Riyan Parag(C)</h2>
+              <p>RR · Matches 2</p>
+            </div>
+            <div class="player-total">60 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs RR, 9th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">39 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 6 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 8</span><span class="breakdown-chip"><strong>6s</strong> 2</span><span class="breakdown-chip"><strong>Wickets</strong> 25</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs RR, 3rd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">21 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 8 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 14</span><span class="breakdown-chip"><strong>4s</strong> 1</span><span class="breakdown-chip"><strong>6s</strong> 2</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="lsg-abdul-samad" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Abdul Samad</h2>
+              <p>LSG · Matches 1</p>
+            </div>
+            <div class="player-total">59 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs LSG, 5th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">59 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 36</span><span class="breakdown-chip"><strong>4s</strong> 3</span><span class="breakdown-chip"><strong>6s</strong> 2</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 4</span><span class="breakdown-chip"><strong>Catches</strong> 8</span><span class="breakdown-chip"><strong>S/R</strong> 2</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="gt-glenn-phillips" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Glenn Phillips</h2>
+              <p>GT · Matches 2</p>
+            </div>
+            <div class="player-total">57 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs RR, 9th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">23 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 6 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 3</span><span class="breakdown-chip"><strong>Catches</strong> 16</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs PBKS, 4th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">34 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 3 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 25</span><span class="breakdown-chip"><strong>4s</strong> 1</span><span class="breakdown-chip"><strong>6s</strong> 2</span><span class="breakdown-chip"><strong>S/R</strong> 2</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="mi-hardik-pandya-c" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Hardik Pandya(C)</h2>
+              <p>MI · Matches 1</p>
+            </div>
+            <div class="player-total">56 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs MI, 2nd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">56 pts</span>
+              </summary>
+              <div class="match-meta">Mumbai Indians won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 18</span><span class="breakdown-chip"><strong>4s</strong> 3</span><span class="breakdown-chip"><strong>Wickets</strong> 25</span><span class="breakdown-chip"><strong>Catches</strong> 8</span><span class="breakdown-chip"><strong>S/R</strong> 4</span><span class="breakdown-chip"><strong>E/R</strong> -6</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="mi-tilak-varma" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Tilak Varma</h2>
+              <p>MI · Matches 2</p>
+            </div>
+            <div class="player-total">56 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs MI, 2nd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">46 pts</span>
+              </summary>
+              <div class="match-meta">Mumbai Indians won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 20</span><span class="breakdown-chip"><strong>4s</strong> 4</span><span class="breakdown-chip"><strong>Catches</strong> 16</span><span class="breakdown-chip"><strong>S/R</strong> 2</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs MI, 8th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">10 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Duck</strong> -2</span><span class="breakdown-chip"><strong>Catches</strong> 8</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="rcb-rajat-patidar-c" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Rajat Patidar(C)</h2>
+              <p>RCB · Matches 1</p>
+            </div>
+            <div class="player-total">53 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">RCB Vs SRH, 1st T20, IPL 2026 Scorecard</span>
+                <span class="match-points">53 pts</span>
+              </summary>
+              <div class="match-meta">RCB won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 31</span><span class="breakdown-chip"><strong>4s</strong> 2</span><span class="breakdown-chip"><strong>6s</strong> 6</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 4</span><span class="breakdown-chip"><strong>S/R</strong> 6</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="mi-mitchell-santner" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Mitchell Santner</h2>
+              <p>MI · Matches 1</p>
+            </div>
+            <div class="player-total">51 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs MI, 8th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">51 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 18</span><span class="breakdown-chip"><strong>4s</strong> 2</span><span class="breakdown-chip"><strong>Wickets</strong> 25</span><span class="breakdown-chip"><strong>S/R</strong> 2</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="lsg-mitchell-marsh" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Mitchell Marsh</h2>
+              <p>LSG · Matches 1</p>
+            </div>
+            <div class="player-total">51 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs LSG, 5th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">51 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 35</span><span class="breakdown-chip"><strong>4s</strong> 2</span><span class="breakdown-chip"><strong>6s</strong> 6</span><span class="breakdown-chip"><strong>Bat Bonus</strong> 4</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="mi-naman-dhir" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Naman Dhir</h2>
+              <p>MI · Matches 2</p>
+            </div>
+            <div class="player-total">48 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs MI, 2nd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">10 pts</span>
+              </summary>
+              <div class="match-meta">Mumbai Indians won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 5</span><span class="breakdown-chip"><strong>4s</strong> 1</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs MI, 8th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">38 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 28</span><span class="breakdown-chip"><strong>4s</strong> 2</span><span class="breakdown-chip"><strong>6s</strong> 2</span><span class="breakdown-chip"><strong>S/R</strong> 2</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="csk-ruturaj-gaikwad-c" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Ruturaj Gaikwad(C)</h2>
+              <p>CSK · Matches 2</p>
+            </div>
+            <div class="player-total">47 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs RR, 3rd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">7 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 8 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 6</span><span class="breakdown-chip"><strong>4s</strong> 1</span><span class="breakdown-chip"><strong>S/R</strong> -4</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs PBKS, 7th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">40 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 5 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 28</span><span class="breakdown-chip"><strong>4s</strong> 2</span><span class="breakdown-chip"><strong>Indirect RO</strong> 6</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="kkr-sunil-narine" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Sunil Narine</h2>
+              <p>KKR · Matches 2</p>
+            </div>
+            <div class="player-total">47 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs SRH, 6th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">20 pts</span>
+              </summary>
+              <div class="match-meta">Sunrisers Hyderabad won by 65 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 12</span><span class="breakdown-chip"><strong>6s</strong> 4</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs MI, 2nd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">27 pts</span>
+              </summary>
+              <div class="match-meta">Mumbai Indians won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 25</span><span class="breakdown-chip"><strong>E/R</strong> -2</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="kkr-cameron-green" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Cameron Green</h2>
+              <p>KKR · Matches 2</p>
+            </div>
+            <div class="player-total">45 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs SRH, 6th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">14 pts</span>
+              </summary>
+              <div class="match-meta">Sunrisers Hyderabad won by 65 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 2</span><span class="breakdown-chip"><strong>Catches</strong> 8</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs MI, 2nd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">31 pts</span>
+              </summary>
+              <div class="match-meta">Mumbai Indians won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 18</span><span class="breakdown-chip"><strong>4s</strong> 1</span><span class="breakdown-chip"><strong>6s</strong> 2</span><span class="breakdown-chip"><strong>S/R</strong> 6</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="rcb-philip-salt" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Philip Salt</h2>
+              <p>RCB · Matches 1</p>
+            </div>
+            <div class="player-total">42 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">RCB Vs SRH, 1st T20, IPL 2026 Scorecard</span>
+                <span class="match-points">42 pts</span>
+              </summary>
+              <div class="match-meta">RCB won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 8</span><span class="breakdown-chip"><strong>4s</strong> 2</span><span class="breakdown-chip"><strong>Catches</strong> 24</span><span class="breakdown-chip"><strong>3 Catch Bonus</strong> 4</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="pbks-nehal-wadhera" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Nehal Wadhera</h2>
+              <p>PBKS · Matches 2</p>
+            </div>
+            <div class="player-total">39 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs PBKS, 4th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">7 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 3 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 3</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs PBKS, 7th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">32 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 5 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 10</span><span class="breakdown-chip"><strong>6s</strong> 2</span><span class="breakdown-chip"><strong>Catches</strong> 16</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="rr-tushar-deshpande" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Tushar Deshpande</h2>
+              <p>RR · Matches 1</p>
+            </div>
+            <div class="player-total">37 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs RR, 9th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">37 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 6 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 25</span><span class="breakdown-chip"><strong>Catches</strong> 8</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="rr-sandeep-sharma" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Sandeep Sharma</h2>
+              <p>RR · Matches 2</p>
+            </div>
+            <div class="player-total">37 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs RR, 9th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">8 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 6 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Catches</strong> 8</span><span class="breakdown-chip"><strong>E/R</strong> -4</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs RR, 3rd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">29 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 8 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 25</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="gt-mohammed-siraj" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Mohammed Siraj</h2>
+              <p>GT · Matches 2</p>
+            </div>
+            <div class="player-total">35 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs RR, 9th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">31 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 6 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 25</span><span class="breakdown-chip"><strong>Catches</strong> 8</span><span class="breakdown-chip"><strong>E/R</strong> -6</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs PBKS, 4th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">4 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 3 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="rr-shimron-hetmyer" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Shimron Hetmyer</h2>
+              <p>RR · Matches 1</p>
+            </div>
+            <div class="player-total">35 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs RR, 9th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">35 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 6 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 18</span><span class="breakdown-chip"><strong>4s</strong> 1</span><span class="breakdown-chip"><strong>6s</strong> 4</span><span class="breakdown-chip"><strong>Catches</strong> 8</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="dc-vipraj-nigam" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Vipraj Nigam</h2>
+              <p>DC · Matches 2</p>
+            </div>
+            <div class="player-total">33 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs MI, 8th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">29 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 25</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs LSG, 5th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">4 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="dc-nitish-rana" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Nitish Rana</h2>
+              <p>DC · Matches 2</p>
+            </div>
+            <div class="player-total">33 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs MI, 8th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">10 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Duck</strong> -2</span><span class="breakdown-chip"><strong>Catches</strong> 8</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs LSG, 5th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">23 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 15</span><span class="breakdown-chip"><strong>4s</strong> 2</span><span class="breakdown-chip"><strong>6s</strong> 2</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="mi-deepak-chahar" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Deepak Chahar</h2>
+              <p>MI · Matches 1</p>
+            </div>
+            <div class="player-total">31 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs MI, 8th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">31 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 25</span><span class="breakdown-chip"><strong>E/R</strong> 2</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="lsg-mohammed-shami" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Mohammed Shami</h2>
+              <p>LSG · Matches 1</p>
+            </div>
+            <div class="player-total">30 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs LSG, 5th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">30 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 1</span><span class="breakdown-chip"><strong>Wickets</strong> 25</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="csk-kartik-sharma" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Kartik Sharma</h2>
+              <p>CSK · Matches 2</p>
+            </div>
+            <div class="player-total">29 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs RR, 3rd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">24 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 8 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 18</span><span class="breakdown-chip"><strong>6s</strong> 2</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs PBKS, 7th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">5 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 5 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 1</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="dc-david-miller" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>David Miller</h2>
+              <p>DC · Matches 1</p>
+            </div>
+            <div class="player-total">29 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs MI, 8th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">29 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 21</span><span class="breakdown-chip"><strong>4s</strong> 4</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="rcb-suyash-sharma" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Suyash Sharma</h2>
+              <p>RCB · Matches 1</p>
+            </div>
+            <div class="player-total">29 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">RCB Vs SRH, 1st T20, IPL 2026 Scorecard</span>
+                <span class="match-points">29 pts</span>
+              </summary>
+              <div class="match-meta">RCB won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 25</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="rcb-bhuvneshwar-kumar" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Bhuvneshwar Kumar</h2>
+              <p>RCB · Matches 1</p>
+            </div>
+            <div class="player-total">29 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">RCB Vs SRH, 1st T20, IPL 2026 Scorecard</span>
+                <span class="match-points">29 pts</span>
+              </summary>
+              <div class="match-meta">RCB won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Wickets</strong> 25</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="pbks-shashank-singh" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Shashank Singh</h2>
+              <p>PBKS · Matches 2</p>
+            </div>
+            <div class="player-total">28 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs PBKS, 4th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">8 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 3 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 4</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs PBKS, 7th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">20 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 5 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 14</span><span class="breakdown-chip"><strong>4s</strong> 2</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="rcb-tim-david" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Tim David</h2>
+              <p>RCB · Matches 1</p>
+            </div>
+            <div class="player-total">27 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">RCB Vs SRH, 1st T20, IPL 2026 Scorecard</span>
+                <span class="match-points">27 pts</span>
+              </summary>
+              <div class="match-meta">RCB won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 16</span><span class="breakdown-chip"><strong>4s</strong> 1</span><span class="breakdown-chip"><strong>6s</strong> 2</span><span class="breakdown-chip"><strong>S/R</strong> 4</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="gt-shahrukh-khan" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Shahrukh Khan</h2>
+              <p>GT · Matches 2</p>
+            </div>
+            <div class="player-total">26 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs RR, 9th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">18 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 6 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 11</span><span class="breakdown-chip"><strong>4s</strong> 1</span><span class="breakdown-chip"><strong>6s</strong> 2</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs PBKS, 4th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">8 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 3 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 4</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="mi-jasprit-bumrah" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Jasprit Bumrah</h2>
+              <p>MI · Matches 2</p>
+            </div>
+            <div class="player-total">24 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs MI, 2nd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">4 pts</span>
+              </summary>
+              <div class="match-meta">Mumbai Indians won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs MI, 8th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">20 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Direct RO</strong> 12</span><span class="breakdown-chip"><strong>E/R</strong> 4</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="csk-sanju-samson-wk" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Sanju Samson(WK)</h2>
+              <p>CSK · Matches 2</p>
+            </div>
+            <div class="player-total">23 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs RR, 3rd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">11 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 8 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 6</span><span class="breakdown-chip"><strong>4s</strong> 1</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs PBKS, 7th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">12 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 5 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 7</span><span class="breakdown-chip"><strong>4s</strong> 1</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="pbks-arshdeep-singh" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Arshdeep Singh</h2>
+              <p>PBKS · Matches 2</p>
+            </div>
+            <div class="player-total">20 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs PBKS, 4th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">18 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 3 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Catches</strong> 16</span><span class="breakdown-chip"><strong>E/R</strong> -2</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs PBKS, 7th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">2 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 5 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>E/R</strong> -2</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="lsg-rishabh-pant-c-wk" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Rishabh Pant(C)(WK)</h2>
+              <p>LSG · Matches 1</p>
+            </div>
+            <div class="player-total">20 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs LSG, 5th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">20 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 7</span><span class="breakdown-chip"><strong>4s</strong> 1</span><span class="breakdown-chip"><strong>Catches</strong> 8</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="lsg-aiden-markram" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Aiden Markram</h2>
+              <p>LSG · Matches 1</p>
+            </div>
+            <div class="player-total">18 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs LSG, 5th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">18 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 11</span><span class="breakdown-chip"><strong>4s</strong> 1</span><span class="breakdown-chip"><strong>6s</strong> 2</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="pbks-marcus-stoinis" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Marcus Stoinis</h2>
+              <p>PBKS · Matches 2</p>
+            </div>
+            <div class="player-total">17 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">GT Vs PBKS, 4th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">2 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 3 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Duck</strong> -2</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs PBKS, 7th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">15 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 5 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 9</span><span class="breakdown-chip"><strong>4s</strong> 2</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="dc-kl-rahul-wk" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>KL Rahul(WK)</h2>
+              <p>DC · Matches 2</p>
+            </div>
+            <div class="player-total">15 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs MI, 8th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">5 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 1</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs LSG, 5th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">10 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Duck</strong> -2</span><span class="breakdown-chip"><strong>Catches</strong> 8</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="lsg-nicholas-pooran" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Nicholas Pooran</h2>
+              <p>LSG · Matches 1</p>
+            </div>
+            <div class="player-total">13 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs LSG, 5th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">13 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 8</span><span class="breakdown-chip"><strong>4s</strong> 1</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="kkr-varun-chakaravarthy" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Varun Chakaravarthy</h2>
+              <p>KKR · Matches 2</p>
+            </div>
+            <div class="player-total">12 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs SRH, 6th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">14 pts</span>
+              </summary>
+              <div class="match-meta">Sunrisers Hyderabad won by 65 runs 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Catches</strong> 16</span><span class="breakdown-chip"><strong>E/R</strong> -6</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs MI, 2nd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">-2 pts</span>
+              </summary>
+              <div class="match-meta">Mumbai Indians won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>E/R</strong> -6</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="csk-khaleel-ahmed" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Khaleel Ahmed</h2>
+              <p>CSK · Matches 2</p>
+            </div>
+            <div class="player-total">12 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs RR, 3rd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">8 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 8 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>E/R</strong> 4</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs PBKS, 7th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">4 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 5 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="csk-prashant-veer" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Prashant Veer</h2>
+              <p>CSK · Matches 1</p>
+            </div>
+            <div class="player-total">11 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs PBKS, 7th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">11 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 5 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 6</span><span class="breakdown-chip"><strong>4s</strong> 1</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="csk-noor-ahmad" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Noor Ahmad</h2>
+              <p>CSK · Matches 2</p>
+            </div>
+            <div class="player-total">11 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs RR, 3rd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">-1 pts</span>
+              </summary>
+              <div class="match-meta">Rajasthan Royals won by 8 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Runs</strong> 1</span><span class="breakdown-chip"><strong>E/R</strong> -6</span></div>
+            </details>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">CSK Vs PBKS, 7th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">12 pts</span>
+              </summary>
+              <div class="match-meta">Punjab Kings won by 5 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Catches</strong> 8</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="rcb-jitesh-sharma-wk" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Jitesh Sharma(WK)</h2>
+              <p>RCB · Matches 1</p>
+            </div>
+            <div class="player-total">10 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">RCB Vs SRH, 1st T20, IPL 2026 Scorecard</span>
+                <span class="match-points">10 pts</span>
+              </summary>
+              <div class="match-meta">RCB won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Duck</strong> -2</span><span class="breakdown-chip"><strong>Catches</strong> 8</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="mi-trent-boult" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Trent Boult</h2>
+              <p>MI · Matches 1</p>
+            </div>
+            <div class="player-total">4 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">KKR Vs MI, 2nd T20, IPL 2026 Scorecard</span>
+                <span class="match-points">4 pts</span>
+              </summary>
+              <div class="match-meta">Mumbai Indians won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="lsg-ayush-badoni" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Ayush Badoni</h2>
+              <p>LSG · Matches 1</p>
+            </div>
+            <div class="player-total">2 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">DC Vs LSG, 5th T20, IPL 2026 Scorecard</span>
+                <span class="match-points">2 pts</span>
+              </summary>
+              <div class="match-meta">Delhi Capitals won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>Duck</strong> -2</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="lsg-digvesh" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Digvesh</h2>
+              <p>LSG · Matches 0</p>
+            </div>
+            <div class="player-total">0 pts</div>
+          </div>
+          
+        </section>
+      
+        <section id="mi-de-kock" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>De Kock</h2>
+              <p>MI · Matches 0</p>
+            </div>
+            <div class="player-total">0 pts</div>
+          </div>
+          
+        </section>
+      
+        <section id="lsg-avesh" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Avesh</h2>
+              <p>LSG · Matches 0</p>
+            </div>
+            <div class="player-total">0 pts</div>
+          </div>
+          
+        </section>
+      
+        <section id="gt-sai-kishore" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Sai kishore</h2>
+              <p>GT · Matches 0</p>
+            </div>
+            <div class="player-total">0 pts</div>
+          </div>
+          
+        </section>
+      
+        <section id="csk-brevis" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Brevis</h2>
+              <p>CSK · Matches 0</p>
+            </div>
+            <div class="player-total">0 pts</div>
+          </div>
+          
+        </section>
+      
+        <section id="lsg-mayank-yadav" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Mayank Yadav</h2>
+              <p>LSG · Matches 0</p>
+            </div>
+            <div class="player-total">0 pts</div>
+          </div>
+          
+        </section>
+      
+        <section id="mi-will-jacks" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Will Jacks</h2>
+              <p>MI · Matches 0</p>
+            </div>
+            <div class="player-total">0 pts</div>
+          </div>
+          
+        </section>
+      
+        <section id="rr-sam-curran" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Sam curran</h2>
+              <p>RR · Matches 0</p>
+            </div>
+            <div class="player-total">0 pts</div>
+          </div>
+          
+        </section>
+      
+        <section id="csk-dhoni" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Dhoni</h2>
+              <p>CSK · Matches 0</p>
+            </div>
+            <div class="player-total">0 pts</div>
+          </div>
+          
+        </section>
+      
+        <section id="dc-starc" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Starc</h2>
+              <p>DC · Matches 0</p>
+            </div>
+            <div class="player-total">0 pts</div>
+          </div>
+          
+        </section>
+      
+        <section id="kkr-pathirana" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Pathirana</h2>
+              <p>KKR · Matches 0</p>
+            </div>
+            <div class="player-total">0 pts</div>
+          </div>
+          
+        </section>
+      
+        <section id="pbks-ferguson" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Ferguson</h2>
+              <p>PBKS · Matches 0</p>
+            </div>
+            <div class="player-total">0 pts</div>
+          </div>
+          
+        </section>
+      
+        <section id="rcb-dayal" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Dayal</h2>
+              <p>RCB · Matches 0</p>
+            </div>
+            <div class="player-total">0 pts</div>
+          </div>
+          
+        </section>
+      
+        <section id="kkr-seifert" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Seifert</h2>
+              <p>KKR · Matches 0</p>
+            </div>
+            <div class="player-total">0 pts</div>
+          </div>
+          
+        </section>
+      
+        <section id="rr-ellis" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Ellis</h2>
+              <p>RR · Matches 0</p>
+            </div>
+            <div class="player-total">0 pts</div>
+          </div>
+          
+        </section>
+      
+        <section id="rcb-venkatesh-iyer" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Venkatesh Iyer</h2>
+              <p>RCB · Matches 0</p>
+            </div>
+            <div class="player-total">0 pts</div>
+          </div>
+          
+        </section>
+      
+        <section id="rcb-hazlewood" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Hazlewood</h2>
+              <p>RCB · Matches 0</p>
+            </div>
+            <div class="player-total">0 pts</div>
+          </div>
+          
+        </section>
+      
+        <section id="srh-harshal-patel" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Harshal Patel</h2>
+              <p>SRH · Matches 1</p>
+            </div>
+            <div class="player-total">-2 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">RCB Vs SRH, 1st T20, IPL 2026 Scorecard</span>
+                <span class="match-points">-2 pts</span>
+              </summary>
+              <div class="match-meta">RCB won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>E/R</strong> -6</span></div>
+            </details>
+          
+        </section>
+      
+        <section id="rcb-krunal-pandya" class="player-card">
+          <div class="player-top">
+            <div>
+              <h2>Krunal Pandya</h2>
+              <p>RCB · Matches 1</p>
+            </div>
+            <div class="player-total">-2 pts</div>
+          </div>
+          
+            <details class="match-card">
+              <summary>
+                <span class="match-name">RCB Vs SRH, 1st T20, IPL 2026 Scorecard</span>
+                <span class="match-points">-2 pts</span>
+              </summary>
+              <div class="match-meta">RCB won by 6 wickets 🏆</div>
+              <div class="breakdown-grid"><span class="breakdown-chip"><strong>Starting XI</strong> 4</span><span class="breakdown-chip"><strong>E/R</strong> -6</span></div>
+            </details>
+          
+        </section>
+      
+      </section>
+    </main>
+  </body>
+</html>

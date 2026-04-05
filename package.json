@@ -5,8 +5,12 @@
   "main": "src/app/index.js",
   "scripts": {
     "start": "node src/app/index.js",
-    "update:matches": "node src/app/updateMatches.js",
-    "refresh": "node src/app/refreshLeaderboard.js"
+    "update:matches": "powershell -Command \"$env:LIVE_MATCH_SOURCE='playwright-crex'; $env:LIVE_MATCH_URL='https://crex.com/series/indian-premier-league-2026-1PW/matches'; node src/app/updateMatches.js\"",
+    "refresh": "node src/app/refreshLeaderboard.js",
+    "score": "powershell -Command \"$env:LIVE_MATCH_SOURCE='playwright-crex'; $env:LIVE_MATCH_URL='https://crex.com/series/indian-premier-league-2026-1PW/matches'; npm run refresh\""
+  },
+  "dependencies": {
+    "playwright": "^1.53.0"
   },
   "license": "MIT"
 }

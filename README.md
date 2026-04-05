@@ -21,18 +21,34 @@ The app can now use generated match data instead of only the seeded sample data.
   Fetches latest match data from the configured source and writes `src/data/generated/matches.json`.
 - `npm run refresh`
   Runs the match update and then rebuilds the leaderboard HTML.
+- `npm run score`
+  Fetches the latest completed IPL 2026 matches from CREX, rebuilds the leaderboard, and opens `owners.html`.
 
 ### Live data source
 
-By default the updater expects a local JSON file at `live-data/matches.json`.
-You can copy `live-data/matches.example.json` and replace it with your latest match payload.
-
 Supported environment variables:
-
-- `LIVE_MATCH_SOURCE=local-json`
-- `LIVE_MATCH_FILE=path-to-your-json-file`
 
 Or for a future API integration:
 
 - `LIVE_MATCH_SOURCE=http-json`
 - `LIVE_MATCH_URL=https://your-endpoint.example.com/matches`
+
+Or for the Playwright scraper prototype:
+
+- `LIVE_MATCH_SOURCE=playwright-crex`
+- `LIVE_MATCH_URL=https://crex.com/cricket-live-score/.../match-scorecard`
+
+Example:
+
+```powershell
+$env:LIVE_MATCH_SOURCE="playwright-crex"
+$env:LIVE_MATCH_URL="https://crex.com/cricket-live-score/kkr-vs-mi-2nd-match-ipl-2026-10Y0/match-scorecard"
+npm run update:matches
+```
+
+Notes:
+
+- Run `npm install` first so Playwright is available.
+- This scraper is a best-effort fallback for public scorecard pages, not a stable API.
+- It reads the visible CREX scorecard, toggles innings, and derives batting, bowling, and some fielding events from dismissal text.
+- Cricbuzz blocked headless browser access during validation in this environment, so CREX is the working fallback target here.

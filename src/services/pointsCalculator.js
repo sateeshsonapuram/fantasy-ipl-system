@@ -68,8 +68,16 @@ function getEconomyRatePoints(player) {
   return -6;
 }
 
+function shouldSkipStrikeRate(player) {
+  return player.role === "bowler";
+}
+
+function shouldSkipDuckPenalty(player) {
+  return player.role === "bowler";
+}
+
 function getStrikeRatePoints(player) {
-  if (player.role === "bowler") {
+  if (shouldSkipStrikeRate(player)) {
     return 0;
   }
 
@@ -110,41 +118,73 @@ function getStrikeRatePoints(player) {
   return 6;
 }
 
+function calculatePlayerPointBreakdown(player) {
+  const startingXI = player.inPlayingXI ? 4 : 0;
+  const runs = player.runs;
+  const fours = player.fours;
+  const sixes = player.sixes * 2;
+  const battingBonus = getBattingBonusPoints(player.runs);
+  const duckPenalty = player.isOutForDuck && !shouldSkipDuckPenalty(player) ? -2 : 0;
+  const wickets = player.wickets * 25;
+  const maidenOvers = player.maidenOvers * 12;
+  const lbwBowledBonus = player.lbwBowledWickets * 8;
+  const wicketBonus = getWicketHaulBonus(player.wickets);
+  const catches = player.catches * 8;
+  const catchBonus = getCatchBonus(player.catches);
+  const stumpings = player.stumpings * 12;
+  const directRunOuts = player.directRunOuts * 12;
+  const indirectRunOuts = player.indirectRunOuts * 6;
+  const strikeRate = getStrikeRatePoints(player);
+  const economyRate = getEconomyRatePoints(player);
+
+  const total =
+    startingXI +
+    runs +
+    fours +
+    sixes +
+    battingBonus +
+    duckPenalty +
+    wickets +
+    maidenOvers +
+    lbwBowledBonus +
+    wicketBonus +
+    catches +
+    catchBonus +
+    stumpings +
+    directRunOuts +
+    indirectRunOuts +
+    strikeRate +
+    economyRate;
+
+  return {
+    total,
+    breakdown: {
+      startingXI,
+      runs,
+      fours,
+      sixes,
+      battingBonus,
+      duckPenalty,
+      wickets,
+      maidenOvers,
+      lbwBowledBonus,
+      wicketBonus,
+      catches,
+      catchBonus,
+      stumpings,
+      directRunOuts,
+      indirectRunOuts,
+      strikeRate,
+      economyRate
+    }
+  };
+}
+
 function calculatePlayerPoints(player) {
-  const battingPoints =
-    player.runs +
-    player.fours +
-    player.sixes * 2 +
-    getBattingBonusPoints(player.runs) +
-    (player.isOutForDuck && player.role !== "bowler" ? -2 : 0);
-
-  const bowlingPoints =
-    player.wickets * 25 +
-    player.maidenOvers * 12 +
-    player.lbwBowledWickets * 8 +
-    getWicketHaulBonus(player.wickets);
-
-  const fieldingPoints =
-    player.catches * 8 +
-    getCatchBonus(player.catches) +
-    player.stumpings * 12 +
-    player.directRunOuts * 12 +
-    player.indirectRunOuts * 6;
-
-  const otherPoints = player.inPlayingXI ? 4 : 0;
-  const strikeRatePoints = getStrikeRatePoints(player);
-  const economyRatePoints = getEconomyRatePoints(player);
-
-  return (
-    battingPoints +
-    bowlingPoints +
-    fieldingPoints +
-    otherPoints +
-    strikeRatePoints +
-    economyRatePoints
-  );
+  return calculatePlayerPointBreakdown(player).total;
 }
 
 module.exports = {
-  calculatePlayerPoints
+  calculatePlayerPoints,
+  calculatePlayerPointBreakdown
 };

@@ -1,6 +1,3 @@
-const fs = require("fs");
-const path = require("path");
-
 function normalizeBoolean(value, fallback = false) {
   if (typeof value === "boolean") {
     return value;
@@ -66,17 +63,6 @@ function parseMatchesPayload(payload) {
   throw new Error("Payload must be an array of matches or an object with a matches array.");
 }
 
-async function loadFromLocalJson(filePath) {
-  const resolvedPath = path.resolve(filePath);
-
-  if (!fs.existsSync(resolvedPath)) {
-    throw new Error(`Local data file not found: ${resolvedPath}`);
-  }
-
-  const fileContents = fs.readFileSync(resolvedPath, "utf8");
-  return parseMatchesPayload(JSON.parse(fileContents));
-}
-
 async function loadFromHttpJson(url) {
   if (typeof fetch !== "function") {
     throw new Error("Global fetch is not available in this Node runtime.");
@@ -96,18 +82,7 @@ async function loadFromHttpJson(url) {
 }
 
 async function fetchLatestMatches() {
-  const mode = process.env.LIVE_MATCH_SOURCE || "local-json";
-
-  if (mode === "local-json") {
-    const inputPath =
-      process.env.LIVE_MATCH_FILE || path.resolve(process.cwd(), "live-data", "matches.json");
-
-    const matches = await loadFromLocalJson(inputPath);
-    return {
-      source: `local-json:${inputPath}`,
-      matches
-    };
-  }
+  const mode = process.env.LIVE_MATCH_SOURCE || "playwright-crex";
 
   if (mode === "http-json") {
     const url = process.env.LIVE_MATCH_URL;
@@ -123,8 +98,14 @@ async function fetchLatestMatches() {
     };
   }
 
+  if (mode === "playwright-crex") {
+    const url = process.env.LIVE_MATCH_URL;
+    const { scrapeCricbuzzScorecard } = require("./playwrightCricbuzzSource");
+    return scrapeCricbuzzScorecard(url);
+  }
+
   throw new Error(
-    `Unsupported LIVE_MATCH_SOURCE "${mode}". Use "local-json" or "http-json".`
+    `Unsupported LIVE_MATCH_SOURCE "${mode}". Use "http-json" or "playwright-crex".`
   );
 }
 
