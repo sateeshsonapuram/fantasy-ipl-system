@@ -1,4 +1,4 @@
-# Project Guide
+﻿# Project Guide
 
 This guide explains what each file does, how the app runs, and how match data moves through the system.
 
@@ -92,7 +92,7 @@ This is the best command for daily use.
   Defines fantasy scoring rules for batting, bowling, fielding, strike rate, economy, and XI bonus.
 
 - [playerAggregation.js](e:/Sateesh%20Project/fantasy-ipl-system/src/services/playerAggregation.js)
-  Combines the same player’s performance across matches and calculates season total points.
+  Combines the same player's performance across matches and calculates season total points.
 
 - [ownerLeaderboard.js](e:/Sateesh%20Project/fantasy-ipl-system/src/services/ownerLeaderboard.js)
   Matches owner squad names to player stats, handles aliases, marks missing players, and computes owner totals.
@@ -105,7 +105,7 @@ This is the best command for daily use.
 
 ## Data Flow
 
-The project’s data flow is:
+The project's data flow is:
 
 `CREX matches page or configured JSON source`
 -> [updateMatches.js](e:/Sateesh%20Project/fantasy-ipl-system/src/app/updateMatches.js)
@@ -130,7 +130,7 @@ This usually means the latest match payload does not include that player yet.
 
 For daily updates after each match:
 
-1. Run `npm run score`
+1. Run `npm run score:live` (checks only the newest match and then calculates live + stored points), or run `npm run score:completed` (checks only the newest match and then shows completed-only points)
 2. Check [owners.html](e:/Sateesh%20Project/fantasy-ipl-system/owners.html)
 
 ## Future Automation
@@ -151,3 +151,4 @@ If someone is new to this repo, the most important files are:
 - [pointsCalculator.js](e:/Sateesh%20Project/fantasy-ipl-system/src/services/pointsCalculator.js)
 - [ownerLeaderboard.js](e:/Sateesh%20Project/fantasy-ipl-system/src/services/ownerLeaderboard.js)
 - [updateMatches.js](e:/Sateesh%20Project/fantasy-ipl-system/src/app/updateMatches.js)
+

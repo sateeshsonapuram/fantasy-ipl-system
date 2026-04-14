@@ -5,9 +5,13 @@
   "main": "src/app/index.js",
   "scripts": {
     "start": "node src/app/index.js",
-    "update:matches": "powershell -Command \"$env:LIVE_MATCH_SOURCE='playwright-crex'; $env:LIVE_MATCH_URL='https://crex.com/series/indian-premier-league-2026-1PW/matches'; node src/app/updateMatches.js\"",
+    "update:matches": "powershell -Command \"$env:LIVE_MATCH_SOURCE='playwright-crex'; $env:LIVE_MATCH_URL_CREX='https://crex.com/series/indian-premier-league-2026-1PW/matches'; node src/app/updateMatches.js\"",
+    "update:matches:completed": "powershell -Command \"$env:MATCH_SCOPE='completed'; $env:LIVE_MATCH_SOURCE='playwright-crex'; $env:LIVE_MATCH_URL_CREX='https://crex.com/series/indian-premier-league-2026-1PW/matches'; node src/app/updateMatches.js\"",
+    "update:matches:latest": "powershell -Command \"$env:MATCH_SCOPE='latest'; $env:LIVE_MATCH_SOURCE='playwright-crex'; $env:LIVE_MATCH_URL_CREX='https://crex.com/series/indian-premier-league-2026-1PW/matches'; node src/app/updateMatches.js\"",
     "refresh": "node src/app/refreshLeaderboard.js",
-    "score": "powershell -Command \"$env:LIVE_MATCH_SOURCE='playwright-crex'; $env:LIVE_MATCH_URL='https://crex.com/series/indian-premier-league-2026-1PW/matches'; npm run refresh\""
+    "score:all": "powershell -Command \"$env:MATCH_SCOPE='all'; $env:LIVE_MATCH_SOURCE='playwright-crex'; $env:LIVE_MATCH_URL_CREX='https://crex.com/series/indian-premier-league-2026-1PW/matches'; npm run refresh\"",
+    "score:completed": "powershell -Command \"$env:MATCH_SCOPE='latest'; $env:LEADERBOARD_MATCH_SCOPE='completed'; $env:LIVE_MATCH_SOURCE='playwright-crex'; $env:LIVE_MATCH_URL_CREX='https://crex.com/series/indian-premier-league-2026-1PW/matches'; npm run refresh\"",
+    "score:live": "powershell -Command \"$env:MATCH_SCOPE='latest'; $env:LIVE_MATCH_SOURCE='playwright-crex'; $env:LIVE_MATCH_URL_CREX='https://crex.com/series/indian-premier-league-2026-1PW/matches'; npm run refresh\""
   },
   "dependencies": {
     "playwright": "^1.53.0"

@@ -1,10 +1,10 @@
-const fs = require("fs");
+﻿const fs = require("fs");
 const path = require("path");
 const { spawn } = require("child_process");
 const { fetchMatches } = require("../data/matches");
 const { fetchOwners } = require("../data/owners");
 const {
-  aggregatePlayerPointsIncrementally
+  aggregatePlayerPoints
 } = require("../services/playerAggregation");
 const { calculateOwnerLeaderboard } = require("../services/ownerLeaderboard");
 
@@ -143,8 +143,9 @@ function buildOwnersHtml(ownerLeaderboard) {
     (largestSquad, owner) => Math.max(largestSquad, owner.squadPlayers.length),
     0
   );
-  const nameColumnWidth = Math.min(82, Math.max(68, longestPlayerNameLength * 3.2));
-  const sideColumnWidth = (100 - nameColumnWidth) / 2;
+  const pointsColumnWidth = 24;
+  const numberColumnWidth = 12;
+  const nameColumnWidth = 100 - pointsColumnWidth - numberColumnWidth;
 
   const rankRows = ownerLeaderboard
     .map(
@@ -217,7 +218,7 @@ function buildOwnersHtml(ownerLeaderboard) {
 
           const isSelected = selectedPlayerIds.has(player.id);
           const overseasBadge = isOverseasPlayer(player.name)
-            ? '<span class="overseas-badge" title="Overseas player">✈</span>'
+            ? '<span class="overseas-badge" title="Overseas player">&#9992;</span>'
             : "";
 
           return `
@@ -234,9 +235,9 @@ function buildOwnersHtml(ownerLeaderboard) {
       return `
         <table class="team-table">
           <colgroup>
-            <col style="width: ${sideColumnWidth}%;" />
+            <col style="width: ${numberColumnWidth}%;" />
             <col style="width: ${nameColumnWidth}%;" />
-            <col style="width: ${sideColumnWidth}%;" />
+            <col style="width: ${pointsColumnWidth}%;" />
           </colgroup>
           <thead>
             <tr>
@@ -461,11 +462,11 @@ function buildOwnersHtml(ownerLeaderboard) {
       }
 
       .rank-1::before {
-        content: "🥇";
+        content: "\\1F947";
       }
 
       .rank-2::before {
-        content: "🥈";
+        content: "\\1F948";
       }
 
       .rank-3::before {
@@ -563,6 +564,11 @@ function buildOwnersHtml(ownerLeaderboard) {
       .team-table td:nth-child(3) {
         text-align: right;
         white-space: nowrap;
+        min-width: 62px;
+        padding-right: 8px;
+        font-size: 0.68rem;
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
       }
 
       .team-table tbody td {
@@ -595,8 +601,10 @@ function buildOwnersHtml(ownerLeaderboard) {
       }
 
       .team-table tfoot td {
-        background: #ecfccb;
-        font-weight: 700;
+        background: #dcfce7;
+        color: #14532d;
+        font-weight: 800;
+        border-top: 2px solid #86efac;
       }
 
       .footer-note {
@@ -772,7 +780,7 @@ function buildOwnersHtml(ownerLeaderboard) {
       </section>
       <section class="top-ribbon">
         <nav class="ribbon-nav" aria-label="Info links">
-          <a href="#player-points">Player Points</a>
+          <a href="./player-details.html">Player Points</a>
           <a href="#team-points">Team Totals</a>
           <a href="#points-system">Points System</a>
           <a href="#rules">Rules</a>
@@ -797,7 +805,7 @@ function buildOwnersHtml(ownerLeaderboard) {
         </table>
       </section>
       <section id="overseas" class="footer-note">
-        ✈ = overseas player
+        &#9992; = overseas player
       </section>
       <section class="team-filters">
         <div class="team-filters-header">
@@ -893,12 +901,21 @@ function buildTrackedPlayers(ownerLeaderboard) {
 }
 
 function buildPlayerDetailsHtml(players) {
-  const sortedPlayers = [...players].sort(
-    (firstPlayer, secondPlayer) => secondPlayer.totalPoints - firstPlayer.totalPoints
-  );
+  const playersByTeam = players.reduce((groupedPlayers, player) => {
+    const teamCode = String(player.team || "Unknown").toUpperCase();
+    if (!groupedPlayers.has(teamCode)) {
+      groupedPlayers.set(teamCode, []);
+    }
+    groupedPlayers.get(teamCode).push(player);
+    return groupedPlayers;
+  }, new Map());
 
-  const playerSections = sortedPlayers
-    .map((player) => {
+  const playerSections = Array.from(playersByTeam.entries())
+    .sort((firstTeam, secondTeam) => firstTeam[0].localeCompare(secondTeam[0]))
+    .map(([teamCode, teamPlayers]) => {
+      const teamPlayerCards = teamPlayers
+        .sort((firstPlayer, secondPlayer) => secondPlayer.totalPoints - firstPlayer.totalPoints)
+        .map((player) => {
       const matchCards = [...player.matchBreakdowns]
         .sort((firstMatch, secondMatch) => secondMatch.matchId.localeCompare(firstMatch.matchId))
         .map((matchBreakdown) => {
@@ -941,17 +958,24 @@ function buildPlayerDetailsHtml(players) {
         })
         .join("");
 
+          return `
+            <section id="${slugify(`${player.team}-${player.name}`)}" class="player-card">
+              <div class="player-top">
+                <div>
+                  <h2>${escapeHtml(player.name)}</h2>
+                  <p>${escapeHtml(player.team)} · Matches ${player.matchesPlayed}</p>
+                </div>
+                <div class="player-total">${player.totalPoints} pts</div>
+              </div>
+              ${matchCards}
+            </section>
+          `;
+        })
+        .join("");
+
       return `
-        <section id="${slugify(`${player.team}-${player.name}`)}" class="player-card">
-          <div class="player-top">
-            <div>
-              <h2>${escapeHtml(player.name)}</h2>
-              <p>${escapeHtml(player.team)} · Matches ${player.matchesPlayed}</p>
-            </div>
-            <div class="player-total">${player.totalPoints} pts</div>
-          </div>
-          ${matchCards}
-        </section>
+        <h2 class="team-heading">${escapeHtml(teamCode)}</h2>
+        ${teamPlayerCards}
       `;
     })
     .join("");
@@ -1003,6 +1027,15 @@ function buildPlayerDetailsHtml(players) {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 12px;
+      }
+      .team-heading {
+        grid-column: 1 / -1;
+        margin: 12px 0 2px;
+        padding: 8px 12px;
+        border-left: 4px solid var(--accent);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.78);
+        font-size: 1rem;
       }
       .player-card {
         padding: 14px;
@@ -1109,7 +1142,7 @@ function writeIncrementalPlayerPointsJson(result) {
   const payload = {
     updatedAt: new Date().toISOString(),
     playerCount: result.players.length,
-    processedMatchIds: result.processedMatchIds,
+    processedMatchIds: result.processedMatchIds || [],
     players: result.players
   };
 
@@ -1163,28 +1196,36 @@ function openHtmlInBrowser(htmlPath) {
 
 function printLeaderboard() {
   const matches = fetchMatches();
-  const existingPlayerPoints = readExistingPlayerPointsJson();
-  const incrementalResult = aggregatePlayerPointsIncrementally(existingPlayerPoints, matches);
-  const seasonLeaderboard = incrementalResult.players;
+  const leaderboardScope = String(process.env.LEADERBOARD_MATCH_SCOPE || "all")
+    .trim()
+    .toLowerCase();
+  const seasonLeaderboard = aggregatePlayerPoints(matches);
   const owners = fetchOwners();
   const teamSize = 11;
   const ownerLeaderboard = calculateOwnerLeaderboard(owners, seasonLeaderboard, teamSize);
   const trackedPlayers = buildTrackedPlayers(ownerLeaderboard);
   const htmlPath = writeOwnersHtml(ownerLeaderboard);
   const playerPointsPath = writeIncrementalPlayerPointsJson({
-    ...incrementalResult,
+    processedMatchIds: matches.map((match) => match.id),
     players: trackedPlayers
   });
   const playerDetailsPath = writePlayerDetailsHtml(trackedPlayers);
   const openedIn = openHtmlInBrowser(htmlPath);
 
-  console.log(`Matches Processed: ${matches.length}`);
+  console.log(
+    `Leaderboard Scope: ${
+      leaderboardScope === "completed" ? "completed matches only" : "all stored matches"
+    }`
+  );
+  console.log(
+    `${leaderboardScope === "completed" ? "Completed Matches Processed" : "Matches Processed"}: ${matches.length}`
+  );
   console.log(`Owner Teams Processed: ${owners.length}`);
   console.log(`Selected Team Size Per Owner: ${teamSize}`);
   console.log(`Owners HTML Generated: ${htmlPath}`);
   console.log(`Player Points JSON Generated: ${playerPointsPath}`);
   console.log(`Player Details HTML Generated: ${playerDetailsPath}`);
-  console.log(`New Matches Added To Player Cache: ${incrementalResult.newMatchIds.length}`);
+  console.log("Player Cache Mode: full recompute");
   console.log(
     `Owners HTML Opened In: ${openedIn === "chrome" ? "Google Chrome" : "default browser"}`
   );
