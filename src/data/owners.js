@@ -1,4 +1,4 @@
-const owners = [
+const defaultOwners = [
   {
     id: 1,
     name: "Aditya",
@@ -163,10 +163,178 @@ const owners = [
   }
 ];
 
+const alt12Owners = [
+  {
+    id: 1,
+    name: "Sateesh",
+    playerCount: 14,
+    squadPlayerNames: [
+      "Buttler",
+      "Bishnoi",
+      "Raghuvanshi",
+      "Sanju Samson",
+      "Ayush Mhatre",
+      "Nissanka",
+      "Dube",
+      "Rinku",
+      "Rabada",
+      "Chahal",
+      "Hetmyer",
+      "Arshdeep",
+      "Wadhera",
+      "Bumrah"
+    ]
+  },
+  {
+    id: 2,
+    name: "Kamal",
+    playerCount: 16,
+    squadPlayerNames: [
+      "Patidar",
+      "Klaasen",
+      "Gill",
+      "Rickelton",
+      "V Arora",
+      "Sandeep Sharma",
+      "T Natarajan",
+      "Axar",
+      "Kuldeep",
+      "Tilak",
+      "Ruturaj",
+      "Brevis",
+      "Prashant Veer",
+      "Varun",
+      "Quinton de Kock",
+      "Ellis"
+    ]
+  },
+  {
+    id: 3,
+    name: "Bharath",
+    playerCount: 16,
+    squadPlayerNames: [
+      "Kohli",
+      "Vaibhav Sooryavanshi",
+      "Sudharsan",
+      "Priyansh",
+      "Jitesh",
+      "Shashank",
+      "Jansen",
+      "Siraj",
+      "Santner",
+      "M Henry",
+      "Vipraj",
+      "Shahrukh",
+      "Dhoni",
+      "Abishek Porel",
+      "Will Jacks",
+      "Dayal"
+    ]
+  },
+  {
+    id: 4,
+    name: "Sriram",
+    playerCount: 13,
+    squadPlayerNames: [
+      "Ishan",
+      "Jadeja",
+      "Krunal",
+      "Sherfane Rutherford",
+      "Marsh",
+      "Suryakumar Yadav",
+      "Noor",
+      "Pooran",
+      "Khaleel",
+      "Auqib Nabi",
+      "R Sai Kishore",
+      "Jason Holder",
+      "Pathirana"
+    ]
+  },
+  {
+    id: 5,
+    name: "Subhash",
+    playerCount: 13,
+    squadPlayerNames: [
+      "Jaiswal",
+      "Prabhsimran",
+      "Abhishek",
+      "Rohit",
+      "Ngidi",
+      "Mohammad Shami",
+      "Miller",
+      "Green",
+      "Digvesh Singh",
+      "Nitish Rana",
+      "Boult",
+      "Sam Curran",
+      "Cummins"
+    ]
+  },
+  {
+    id: 6,
+    name: "Suresh",
+    playerCount: 15,
+    squadPlayerNames: [
+      "Jurel",
+      "Prasidh",
+      "Phil Salt",
+      "Bhuvneshwar Kumar",
+      "Rahane",
+      "Markram",
+      "Washington",
+      "Head",
+      "Narine",
+      "Finn Allen",
+      "Hazlewood",
+      "Deepak",
+      "Stoinis",
+      "Harshal",
+      "Starc"
+    ]
+  },
+  {
+    id: 7,
+    name: "Susheel",
+    playerCount: 15,
+    squadPlayerNames: [
+      "Nitish Reddy",
+      "Padikkal",
+      "Jofra",
+      "Tim David",
+      "Shreyas Iyer",
+      "Pant",
+      "Rashid Khan",
+      "Stubbs",
+      "KL Rahul",
+      "Hardik",
+      "Parag",
+      "Suyash",
+      "Venkatesh Iyer",
+      "Livingstone",
+      "Ferguson"
+    ]
+  }
+];
+
+const ownerSets = {
+  default: defaultOwners,
+  alt12: alt12Owners
+};
+
+function cloneOwners(owners) {
+  return owners.map((owner) => ({
+    ...owner,
+    squadPlayerNames: [...owner.squadPlayerNames]
+  }));
+}
+
 function fetchOwners() {
-  return owners;
+  const ownerSet = String(process.env.OWNER_SET || "default").trim().toLowerCase();
+  return cloneOwners(ownerSets[ownerSet] || ownerSets.default);
 }
 
 module.exports = {
   fetchOwners
 };
+

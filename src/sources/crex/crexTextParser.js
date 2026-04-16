@@ -1,5 +1,5 @@
-const predefinedBowlers = require("../config/predefinedBowlers");
-const { resolveTeamPlayerName, teamPlayerRegistry } = require("./playerRegistry");
+const predefinedBowlers = require("../../config/predefinedBowlers");
+const { resolveTeamPlayerName, teamPlayerRegistry } = require("../../services/playerRegistry");
 
 function slugify(value) {
   return String(value || "")

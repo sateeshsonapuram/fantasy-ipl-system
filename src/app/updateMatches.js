@@ -1,6 +1,9 @@
 const fs = require("fs");
 const path = require("path");
-const { fetchLatestMatches } = require("../services/liveMatchSource");
+const {
+  scrapeCrexScorecard,
+  scrapeLatestCrexMatch
+} = require("../sources/crex/playwrightCrexSource");
 const { scorecardCorrections } = require("../data/scorecardCorrections");
 
 function normalizeScope(rawScope) {
@@ -79,10 +82,12 @@ async function updateMatches() {
     : null;
   const existingMatches = Array.isArray(existingPayload?.matches) ? existingPayload.matches : [];
 
-  const { source, matches } = await fetchLatestMatches({
-    scope,
-    existingMatches
-  });
+  const url = process.env.LIVE_MATCH_URL_CREX || process.env.LIVE_MATCH_URL;
+  const crexResult =
+    scope === "latest"
+      ? await scrapeLatestCrexMatch(url, existingMatches)
+      : await scrapeCrexScorecard(url);
+  const { source, matches } = crexResult;
   applyScorecardCorrections(matches);
   const mergedMatches =
     scope === "latest"

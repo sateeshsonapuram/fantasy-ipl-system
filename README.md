@@ -15,35 +15,31 @@ The app can now use generated match data instead of only the seeded sample data.
 
 ### Commands
 
-- `npm start`
-  Builds the leaderboard and opens `owners.html`.
-- `npm run update:matches`
-  Fetches latest match data from the configured source and writes `src/data/generated/matches.json`.
-- `npm run update:matches:latest`
-  Fetches only the latest match from CREX and merges it into `src/data/generated/matches.json`.
-- `npm run refresh`
-  Runs the match update and then rebuilds the leaderboard HTML.
+- `npm run fantasy:login`
+  Opens IPL Fantasy login once and saves the authenticated browser session locally in `.auth/ipl-fantasy-session.json`.
 - `npm run score:all`
   Fetches all available IPL 2026 matches from CREX (including live), rebuilds the leaderboard, and opens `owners.html`.
 - `npm run score:completed`
   Checks only the latest match from CREX, updates stored data for that match, then rebuilds the leaderboard using completed matches only.
 - `npm run score:live`
   Fetches only the latest match from CREX, merges it into the existing data, rebuilds the leaderboard, and opens `owners.html`.
+- `npm run score:official`
+  One-command official mode. It reuses the saved IPL Fantasy session if available, otherwise opens login once, saves the session, fetches official player points from `fantasy.iplt20.com`, and rebuilds the leaderboard HTML.
+- `npm run score:official:last`
+  Rebuilds the leaderboard HTML from the last successful stored official IPL Fantasy points file without fetching from the website.
 
 ### Live data source
 
 Supported environment variables:
 
-- `LIVE_MATCH_SOURCE=playwright-crex`
 - `LIVE_MATCH_URL_CREX=https://crex.com/series/indian-premier-league-2026-1PW/matches`
 - `LIVE_MATCH_URL=https://crex.com/cricket-live-score/.../match-scorecard` (optional single-match input)
 
 Example:
 
 ```powershell
-$env:LIVE_MATCH_SOURCE="playwright-crex"
 $env:LIVE_MATCH_URL_CREX="https://crex.com/series/indian-premier-league-2026-1PW/matches"
-npm run update:matches
+npm run score:live
 ```
 
 Notes:

@@ -7,6 +7,10 @@ const {
   aggregatePlayerPoints
 } = require("../services/playerAggregation");
 const { calculateOwnerLeaderboard } = require("../services/ownerLeaderboard");
+const {
+  fetchOfficialFantasyPlayers,
+  readGeneratedOfficialPoints
+} = require("../sources/ipl-fantasy/iplFantasySource");
 
 function escapeHtml(value) {
   return String(value)
@@ -26,6 +30,11 @@ function slugify(value) {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
+}
+
+function buildOutputSuffix(ownerSet) {
+  const normalizedSet = String(ownerSet || "default").trim().toLowerCase();
+  return normalizedSet === "default" ? "" : `-${slugify(normalizedSet)}`;
 }
 
 const overseasPlayers = new Set(
@@ -89,15 +98,15 @@ function buildTrackedPlayers(ownerLeaderboard) {
         return;
       }
 
-      trackedPlayersByKey.set(playerKey, {
-        id: player.id,
-        name: player.name,
-        team: player.team || "Unknown",
-        totalPoints: player.totalPoints || 0,
-        matchesPlayed: player.matchesPlayed || 0,
-        matchBreakdowns: [...(player.matchBreakdowns || [])],
-        isMissingStat: Boolean(player.isMissingStat)
-      });
+        trackedPlayersByKey.set(playerKey, {
+          id: player.id,
+          name: player.name,
+          team: player.team || "Unknown",
+          totalPoints: player.totalPoints || 0,
+          matchesPlayed: player.matchesPlayed || 0,
+          matchBreakdowns: [...(player.matchBreakdowns || [])],
+          isMissingStat: Boolean(player.isMissingStat)
+        });
     });
   });
 
@@ -106,22 +115,23 @@ function buildTrackedPlayers(ownerLeaderboard) {
   );
 }
 
-function buildOwnersHtml(ownerLeaderboard) {
+function buildOwnersHtml(ownerLeaderboard, options = {}) {
+  const playerDetailsFileName = options.playerDetailsFileName || "player-details.html";
   const alphabeticalTeams = [...ownerLeaderboard].sort((firstOwner, secondOwner) =>
     firstOwner.name.localeCompare(secondOwner.name)
   );
   const trackedPlayers = buildTrackedPlayers(ownerLeaderboard);
   const teamColorMap = {
-    CSK: "#fdb913",
-    MI: "#004ba0",
-    RCB: "#d71920",
-    SRH: "#f26522",
-    KKR: "#3b215d",
-    RR: "#ea1a85",
-    GT: "#1c2c5b",
-    PBKS: "#dd1f2d",
-    DC: "#17479e",
-    LSG: "#00a6e2"
+    CSK: "#FFD700",
+    MI: "#004B8D",
+    RCB: "#EC1C24",
+    SRH: "#EE7429",
+    KKR: "#3A225D",
+    RR: "#074EA2",
+    GT: "#1B2133",
+    PBKS: "#1B2133",
+    DC: "#282968",
+    LSG: "#0057E2"
   };
   const availableTeams = Array.from(
     new Set(
@@ -268,8 +278,8 @@ function buildOwnersHtml(ownerLeaderboard) {
       return `<button class="team-filter" type="button" data-team-filter="${escapeHtml(
         teamCode
       )}" style="--team-filter-color: ${teamColor};">${escapeHtml(teamCode)}</button>`;
-    })
-    .join("");
+      })
+      .join("");
   const teamColorScript = JSON.stringify(teamColorMap);
 
   return `<!DOCTYPE html>
@@ -582,11 +592,11 @@ function buildOwnersHtml(ownerLeaderboard) {
       }
 
       .team-highlight td {
-        background: color-mix(in srgb, var(--team-highlight-color, #fde68a) 24%, white);
+        background: color-mix(in srgb, var(--team-highlight-color, #fde68a) 18%, white);
       }
 
       .team-highlight.selected-player td {
-        background: color-mix(in srgb, var(--team-highlight-color, #fde68a) 34%, white);
+        background: color-mix(in srgb, var(--team-highlight-color, #fde68a) 28%, white);
       }
 
       .empty-row td {
@@ -619,8 +629,8 @@ function buildOwnersHtml(ownerLeaderboard) {
       }
 
       .team-filters {
-        margin-top: 8px;
-        padding: 10px;
+        margin-top: 6px;
+        padding: 7px 8px;
         border: 1px solid rgba(139, 92, 246, 0.14);
         border-radius: 10px;
         background: rgba(255, 255, 255, 0.82);
@@ -631,7 +641,7 @@ function buildOwnersHtml(ownerLeaderboard) {
         align-items: center;
         justify-content: space-between;
         gap: 8px;
-        margin-bottom: 8px;
+        margin-bottom: 5px;
       }
 
       .team-filters-title {
@@ -650,23 +660,18 @@ function buildOwnersHtml(ownerLeaderboard) {
       .team-filters-grid {
         display: flex;
         flex-wrap: wrap;
-        gap: 8px;
-      }
-
-      .team-filter-actions {
-        display: flex;
-        justify-content: flex-end;
-        margin-top: 8px;
+        align-items: center;
+        gap: 6px;
       }
 
       .team-filter {
         appearance: none;
-        border: 1px solid color-mix(in srgb, var(--team-filter-color) 40%, white);
-        background: color-mix(in srgb, var(--team-filter-color) 12%, white);
-        color: #111827;
+        border: 2px solid var(--team-filter-color);
+        background: #ffffff;
+        color: var(--team-filter-color);
         border-radius: 999px;
-        padding: 6px 10px;
-        font-size: 0.66rem;
+        padding: 4px 9px;
+        font-size: 0.62rem;
         font-weight: 800;
         cursor: pointer;
         transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
@@ -674,14 +679,16 @@ function buildOwnersHtml(ownerLeaderboard) {
 
       .team-filter:hover {
         transform: translateY(-1px);
-        box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+        box-shadow: 0 6px 14px rgba(15, 23, 42, 0.18);
       }
 
       .team-filter.active {
         background: var(--team-filter-color);
         border-color: var(--team-filter-color);
         color: white;
-        box-shadow: 0 6px 14px color-mix(in srgb, var(--team-filter-color) 30%, transparent);
+        box-shadow:
+          0 0 0 3px color-mix(in srgb, var(--team-filter-color) 28%, white),
+          0 8px 18px rgba(15, 23, 42, 0.22);
       }
 
       .clear-filters {
@@ -690,8 +697,8 @@ function buildOwnersHtml(ownerLeaderboard) {
         background: white;
         color: var(--text);
         border-radius: 999px;
-        padding: 6px 10px;
-        font-size: 0.64rem;
+        padding: 4px 9px;
+        font-size: 0.62rem;
         font-weight: 800;
         cursor: pointer;
       }
@@ -780,7 +787,7 @@ function buildOwnersHtml(ownerLeaderboard) {
       </section>
       <section class="top-ribbon">
         <nav class="ribbon-nav" aria-label="Info links">
-          <a href="./player-details.html">Player Points</a>
+          <a href="./${escapeHtml(playerDetailsFileName)}">Player Points</a>
           <a href="#team-points">Team Totals</a>
           <a href="#points-system">Points System</a>
           <a href="#rules">Rules</a>
@@ -814,6 +821,7 @@ function buildOwnersHtml(ownerLeaderboard) {
         </div>
         <div class="team-filters-grid">
           ${teamFilters}
+          <button class="clear-filters" type="button" id="clear-team-filters">Clear All</button>
         </div>
       </section>
     </main>
@@ -822,14 +830,15 @@ function buildOwnersHtml(ownerLeaderboard) {
       const activeTeams = new Set();
       const filterButtons = Array.from(document.querySelectorAll("[data-team-filter]"));
       const playerRows = Array.from(document.querySelectorAll("tr[data-team]"));
+      const clearTeamFiltersButton = document.getElementById("clear-team-filters");
 
-      function applyTeamHighlights() {
-        playerRows.forEach((row) => {
-          const teamCode = (row.dataset.team || "").toUpperCase();
+        function applyTeamHighlights() {
+          playerRows.forEach((row) => {
+            const teamCode = (row.dataset.team || "").toUpperCase();
           if (activeTeams.has(teamCode)) {
-            row.classList.add("team-highlight");
-            row.style.setProperty("--team-highlight-color", TEAM_COLORS[teamCode] || "#fde68a");
-          } else {
+              row.classList.add("team-highlight");
+              row.style.setProperty("--team-highlight-color", TEAM_COLORS[teamCode] || "#fde68a");
+            } else {
             row.classList.remove("team-highlight");
             row.style.removeProperty("--team-highlight-color");
           }
@@ -857,14 +866,22 @@ function buildOwnersHtml(ownerLeaderboard) {
           applyTeamHighlights();
         });
       });
+
+      if (clearTeamFiltersButton) {
+        clearTeamFiltersButton.addEventListener("click", () => {
+          activeTeams.clear();
+          applyTeamHighlights();
+        });
+      }
     </script>
   </body>
 </html>`;
 }
 
-function writeOwnersHtml(ownerLeaderboard) {
-  const htmlPath = path.resolve(__dirname, "../../owners.html");
-  const html = buildOwnersHtml(ownerLeaderboard);
+function writeOwnersHtml(ownerLeaderboard, options = {}) {
+  const fileName = options.fileName || "owners.html";
+  const htmlPath = path.resolve(__dirname, `../../${fileName}`);
+  const html = buildOwnersHtml(ownerLeaderboard, options);
   fs.writeFileSync(htmlPath, html, "utf8");
   return htmlPath;
 }
@@ -883,15 +900,15 @@ function buildTrackedPlayers(ownerLeaderboard) {
         return;
       }
 
-      trackedPlayersByKey.set(playerKey, {
-        id: player.id,
-        name: player.name,
-        team: player.team || "Unknown",
-        totalPoints: player.totalPoints || 0,
-        matchesPlayed: player.matchesPlayed || 0,
-        matchBreakdowns: [...(player.matchBreakdowns || [])],
-        isMissingStat: Boolean(player.isMissingStat)
-      });
+        trackedPlayersByKey.set(playerKey, {
+          id: player.id,
+          name: player.name,
+          team: player.team || "Unknown",
+          totalPoints: player.totalPoints || 0,
+          matchesPlayed: player.matchesPlayed || 0,
+          matchBreakdowns: [...(player.matchBreakdowns || [])],
+          isMissingStat: Boolean(player.isMissingStat)
+        });
     });
   });
 
@@ -900,7 +917,8 @@ function buildTrackedPlayers(ownerLeaderboard) {
   );
 }
 
-function buildPlayerDetailsHtml(players) {
+function buildPlayerDetailsHtml(players, options = {}) {
+  const ownersFileName = options.ownersFileName || "owners.html";
   const playersByTeam = players.reduce((groupedPlayers, player) => {
     const teamCode = String(player.team || "Unknown").toUpperCase();
     if (!groupedPlayers.has(teamCode)) {
@@ -1105,7 +1123,7 @@ function buildPlayerDetailsHtml(players) {
       <section class="header">
         <h1>Player Match Points</h1>
         <p>Match-by-match fantasy points and scoring breakdown for every player processed so far.</p>
-        <a class="nav-link" href="./owners.html">Back to Owners</a>
+        <a class="nav-link" href="./${escapeHtml(ownersFileName)}">Back to Owners</a>
       </section>
       <section class="players-grid">
         ${playerSections}
@@ -1115,9 +1133,10 @@ function buildPlayerDetailsHtml(players) {
 </html>`;
 }
 
-function writePlayerDetailsHtml(players) {
-  const htmlPath = path.resolve(__dirname, "../../player-details.html");
-  const html = buildPlayerDetailsHtml(players);
+function writePlayerDetailsHtml(players, options = {}) {
+  const fileName = options.fileName || "player-details.html";
+  const htmlPath = path.resolve(__dirname, `../../${fileName}`);
+  const html = buildPlayerDetailsHtml(players, options);
   fs.writeFileSync(htmlPath, html, "utf8");
   return htmlPath;
 }
@@ -1137,8 +1156,9 @@ function readExistingPlayerPointsJson() {
   }
 }
 
-function writeIncrementalPlayerPointsJson(result) {
-  const outputPath = path.resolve(__dirname, "../data/generated/player-points.json");
+function writeIncrementalPlayerPointsJson(result, options = {}) {
+  const fileName = options.fileName || "player-points.json";
+  const outputPath = path.resolve(__dirname, `../data/generated/${fileName}`);
   const payload = {
     updatedAt: new Date().toISOString(),
     playerCount: result.players.length,
@@ -1194,38 +1214,113 @@ function openHtmlInBrowser(htmlPath) {
   return "default";
 }
 
-function printLeaderboard() {
+async function buildLeaderboardPlayers() {
+  const playerPointsSource = String(process.env.PLAYER_POINTS_SOURCE || "derived")
+    .trim()
+    .toLowerCase();
+
+  if (playerPointsSource === "official") {
+    const officialPayload = await fetchOfficialFantasyPlayers();
+    return {
+      playerPointsSource,
+      sourceDetail: officialPayload,
+      players: officialPayload.players,
+      matches: []
+    };
+  }
+
+  if (playerPointsSource === "official-cache") {
+    const officialPayload = readGeneratedOfficialPoints();
+    return {
+      playerPointsSource,
+      sourceDetail: officialPayload,
+      players: officialPayload.players,
+      matches: []
+    };
+  }
+
   const matches = fetchMatches();
+  return {
+    playerPointsSource,
+    sourceDetail: null,
+    players: aggregatePlayerPoints(matches),
+    matches
+  };
+}
+
+async function printLeaderboard() {
   const leaderboardScope = String(process.env.LEADERBOARD_MATCH_SCOPE || "all")
     .trim()
     .toLowerCase();
-  const seasonLeaderboard = aggregatePlayerPoints(matches);
+  const { playerPointsSource, sourceDetail, players, matches } = await buildLeaderboardPlayers();
   const owners = fetchOwners();
-  const teamSize = 11;
-  const ownerLeaderboard = calculateOwnerLeaderboard(owners, seasonLeaderboard, teamSize);
+  const teamSize = Math.max(1, Number(process.env.OWNER_TEAM_SIZE || 11));
+  const ownerSet = String(process.env.OWNER_SET || "default").trim().toLowerCase();
+  const outputSuffix = buildOutputSuffix(ownerSet);
+  const ownersFileName = `owners${outputSuffix}.html`;
+  const playerDetailsFileName = `player-details${outputSuffix}.html`;
+  const playerPointsFileName = `player-points${outputSuffix}.json`;
+  const ownerLeaderboard = calculateOwnerLeaderboard(owners, players, teamSize);
   const trackedPlayers = buildTrackedPlayers(ownerLeaderboard);
-  const htmlPath = writeOwnersHtml(ownerLeaderboard);
+  const htmlPath = writeOwnersHtml(ownerLeaderboard, {
+    fileName: ownersFileName,
+    playerDetailsFileName
+  });
   const playerPointsPath = writeIncrementalPlayerPointsJson({
     processedMatchIds: matches.map((match) => match.id),
     players: trackedPlayers
+  }, {
+    fileName: playerPointsFileName
   });
-  const playerDetailsPath = writePlayerDetailsHtml(trackedPlayers);
+  const playerDetailsPath = writePlayerDetailsHtml(trackedPlayers, {
+    fileName: playerDetailsFileName,
+    ownersFileName
+  });
   const openedIn = openHtmlInBrowser(htmlPath);
 
   console.log(
-    `Leaderboard Scope: ${
-      leaderboardScope === "completed" ? "completed matches only" : "all stored matches"
+    `Player Points Source: ${
+      playerPointsSource === "official"
+        ? "official IPL fantasy"
+        : playerPointsSource === "official-cache"
+          ? "cached official IPL fantasy"
+          : "derived from stored matches"
     }`
   );
-  console.log(
-    `${leaderboardScope === "completed" ? "Completed Matches Processed" : "Matches Processed"}: ${matches.length}`
-  );
+  if (playerPointsSource === "official" || playerPointsSource === "official-cache") {
+    console.log(`Official Points URL: ${sourceDetail.sourceUrl}`);
+    console.log(`Official Player Feed Saved: ${sourceDetail.generatedFile}`);
+    if (sourceDetail.feedTime?.ISTTime) {
+      console.log(`Official Feed Time (IST): ${sourceDetail.feedTime.ISTTime}`);
+    }
+    if (playerPointsSource === "official-cache" && sourceDetail.updatedAt) {
+      console.log(`Cached File Updated At: ${sourceDetail.updatedAt}`);
+    }
+  } else {
+    console.log(
+      `Leaderboard Scope: ${
+        leaderboardScope === "completed" ? "completed matches only" : "all stored matches"
+      }`
+    );
+    console.log(
+      `${leaderboardScope === "completed" ? "Completed Matches Processed" : "Matches Processed"}: ${matches.length}`
+    );
+  }
   console.log(`Owner Teams Processed: ${owners.length}`);
+  console.log(`Owner Set: ${ownerSet}`);
   console.log(`Selected Team Size Per Owner: ${teamSize}`);
   console.log(`Owners HTML Generated: ${htmlPath}`);
   console.log(`Player Points JSON Generated: ${playerPointsPath}`);
   console.log(`Player Details HTML Generated: ${playerDetailsPath}`);
-  console.log("Player Cache Mode: full recompute");
+  console.log(
+    `Player Cache Mode: ${
+      playerPointsSource === "official"
+        ? "official fantasy fetch"
+        : playerPointsSource === "official-cache"
+          ? "official fantasy cache reuse"
+          : "full recompute"
+    }`
+  );
   console.log(
     `Owners HTML Opened In: ${openedIn === "chrome" ? "Google Chrome" : "default browser"}`
   );
@@ -1259,4 +1354,7 @@ function printLeaderboard() {
   });
 }
 
-printLeaderboard();
+printLeaderboard().catch((error) => {
+  console.error(error.message);
+  process.exit(1);
+});

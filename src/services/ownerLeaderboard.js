@@ -32,7 +32,113 @@ function buildPlayerIndex(players) {
   };
 }
 
-function resolveOwnerSquadPlayer(playerName) {
+function tokenizePlayerName(name) {
+  return normalizePlayerName(name).split(" ").filter(Boolean);
+}
+
+function removeLeadingInitials(tokens) {
+  const trimmed = [...tokens];
+
+  while (trimmed.length > 2 && trimmed[0] && trimmed[0].length === 1) {
+    trimmed.shift();
+  }
+
+  return trimmed;
+}
+
+function findUniqueCandidate(candidates) {
+  if (candidates.length !== 1) {
+    return null;
+  }
+
+  return candidates[0];
+}
+
+function resolveOwnerPlayerFromPool(playerName, players) {
+  const inputTokens = tokenizePlayerName(playerName);
+
+  if (inputTokens.length === 0) {
+    return null;
+  }
+
+  const normalizedInput = inputTokens.join(" ");
+  const trimmedInput = removeLeadingInitials(inputTokens).join(" ");
+  const exactCandidates = players.filter(
+    (player) => normalizePlayerName(player.name) === normalizedInput
+  );
+  const exactMatch = findUniqueCandidate(exactCandidates);
+
+  if (exactMatch) {
+    return exactMatch;
+  }
+
+  if (trimmedInput && trimmedInput !== normalizedInput) {
+    const trimmedCandidates = players.filter((player) => {
+      const playerTokens = tokenizePlayerName(player.name);
+      return (
+        normalizePlayerName(player.name) === trimmedInput ||
+        removeLeadingInitials(playerTokens).join(" ") === trimmedInput
+      );
+    });
+    const trimmedMatch = findUniqueCandidate(trimmedCandidates);
+
+    if (trimmedMatch) {
+      return trimmedMatch;
+    }
+  }
+
+  const inputFirst = inputTokens[0];
+  const inputLast = inputTokens[inputTokens.length - 1];
+  const flexibleCandidates = players.filter((player) => {
+    const playerTokens = tokenizePlayerName(player.name);
+    const playerFirst = playerTokens[0] || "";
+    const playerLast = playerTokens[playerTokens.length - 1] || "";
+
+    if (!playerLast || playerLast !== inputLast) {
+      return false;
+    }
+
+    return (
+      playerFirst === inputFirst ||
+      playerFirst.startsWith(inputFirst) ||
+      inputFirst.startsWith(playerFirst) ||
+      playerFirst.charAt(0) === inputFirst.charAt(0)
+    );
+  });
+  const flexibleMatch = findUniqueCandidate(flexibleCandidates);
+
+  if (flexibleMatch) {
+    return flexibleMatch;
+  }
+
+  const subsetCandidates = players.filter((player) => {
+    const playerTokens = tokenizePlayerName(player.name);
+
+    if (playerTokens.length < 2 || inputTokens.length < playerTokens.length) {
+      return false;
+    }
+
+    return playerTokens.every((token) => inputTokens.includes(token));
+  });
+  const subsetMatch = findUniqueCandidate(subsetCandidates);
+
+  if (subsetMatch) {
+    return subsetMatch;
+  }
+
+  return null;
+}
+
+function resolveOwnerSquadPlayer(playerName, players) {
+  const poolMatch = resolveOwnerPlayerFromPool(playerName, players);
+  if (poolMatch) {
+    return {
+      team: poolMatch.team,
+      canonicalName: poolMatch.name,
+      matchedPlayer: poolMatch
+    };
+  }
+
   const normalizedInput = normalizePlayerName(playerName);
   const exactCrossTeamMatches = Object.keys(teamPlayerRegistry)
     .map((teamCode) => {
@@ -80,7 +186,12 @@ function calculateOwnerLeaderboard(owners, players, teamSize) {
   return owners
     .map((owner) => {
       const squadPlayers = owner.squadPlayerNames.map((playerName) => {
-        const resolved = resolveOwnerSquadPlayer(playerName);
+        const resolved = resolveOwnerSquadPlayer(playerName, players);
+
+        if (resolved.matchedPlayer) {
+          return resolved.matchedPlayer;
+        }
+
         const indexKey = `${resolved.team}|${normalizePlayerName(resolved.canonicalName)}`;
         const matchedPlayer = playerIndex.byTeamAndName.get(indexKey);
 

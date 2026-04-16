@@ -1,6 +1,6 @@
 const { chromium } = require("playwright");
 const { buildMatchFromCrexInnings, parseVisibleCrexScorecard } = require("./crexTextParser");
-const { resolveTeamPlayerName } = require("./playerRegistry");
+const { resolveTeamPlayerName } = require("../../services/playerRegistry");
 
 function normalizeLines(rawText) {
   return String(rawText || "")

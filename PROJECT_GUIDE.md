@@ -15,50 +15,34 @@ It then:
 
 ## Main Execution Flow
 
-There are 3 common ways to run the project.
+There are 2 common flows now.
 
-### 1. `npm start`
+### 1. `npm run score:official`
 
 This runs:
 
+- [scoreOfficialAuto.js](e:/Sateesh%20Project/fantasy-ipl-system/src/sources/ipl-fantasy/scoreOfficialAuto.js)
 - [index.js](e:/Sateesh%20Project/fantasy-ipl-system/src/app/index.js)
 
 Flow:
 
-1. Reads match data from [matches.js](e:/Sateesh%20Project/fantasy-ipl-system/src/data/matches.js)
-2. Reads owner squads from [owners.js](e:/Sateesh%20Project/fantasy-ipl-system/src/data/owners.js)
-3. Aggregates player points using [playerAggregation.js](e:/Sateesh%20Project/fantasy-ipl-system/src/services/playerAggregation.js)
-4. Applies scoring rules from [pointsCalculator.js](e:/Sateesh%20Project/fantasy-ipl-system/src/services/pointsCalculator.js)
-5. Builds owner rankings with [ownerLeaderboard.js](e:/Sateesh%20Project/fantasy-ipl-system/src/services/ownerLeaderboard.js)
-6. Selects the top 11 players for each owner using [teamSelector.js](e:/Sateesh%20Project/fantasy-ipl-system/src/services/teamSelector.js)
-7. Generates [owners.html](e:/Sateesh%20Project/fantasy-ipl-system/owners.html)
-8. Opens the HTML in Chrome or the default browser
+1. Reuses the saved IPL fantasy login session or opens login if needed
+2. Fetches official player points from the IPL fantasy website
+3. Writes the cached official feed to [ipl-fantasy-points.json](e:/Sateesh%20Project/fantasy-ipl-system/src/data/generated/ipl-fantasy-points.json)
+4. Builds owner rankings and generates [owners.html](e:/Sateesh%20Project/fantasy-ipl-system/owners.html)
 
-### 2. `npm run update:matches`
+### 2. `npm run score:live` / `npm run score:completed`
 
-This runs:
+These run:
 
+- [refreshLeaderboard.js](e:/Sateesh%20Project/fantasy-ipl-system/src/app/refreshLeaderboard.js)
 - [updateMatches.js](e:/Sateesh%20Project/fantasy-ipl-system/src/app/updateMatches.js)
 
 Flow:
 
-1. Reads live/source match data using [liveMatchSource.js](e:/Sateesh%20Project/fantasy-ipl-system/src/services/liveMatchSource.js)
-2. Normalizes the data into the project format
-3. Writes the result into [matches.json](e:/Sateesh%20Project/fantasy-ipl-system/src/data/generated/matches.json)
-
-### 3. `npm run refresh`
-
-This runs:
-
-- [refreshLeaderboard.js](e:/Sateesh%20Project/fantasy-ipl-system/src/app/refreshLeaderboard.js)
-
-Flow:
-
-1. Runs the match updater
-2. Rebuilds the leaderboard page
-3. Opens the refreshed HTML
-
-This is the best command for daily use.
+1. Scrapes CREX scorecards from the configured series or match URL
+2. Writes normalized matches to [matches.json](e:/Sateesh%20Project/fantasy-ipl-system/src/data/generated/matches.json)
+3. Rebuilds the leaderboard page from those stored matches
 
 ## File-by-File Guide
 
@@ -69,7 +53,7 @@ This is the best command for daily use.
   Builds the page, calculates the leaderboard, writes `owners.html`, and opens it in the browser.
 
 - [updateMatches.js](e:/Sateesh%20Project/fantasy-ipl-system/src/app/updateMatches.js)
-  Fetches latest match data from the configured source and writes generated match JSON.
+  Fetches CREX match data and writes generated match JSON.
 
 - [refreshLeaderboard.js](e:/Sateesh%20Project/fantasy-ipl-system/src/app/refreshLeaderboard.js)
   Convenience runner that updates matches first and then rebuilds the leaderboard.
@@ -100,16 +84,21 @@ This is the best command for daily use.
 - [teamSelector.js](e:/Sateesh%20Project/fantasy-ipl-system/src/services/teamSelector.js)
   Picks the highest-scoring `teamSize` players for each owner.
 
-- [liveMatchSource.js](e:/Sateesh%20Project/fantasy-ipl-system/src/services/liveMatchSource.js)
-  Reads and normalizes live match data from CREX scraping or an HTTP JSON source.
+### Source folders
+
+- [src/sources/crex](e:/Sateesh%20Project/fantasy-ipl-system/src/sources/crex)
+  CREX scraper/parser files used by `score:live`, `score:completed`, and `score:all`.
+
+- [src/sources/ipl-fantasy](e:/Sateesh%20Project/fantasy-ipl-system/src/sources/ipl-fantasy)
+  Official IPL fantasy login/session and points-fetch files used by `score:official`.
 
 ## Data Flow
 
 The project's data flow is:
 
-`CREX matches page or configured JSON source`
+`CREX matches page`
 -> [updateMatches.js](e:/Sateesh%20Project/fantasy-ipl-system/src/app/updateMatches.js)
--> [liveMatchSource.js](e:/Sateesh%20Project/fantasy-ipl-system/src/services/liveMatchSource.js)
+-> [playwrightCrexSource.js](e:/Sateesh%20Project/fantasy-ipl-system/src/sources/crex/playwrightCrexSource.js)
 -> [matches.json](e:/Sateesh%20Project/fantasy-ipl-system/src/data/generated/matches.json)
 -> [matches.js](e:/Sateesh%20Project/fantasy-ipl-system/src/data/matches.js)
 -> [playerAggregation.js](e:/Sateesh%20Project/fantasy-ipl-system/src/services/playerAggregation.js)
@@ -130,7 +119,9 @@ This usually means the latest match payload does not include that player yet.
 
 For daily updates after each match:
 
-1. Run `npm run score:live` (checks only the newest match and then calculates live + stored points), or run `npm run score:completed` (checks only the newest match and then shows completed-only points)
+1. Preferred: run `npm run score:official`
+2. If official fetch fails and you want the last successful official result, run `npm run score:official:last`
+3. If you still want scorecard-derived numbers, run `npm run score:live` or `npm run score:completed`
 2. Check [owners.html](e:/Sateesh%20Project/fantasy-ipl-system/owners.html)
 
 ## Future Automation
