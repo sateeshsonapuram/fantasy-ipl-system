@@ -308,11 +308,11 @@
       }
 
       .team-highlight td {
-        background: color-mix(in srgb, var(--team-highlight-color, #fde68a) 24%, white);
+        background: color-mix(in srgb, var(--team-highlight-color, #fde68a) 18%, white);
       }
 
       .team-highlight.selected-player td {
-        background: color-mix(in srgb, var(--team-highlight-color, #fde68a) 34%, white);
+        background: color-mix(in srgb, var(--team-highlight-color, #fde68a) 28%, white);
       }
 
       .empty-row td {
@@ -345,8 +345,8 @@
       }
 
       .team-filters {
-        margin-top: 8px;
-        padding: 10px;
+        margin-top: 6px;
+        padding: 7px 8px;
         border: 1px solid rgba(139, 92, 246, 0.14);
         border-radius: 10px;
         background: rgba(255, 255, 255, 0.82);
@@ -357,7 +357,7 @@
         align-items: center;
         justify-content: space-between;
         gap: 8px;
-        margin-bottom: 8px;
+        margin-bottom: 5px;
       }
 
       .team-filters-title {
@@ -376,37 +376,18 @@
       .team-filters-grid {
         display: flex;
         flex-wrap: wrap;
-        gap: 8px;
-      }
-
-      .team-filter-actions {
-        display: flex;
-        justify-content: flex-end;
-        margin-top: 8px;
-      }
-
-      .role-filters {
-        margin-top: 8px;
-        padding: 10px;
-        border: 1px solid rgba(139, 92, 246, 0.14);
-        border-radius: 10px;
-        background: rgba(255, 255, 255, 0.82);
-      }
-
-      .role-filters-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
+        align-items: center;
+        gap: 6px;
       }
 
       .team-filter {
         appearance: none;
-        border: 1px solid color-mix(in srgb, var(--team-filter-color) 40%, white);
-        background: color-mix(in srgb, var(--team-filter-color) 12%, white);
-        color: #111827;
+        border: 2px solid var(--team-filter-color);
+        background: #ffffff;
+        color: var(--team-filter-color);
         border-radius: 999px;
-        padding: 6px 10px;
-        font-size: 0.66rem;
+        padding: 4px 9px;
+        font-size: 0.62rem;
         font-weight: 800;
         cursor: pointer;
         transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
@@ -414,39 +395,16 @@
 
       .team-filter:hover {
         transform: translateY(-1px);
-        box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+        box-shadow: 0 6px 14px rgba(15, 23, 42, 0.18);
       }
 
       .team-filter.active {
         background: var(--team-filter-color);
         border-color: var(--team-filter-color);
         color: white;
-        box-shadow: 0 6px 14px color-mix(in srgb, var(--team-filter-color) 30%, transparent);
-      }
-
-      .role-filter {
-        appearance: none;
-        border: 1px solid rgba(15, 23, 42, 0.12);
-        background: #f8fafc;
-        color: var(--text);
-        border-radius: 999px;
-        padding: 6px 10px;
-        font-size: 0.66rem;
-        font-weight: 800;
-        cursor: pointer;
-        transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-      }
-
-      .role-filter:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
-      }
-
-      .role-filter.active {
-        background: #0f766e;
-        border-color: #0f766e;
-        color: white;
-        box-shadow: 0 6px 14px rgba(15, 118, 110, 0.25);
+        box-shadow:
+          0 0 0 3px color-mix(in srgb, var(--team-filter-color) 28%, white),
+          0 8px 18px rgba(15, 23, 42, 0.22);
       }
 
       .clear-filters {
@@ -455,8 +413,8 @@
         background: white;
         color: var(--text);
         border-radius: 999px;
-        padding: 6px 10px;
-        font-size: 0.64rem;
+        padding: 4px 9px;
+        font-size: 0.62rem;
         font-weight: 800;
         cursor: pointer;
       }
@@ -572,97 +530,97 @@
           </thead>
           <tbody>
             
-            <tr class="selected-player" data-team="RCB" data-role="batsman">
+            <tr class="selected-player" data-team="RCB">
               <td>1</td>
               <td><span>Virat Kohli</span> </td>
               <td>357</td>
             </tr>
           
-            <tr class="selected-player" data-team="RR" data-role="batsman">
+            <tr class="selected-player" data-team="RR">
               <td>2</td>
               <td><span>Vaibhav Sooryavanshi</span> </td>
               <td>320</td>
             </tr>
           
-            <tr class="selected-player" data-team="PBKS" data-role="batsman">
+            <tr class="selected-player" data-team="GT">
               <td>3</td>
+              <td><span>Sai Sudharsan</span> </td>
+              <td>216</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="PBKS">
+              <td>4</td>
               <td><span>Priyansh Arya</span> </td>
               <td>190</td>
             </tr>
           
-            <tr class="selected-player" data-team="GT" data-role="batsman">
-              <td>4</td>
-              <td><span>Sai Sudharsan</span> </td>
-              <td>183</td>
+            <tr class="selected-player" data-team="GT">
+              <td>5</td>
+              <td><span>Mohammed Siraj</span> </td>
+              <td>167</td>
             </tr>
           
-            <tr class="selected-player" data-team="PBKS" data-role="batsman">
-              <td>5</td>
+            <tr class="selected-player" data-team="PBKS">
+              <td>6</td>
               <td><span>Shashank Singh</span> </td>
               <td>144</td>
             </tr>
           
-            <tr class="selected-player" data-team="PBKS" data-role="all-rounder">
-              <td>6</td>
+            <tr class="selected-player" data-team="PBKS">
+              <td>7</td>
               <td><span>Marco Jansen</span> </td>
               <td>130</td>
             </tr>
           
-            <tr class="selected-player" data-team="RCB" data-role="wicket-keeper">
-              <td>7</td>
+            <tr class="selected-player" data-team="RCB">
+              <td>8</td>
               <td><span>Jitesh Sharma</span> </td>
               <td>113</td>
             </tr>
           
-            <tr class="selected-player" data-team="GT" data-role="bowler">
-              <td>8</td>
-              <td><span>Mohammed Siraj</span> </td>
-              <td>93</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="MI" data-role="all-rounder">
+            <tr class="selected-player" data-team="MI">
               <td>9</td>
               <td><span>Mitchell Santner</span> </td>
               <td>87</td>
             </tr>
           
-            <tr class="selected-player" data-team="CSK" data-role="bowler">
+            <tr class="selected-player" data-team="CSK">
               <td>10</td>
               <td><span>Matt Henry</span> </td>
               <td>68</td>
             </tr>
           
-            <tr class="selected-player" data-team="DC" data-role="all-rounder">
+            <tr class="selected-player" data-team="DC">
               <td>11</td>
               <td><span>Vipraj Nigam</span> </td>
               <td>51</td>
             </tr>
           
-            <tr class="selected-player" data-team="GT" data-role="batsman">
+            <tr class="selected-player" data-team="GT">
               <td>12</td>
               <td><span>Shahrukh Khan</span> </td>
-              <td>42</td>
+              <td>49</td>
             </tr>
           
-            <tr class="" data-team="CSK" data-role="wicket-keeper">
+            <tr class="" data-team="CSK">
               <td>13</td>
               <td><span>MS Dhoni</span> </td>
               <td>0</td>
             </tr>
           
-            <tr class="" data-team="DC" data-role="wicket-keeper">
+            <tr class="" data-team="DC">
               <td>14</td>
               <td><span>Abishek Porel</span> </td>
               <td>0</td>
             </tr>
           
-            <tr class="" data-team="MI" data-role="all-rounder">
+            <tr class="" data-team="MI">
               <td>15</td>
               <td><span>Will Jacks</span> <span class="overseas-badge" title="Overseas player">&#9992;</span></td>
               <td>0</td>
             </tr>
           
-            <tr class="" data-team="RCB" data-role="bowler">
+            <tr class="" data-team="RCB">
               <td>16</td>
               <td><span>Yash Dayal</span> </td>
               <td>0</td>
@@ -672,7 +630,7 @@
           <tfoot>
             <tr>
               <td colspan="2">Top 11 Total</td>
-              <td>1778</td>
+              <td>1892</td>
             </tr>
           </tfoot>
         </table>
@@ -695,97 +653,97 @@
           </thead>
           <tbody>
             
-            <tr class="selected-player" data-team="RCB" data-role="batsman">
+            <tr class="selected-player" data-team="GT">
               <td>1</td>
+              <td><span>Shubman Gill</span> </td>
+              <td>393</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="RCB">
+              <td>2</td>
               <td><span>Rajat Patidar</span> </td>
               <td>380</td>
             </tr>
           
-            <tr class="selected-player" data-team="SRH" data-role="wicket-keeper">
-              <td>2</td>
+            <tr class="selected-player" data-team="SRH">
+              <td>3</td>
               <td><span>Heinrich Klaasen</span> </td>
               <td>337</td>
             </tr>
           
-            <tr class="selected-player" data-team="GT" data-role="batsman">
-              <td>3</td>
-              <td><span>Shubman Gill</span> </td>
-              <td>273</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="MI" data-role="wicket-keeper">
+            <tr class="selected-player" data-team="MI">
               <td>4</td>
               <td><span>Ryan Rickelton</span> </td>
               <td>220</td>
             </tr>
           
-            <tr class="selected-player" data-team="KKR" data-role="bowler">
+            <tr class="selected-player" data-team="KKR">
               <td>5</td>
               <td><span>Vaibhav Arora</span> </td>
-              <td>171</td>
+              <td>200</td>
             </tr>
           
-            <tr class="selected-player" data-team="MI" data-role="wicket-keeper">
+            <tr class="selected-player" data-team="MI">
               <td>6</td>
               <td><span>Quinton de Kock</span> </td>
               <td>168</td>
             </tr>
           
-            <tr class="selected-player" data-team="RR" data-role="bowler">
+            <tr class="selected-player" data-team="RR">
               <td>7</td>
               <td><span>Sandeep Sharma</span> </td>
               <td>163</td>
             </tr>
           
-            <tr class="selected-player" data-team="MI" data-role="batsman">
+            <tr class="selected-player" data-team="MI">
               <td>8</td>
               <td><span>Tilak Varma</span> </td>
               <td>121</td>
             </tr>
           
-            <tr class="selected-player" data-team="DC" data-role="bowler">
+            <tr class="selected-player" data-team="DC">
               <td>9</td>
               <td><span>T Natarajan</span> </td>
               <td>115</td>
             </tr>
           
-            <tr class="selected-player" data-team="DC" data-role="all-rounder">
+            <tr class="selected-player" data-team="DC">
               <td>10</td>
               <td><span>Axar Patel</span> </td>
               <td>114</td>
             </tr>
           
-            <tr class="selected-player" data-team="DC" data-role="bowler">
+            <tr class="selected-player" data-team="DC">
               <td>11</td>
               <td><span>Kuldeep Yadav</span> </td>
               <td>110</td>
             </tr>
           
-            <tr class="selected-player" data-team="CSK" data-role="batsman">
+            <tr class="selected-player" data-team="CSK">
               <td>12</td>
               <td><span>Ruturaj Gaikwad</span> </td>
               <td>100</td>
             </tr>
           
-            <tr class="" data-team="CSK" data-role="all-rounder">
+            <tr class="" data-team="CSK">
               <td>13</td>
               <td><span>Dewald Brevis</span> </td>
               <td>99</td>
             </tr>
           
-            <tr class="" data-team="CSK" data-role="all-rounder">
+            <tr class="" data-team="CSK">
               <td>14</td>
               <td><span>Prashant Veer</span> </td>
               <td>72</td>
             </tr>
           
-            <tr class="" data-team="KKR" data-role="bowler">
+            <tr class="" data-team="KKR">
               <td>15</td>
               <td><span>Varun Chakaravarthy</span> </td>
-              <td>16</td>
+              <td>70</td>
             </tr>
           
-            <tr class="" data-team="CSK" data-role="bowler">
+            <tr class="" data-team="CSK">
               <td>16</td>
               <td><span>Nathan Ellis</span> </td>
               <td>0</td>
@@ -795,7 +753,7 @@
           <tfoot>
             <tr>
               <td colspan="2">Top 11 Total</td>
-              <td>2272</td>
+              <td>2421</td>
             </tr>
           </tfoot>
         </table>
@@ -818,85 +776,85 @@
           </thead>
           <tbody>
             
-            <tr class="selected-player" data-team="GT" data-role="wicket-keeper">
+            <tr class="selected-player" data-team="GT">
               <td>1</td>
               <td><span>Jos Buttler</span> </td>
-              <td>308</td>
+              <td>389</td>
             </tr>
           
-            <tr class="selected-player" data-team="RR" data-role="bowler">
+            <tr class="selected-player" data-team="KKR">
               <td>2</td>
+              <td><span>Angkrish Raghuvanshi</span> </td>
+              <td>294</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="RR">
+              <td>3</td>
               <td><span>Ravi Bishnoi</span> </td>
               <td>285</td>
             </tr>
           
-            <tr class="selected-player" data-team="KKR" data-role="batsman">
-              <td>3</td>
-              <td><span>Angkrish Raghuvanshi</span> </td>
-              <td>280</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="CSK" data-role="wicket-keeper">
+            <tr class="selected-player" data-team="CSK">
               <td>4</td>
               <td><span>Sanju Samson</span> </td>
               <td>272</td>
             </tr>
           
-            <tr class="selected-player" data-team="CSK" data-role="batsman">
+            <tr class="selected-player" data-team="CSK">
               <td>5</td>
               <td><span>Ayush Mhatre</span> </td>
               <td>260</td>
             </tr>
           
-            <tr class="selected-player" data-team="DC" data-role="batsman">
+            <tr class="selected-player" data-team="GT">
               <td>6</td>
+              <td><span>Kagiso Rabada</span> </td>
+              <td>231</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="DC">
+              <td>7</td>
               <td><span>Pathum Nissanka</span> </td>
               <td>202</td>
             </tr>
           
-            <tr class="selected-player" data-team="CSK" data-role="all-rounder">
-              <td>7</td>
+            <tr class="selected-player" data-team="CSK">
+              <td>8</td>
               <td><span>Shivam Dube</span> </td>
               <td>199</td>
             </tr>
           
-            <tr class="selected-player" data-team="PBKS" data-role="bowler">
-              <td>8</td>
+            <tr class="selected-player" data-team="PBKS">
+              <td>9</td>
               <td><span>Arshdeep Singh</span> </td>
               <td>175</td>
             </tr>
           
-            <tr class="selected-player" data-team="KKR" data-role="batsman">
-              <td>9</td>
-              <td><span>Rinku Singh</span> </td>
-              <td>150</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="GT" data-role="bowler">
+            <tr class="selected-player" data-team="KKR">
               <td>10</td>
-              <td><span>Kagiso Rabada</span> </td>
-              <td>140</td>
+              <td><span>Rinku Singh</span> </td>
+              <td>163</td>
             </tr>
           
-            <tr class="selected-player" data-team="PBKS" data-role="bowler">
+            <tr class="selected-player" data-team="PBKS">
               <td>11</td>
               <td><span>Yuzvendra Chahal</span> </td>
               <td>101</td>
             </tr>
           
-            <tr class="selected-player" data-team="RR" data-role="batsman">
+            <tr class="selected-player" data-team="RR">
               <td>12</td>
               <td><span>Shimron Hetmyer</span> </td>
               <td>93</td>
             </tr>
           
-            <tr class="" data-team="PBKS" data-role="batsman">
+            <tr class="" data-team="PBKS">
               <td>13</td>
               <td><span>Nehal Wadhera</span> </td>
               <td>63</td>
             </tr>
           
-            <tr class="" data-team="MI" data-role="bowler">
+            <tr class="" data-team="MI">
               <td>14</td>
               <td><span>Jasprit Bumrah</span> </td>
               <td>38</td>
@@ -918,7 +876,7 @@
           <tfoot>
             <tr>
               <td colspan="2">Top 11 Total</td>
-              <td>2465</td>
+              <td>2664</td>
             </tr>
           </tfoot>
         </table>
@@ -941,79 +899,79 @@
           </thead>
           <tbody>
             
-            <tr class="selected-player" data-team="SRH" data-role="wicket-keeper">
+            <tr class="selected-player" data-team="SRH">
               <td>1</td>
               <td><span>Ishan Kishan</span> </td>
               <td>367</td>
             </tr>
           
-            <tr class="selected-player" data-team="RR" data-role="all-rounder">
+            <tr class="selected-player" data-team="RR">
               <td>2</td>
               <td><span>Ravindra Jadeja</span> </td>
               <td>202</td>
             </tr>
           
-            <tr class="selected-player" data-team="RCB" data-role="all-rounder">
+            <tr class="selected-player" data-team="RCB">
               <td>3</td>
               <td><span>Krunal Pandya</span> </td>
               <td>202</td>
             </tr>
           
-            <tr class="selected-player" data-team="MI" data-role="batsman">
+            <tr class="selected-player" data-team="MI">
               <td>4</td>
               <td><span>Sherfane Rutherford</span> </td>
               <td>176</td>
             </tr>
           
-            <tr class="selected-player" data-team="LSG" data-role="all-rounder">
+            <tr class="selected-player" data-team="LSG">
               <td>5</td>
               <td><span>Mitchell Marsh</span> </td>
               <td>168</td>
             </tr>
           
-            <tr class="selected-player" data-team="MI" data-role="batsman">
+            <tr class="selected-player" data-team="MI">
               <td>6</td>
               <td><span>Suryakumar Yadav</span> </td>
               <td>167</td>
             </tr>
           
-            <tr class="selected-player" data-team="CSK" data-role="bowler">
+            <tr class="selected-player" data-team="CSK">
               <td>7</td>
               <td><span>Noor Ahmad</span> </td>
               <td>153</td>
             </tr>
           
-            <tr class="selected-player" data-team="LSG" data-role="wicket-keeper">
+            <tr class="selected-player" data-team="LSG">
               <td>8</td>
               <td><span>Nicholas Pooran</span> </td>
               <td>77</td>
             </tr>
           
-            <tr class="selected-player" data-team="CSK" data-role="bowler">
+            <tr class="selected-player" data-team="CSK">
               <td>9</td>
               <td><span>Khaleel Ahmed</span> </td>
               <td>70</td>
             </tr>
           
-            <tr class="selected-player" data-team="DC" data-role="all-rounder">
+            <tr class="selected-player" data-team="DC">
               <td>10</td>
               <td><span>Auqib Nabi</span> </td>
               <td>9</td>
             </tr>
           
-            <tr class="selected-player" data-team="GT" data-role="bowler">
+            <tr class="selected-player" data-team="GT">
               <td>11</td>
               <td><span>Sai Kishore</span> </td>
               <td>0</td>
             </tr>
           
-            <tr class="selected-player" data-team="GT" data-role="all-rounder">
+            <tr class="selected-player" data-team="GT">
               <td>12</td>
               <td><span>Jason Holder</span> </td>
               <td>0</td>
             </tr>
           
-            <tr class="" data-team="KKR" data-role="bowler">
+            <tr class="" data-team="KKR">
               <td>13</td>
               <td><span>Matheesha Pathirana</span> </td>
               <td>0</td>
@@ -1064,79 +1022,79 @@
           </thead>
           <tbody>
             
-            <tr class="selected-player" data-team="PBKS" data-role="wicket-keeper">
+            <tr class="selected-player" data-team="PBKS">
               <td>1</td>
               <td><span>Prabhsimran Singh</span> </td>
               <td>345</td>
             </tr>
           
-            <tr class="selected-player" data-team="RR" data-role="batsman">
+            <tr class="selected-player" data-team="RR">
               <td>2</td>
               <td><span>Yashasvi Jaiswal</span> </td>
               <td>289</td>
             </tr>
           
-            <tr class="selected-player" data-team="SRH" data-role="all-rounder">
+            <tr class="selected-player" data-team="KKR">
               <td>3</td>
+              <td><span>Cameron Green</span> </td>
+              <td>240</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="SRH">
+              <td>4</td>
               <td><span>Abhishek Sharma</span> </td>
               <td>212</td>
             </tr>
           
-            <tr class="selected-player" data-team="MI" data-role="batsman">
-              <td>4</td>
+            <tr class="selected-player" data-team="MI">
+              <td>5</td>
               <td><span>Rohit Sharma</span> </td>
               <td>204</td>
             </tr>
           
-            <tr class="selected-player" data-team="DC" data-role="bowler">
-              <td>5</td>
+            <tr class="selected-player" data-team="DC">
+              <td>6</td>
               <td><span>Lungi Ngidi</span> </td>
               <td>164</td>
             </tr>
           
-            <tr class="selected-player" data-team="LSG" data-role="bowler">
-              <td>6</td>
+            <tr class="selected-player" data-team="LSG">
+              <td>7</td>
               <td><span>Mohammad Shami</span> </td>
               <td>151</td>
             </tr>
           
-            <tr class="selected-player" data-team="DC" data-role="batsman">
-              <td>7</td>
+            <tr class="selected-player" data-team="DC">
+              <td>8</td>
               <td><span>David Miller</span> </td>
               <td>129</td>
             </tr>
           
-            <tr class="selected-player" data-team="KKR" data-role="batsman">
-              <td>8</td>
-              <td><span>Cameron Green</span> </td>
-              <td>116</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="LSG" data-role="bowler">
+            <tr class="selected-player" data-team="LSG">
               <td>9</td>
               <td><span>Digvesh Singh</span> </td>
               <td>99</td>
             </tr>
           
-            <tr class="selected-player" data-team="DC" data-role="batsman">
+            <tr class="selected-player" data-team="DC">
               <td>10</td>
               <td><span>Nitish Rana</span> </td>
               <td>59</td>
             </tr>
           
-            <tr class="selected-player" data-team="MI" data-role="bowler">
+            <tr class="selected-player" data-team="MI">
               <td>11</td>
               <td><span>Trent Boult</span> </td>
               <td>40</td>
             </tr>
           
-            <tr class="selected-player" data-team="RR" data-role="all-rounder">
+            <tr class="selected-player" data-team="RR">
               <td>12</td>
               <td><span>Sam Curran</span> <span class="overseas-badge" title="Overseas player">&#9992;</span></td>
               <td>0</td>
             </tr>
           
-            <tr class="" data-team="UNKNOWN" data-role="unknown">
+            <tr class="" data-team="UNKNOWN">
               <td>13</td>
               <td><span>Cummins</span> </td>
               <td>0</td>
@@ -1164,7 +1122,7 @@
           <tfoot>
             <tr>
               <td colspan="2">Top 11 Total</td>
-              <td>1808</td>
+              <td>1932</td>
             </tr>
           </tfoot>
         </table>
@@ -1187,91 +1145,91 @@
           </thead>
           <tbody>
             
-            <tr class="selected-player" data-team="RR" data-role="wicket-keeper">
+            <tr class="selected-player" data-team="RR">
               <td>1</td>
               <td><span>Dhruv Jurel</span> </td>
               <td>329</td>
             </tr>
           
-            <tr class="selected-player" data-team="GT" data-role="bowler">
+            <tr class="selected-player" data-team="GT">
               <td>2</td>
               <td><span>Prasidh Krishna</span> </td>
-              <td>278</td>
+              <td>313</td>
             </tr>
           
-            <tr class="selected-player" data-team="RCB" data-role="wicket-keeper">
+            <tr class="selected-player" data-team="RCB">
               <td>3</td>
               <td><span>Phil Salt</span> </td>
               <td>251</td>
             </tr>
           
-            <tr class="selected-player" data-team="RCB" data-role="bowler">
+            <tr class="selected-player" data-team="KKR">
               <td>4</td>
+              <td><span>Ajinkya Rahane</span> </td>
+              <td>230</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="RCB">
+              <td>5</td>
               <td><span>Bhuvneshwar Kumar</span> </td>
               <td>229</td>
             </tr>
           
-            <tr class="selected-player" data-team="KKR" data-role="batsman">
-              <td>5</td>
-              <td><span>Ajinkya Rahane</span> </td>
-              <td>228</td>
+            <tr class="selected-player" data-team="GT">
+              <td>6</td>
+              <td><span>Washington Sundar</span> </td>
+              <td>208</td>
             </tr>
           
-            <tr class="selected-player" data-team="LSG" data-role="all-rounder">
-              <td>6</td>
+            <tr class="selected-player" data-team="LSG">
+              <td>7</td>
               <td><span>Aiden Markram</span> </td>
               <td>206</td>
             </tr>
           
-            <tr class="selected-player" data-team="GT" data-role="all-rounder">
-              <td>7</td>
-              <td><span>Washington Sundar</span> </td>
-              <td>190</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="SRH" data-role="batsman">
+            <tr class="selected-player" data-team="SRH">
               <td>8</td>
               <td><span>Travis Head</span> </td>
               <td>183</td>
             </tr>
           
-            <tr class="selected-player" data-team="KKR" data-role="all-rounder">
+            <tr class="selected-player" data-team="KKR">
               <td>9</td>
               <td><span>Sunil Narine</span> </td>
-              <td>155</td>
+              <td>182</td>
             </tr>
           
-            <tr class="selected-player" data-team="KKR" data-role="wicket-keeper">
+            <tr class="selected-player" data-team="KKR">
               <td>10</td>
               <td><span>Finn Allen</span> <span class="overseas-badge" title="Overseas player">&#9992;</span></td>
               <td>138</td>
             </tr>
           
-            <tr class="selected-player" data-team="RCB" data-role="bowler">
+            <tr class="selected-player" data-team="RCB">
               <td>11</td>
               <td><span>Josh Hazlewood</span> </td>
               <td>99</td>
             </tr>
           
-            <tr class="selected-player" data-team="MI" data-role="bowler">
+            <tr class="selected-player" data-team="MI">
               <td>12</td>
               <td><span>Deepak Chahar</span> </td>
               <td>48</td>
             </tr>
           
-            <tr class="" data-team="PBKS" data-role="all-rounder">
+            <tr class="" data-team="PBKS">
               <td>13</td>
               <td><span>Marcus Stoinis</span> </td>
               <td>47</td>
             </tr>
           
-            <tr class="" data-team="SRH" data-role="bowler">
+            <tr class="" data-team="SRH">
               <td>14</td>
               <td><span>Harshal Patel</span> </td>
               <td>9</td>
             </tr>
           
-            <tr class="" data-team="DC" data-role="bowler">
+            <tr class="" data-team="DC">
               <td>15</td>
               <td><span>Mitchell Starc</span> </td>
               <td>0</td>
@@ -1287,7 +1245,7 @@
           <tfoot>
             <tr>
               <td colspan="2">Top 11 Total</td>
-              <td>2334</td>
+              <td>2416</td>
             </tr>
           </tfoot>
         </table>
@@ -1310,91 +1268,91 @@
           </thead>
           <tbody>
             
-            <tr class="selected-player" data-team="PBKS" data-role="batsman">
+            <tr class="selected-player" data-team="PBKS">
               <td>1</td>
               <td><span>Shreyas Iyer</span> </td>
               <td>319</td>
             </tr>
           
-            <tr class="selected-player" data-team="SRH" data-role="all-rounder">
+            <tr class="selected-player" data-team="SRH">
               <td>2</td>
               <td><span>Nitish Kumar Reddy</span> </td>
               <td>277</td>
             </tr>
           
-            <tr class="selected-player" data-team="RCB" data-role="batsman">
+            <tr class="selected-player" data-team="RCB">
               <td>3</td>
               <td><span>Devdutt Padikkal</span> </td>
               <td>263</td>
             </tr>
           
-            <tr class="selected-player" data-team="RR" data-role="bowler">
+            <tr class="selected-player" data-team="RR">
               <td>4</td>
               <td><span>Jofra Archer</span> </td>
               <td>244</td>
             </tr>
           
-            <tr class="selected-player" data-team="RCB" data-role="batsman">
+            <tr class="selected-player" data-team="RCB">
               <td>5</td>
               <td><span>Tim David</span> <span class="overseas-badge" title="Overseas player">&#9992;</span></td>
               <td>238</td>
             </tr>
           
-            <tr class="selected-player" data-team="LSG" data-role="wicket-keeper">
+            <tr class="selected-player" data-team="GT">
               <td>6</td>
+              <td><span>Rashid Khan</span> </td>
+              <td>221</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="LSG">
+              <td>7</td>
               <td><span>Rishabh Pant</span> </td>
               <td>197</td>
             </tr>
           
-            <tr class="selected-player" data-team="GT" data-role="bowler">
-              <td>7</td>
-              <td><span>Rashid Khan</span> </td>
-              <td>196</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="DC" data-role="batsman">
+            <tr class="selected-player" data-team="DC">
               <td>8</td>
               <td><span>Tristan Stubbs</span> </td>
               <td>180</td>
             </tr>
           
-            <tr class="selected-player" data-team="MI" data-role="all-rounder">
+            <tr class="selected-player" data-team="MI">
               <td>9</td>
               <td><span>Hardik Pandya</span> </td>
               <td>180</td>
             </tr>
           
-            <tr class="selected-player" data-team="DC" data-role="wicket-keeper">
+            <tr class="selected-player" data-team="DC">
               <td>10</td>
               <td><span>KL Rahul</span> </td>
               <td>176</td>
             </tr>
           
-            <tr class="selected-player" data-team="RR" data-role="all-rounder">
+            <tr class="selected-player" data-team="RR">
               <td>11</td>
               <td><span>Riyan Parag</span> </td>
               <td>144</td>
             </tr>
           
-            <tr class="selected-player" data-team="RCB" data-role="bowler">
+            <tr class="selected-player" data-team="RCB">
               <td>12</td>
               <td><span>Suyash Sharma</span> </td>
               <td>116</td>
             </tr>
           
-            <tr class="" data-team="RCB" data-role="all-rounder">
+            <tr class="" data-team="RCB">
               <td>13</td>
               <td><span>Venkatesh Iyer</span> </td>
               <td>44</td>
             </tr>
           
-            <tr class="" data-team="SRH" data-role="all-rounder">
+            <tr class="" data-team="SRH">
               <td>14</td>
               <td><span>Liam Livingstone</span> </td>
               <td>36</td>
             </tr>
           
-            <tr class="" data-team="PBKS" data-role="bowler">
+            <tr class="" data-team="PBKS">
               <td>15</td>
               <td><span>Lockie Ferguson</span> </td>
               <td>0</td>
@@ -1410,7 +1368,7 @@
           <tfoot>
             <tr>
               <td colspan="2">Top 11 Total</td>
-              <td>2530</td>
+              <td>2555</td>
             </tr>
           </tfoot>
         </table>
@@ -1429,38 +1387,38 @@
             
         <tr class="winner-rank">
           <td><span class="rank-pill rank-1"></span></td>
-          <td>Susheel</td>
-          <td>2530</td>
+          <td>Sateesh</td>
+          <td>2664</td>
         </tr>
       
         <tr class="winner-rank">
           <td><span class="rank-pill rank-2"></span></td>
-          <td>Sateesh</td>
-          <td>2465</td>
+          <td>Susheel</td>
+          <td>2555</td>
         </tr>
       
         <tr class="">
           <td><span class="rank-pill rank-3"></span></td>
-          <td>Suresh</td>
-          <td>2334</td>
+          <td>Kamal</td>
+          <td>2421</td>
         </tr>
       
         <tr class="">
           <td><span class="rank-pill rank-4"></span></td>
-          <td>Kamal</td>
-          <td>2272</td>
+          <td>Suresh</td>
+          <td>2416</td>
         </tr>
       
         <tr class="">
           <td><span class="rank-pill rank-5"></span></td>
           <td>Subhash</td>
-          <td>1808</td>
+          <td>1932</td>
         </tr>
       
         <tr class="">
           <td><span class="rank-pill rank-6"></span></td>
           <td>Bharath</td>
-          <td>1778</td>
+          <td>1892</td>
         </tr>
       
         <tr class="">
@@ -1481,39 +1439,25 @@
           <p class="team-filters-help">Click one or more teams to highlight their players across all owners.</p>
         </div>
         <div class="team-filters-grid">
-          <button class="team-filter" type="button" data-team-filter="CSK" style="--team-filter-color: #fdb913;">CSK</button><button class="team-filter" type="button" data-team-filter="DC" style="--team-filter-color: #17479e;">DC</button><button class="team-filter" type="button" data-team-filter="GT" style="--team-filter-color: #1c2c5b;">GT</button><button class="team-filter" type="button" data-team-filter="KKR" style="--team-filter-color: #3b215d;">KKR</button><button class="team-filter" type="button" data-team-filter="LSG" style="--team-filter-color: #00a6e2;">LSG</button><button class="team-filter" type="button" data-team-filter="MI" style="--team-filter-color: #004ba0;">MI</button><button class="team-filter" type="button" data-team-filter="PBKS" style="--team-filter-color: #dd1f2d;">PBKS</button><button class="team-filter" type="button" data-team-filter="RCB" style="--team-filter-color: #d71920;">RCB</button><button class="team-filter" type="button" data-team-filter="RR" style="--team-filter-color: #ea1a85;">RR</button><button class="team-filter" type="button" data-team-filter="SRH" style="--team-filter-color: #f26522;">SRH</button>
-        </div>
-      </section>
-      <section class="role-filters">
-        <div class="team-filters-header">
-          <p class="team-filters-title">Highlight Roles</p>
-          <p class="team-filters-help">Highlight batsmen, all-rounders, wicket-keepers, or bowlers across all owners.</p>
-        </div>
-        <div class="role-filters-grid">
-          <button class="role-filter" type="button" data-role-filter="all-rounder">All-Rounders</button><button class="role-filter" type="button" data-role-filter="batsman">Batsmen</button><button class="role-filter" type="button" data-role-filter="bowler">Bowlers</button><button class="role-filter" type="button" data-role-filter="wicket-keeper">Wicket-Keepers</button>
+          <button class="team-filter" type="button" data-team-filter="CSK" style="--team-filter-color: #FFD700;">CSK</button><button class="team-filter" type="button" data-team-filter="DC" style="--team-filter-color: #282968;">DC</button><button class="team-filter" type="button" data-team-filter="GT" style="--team-filter-color: #1B2133;">GT</button><button class="team-filter" type="button" data-team-filter="KKR" style="--team-filter-color: #3A225D;">KKR</button><button class="team-filter" type="button" data-team-filter="LSG" style="--team-filter-color: #0057E2;">LSG</button><button class="team-filter" type="button" data-team-filter="MI" style="--team-filter-color: #004B8D;">MI</button><button class="team-filter" type="button" data-team-filter="PBKS" style="--team-filter-color: #1B2133;">PBKS</button><button class="team-filter" type="button" data-team-filter="RCB" style="--team-filter-color: #EC1C24;">RCB</button><button class="team-filter" type="button" data-team-filter="RR" style="--team-filter-color: #074EA2;">RR</button><button class="team-filter" type="button" data-team-filter="SRH" style="--team-filter-color: #EE7429;">SRH</button>
+          <button class="clear-filters" type="button" id="clear-team-filters">Clear All</button>
         </div>
       </section>
     </main>
     <script>
-      const TEAM_COLORS = {"CSK":"#fdb913","MI":"#004ba0","RCB":"#d71920","SRH":"#f26522","KKR":"#3b215d","RR":"#ea1a85","GT":"#1c2c5b","PBKS":"#dd1f2d","DC":"#17479e","LSG":"#00a6e2"};
+      const TEAM_COLORS = {"CSK":"#FFD700","MI":"#004B8D","RCB":"#EC1C24","SRH":"#EE7429","KKR":"#3A225D","RR":"#074EA2","GT":"#1B2133","PBKS":"#1B2133","DC":"#282968","LSG":"#0057E2"};
       const activeTeams = new Set();
-      const activeRoles = new Set();
       const filterButtons = Array.from(document.querySelectorAll("[data-team-filter]"));
-      const roleButtons = Array.from(document.querySelectorAll("[data-role-filter]"));
       const playerRows = Array.from(document.querySelectorAll("tr[data-team]"));
+      const clearTeamFiltersButton = document.getElementById("clear-team-filters");
 
-      function applyTeamHighlights() {
-        playerRows.forEach((row) => {
-          const teamCode = (row.dataset.team || "").toUpperCase();
-          const roleCode = (row.dataset.role || "").toLowerCase();
-          const matchesTeam = activeTeams.size === 0 || activeTeams.has(teamCode);
-          const matchesRole = activeRoles.size === 0 || activeRoles.has(roleCode);
-          const shouldHighlight = matchesTeam && matchesRole && (activeTeams.size > 0 || activeRoles.size > 0);
-
-          if (shouldHighlight) {
-            row.classList.add("team-highlight");
-            row.style.setProperty("--team-highlight-color", TEAM_COLORS[teamCode] || "#fde68a");
-          } else {
+        function applyTeamHighlights() {
+          playerRows.forEach((row) => {
+            const teamCode = (row.dataset.team || "").toUpperCase();
+          if (activeTeams.has(teamCode)) {
+              row.classList.add("team-highlight");
+              row.style.setProperty("--team-highlight-color", TEAM_COLORS[teamCode] || "#fde68a");
+            } else {
             row.classList.remove("team-highlight");
             row.style.removeProperty("--team-highlight-color");
           }
@@ -1522,11 +1466,6 @@
         filterButtons.forEach((button) => {
           const teamCode = (button.dataset.teamFilter || "").toUpperCase();
           button.classList.toggle("active", activeTeams.has(teamCode));
-        });
-
-        roleButtons.forEach((button) => {
-          const roleCode = (button.dataset.roleFilter || "").toLowerCase();
-          button.classList.toggle("active", activeRoles.has(roleCode));
         });
       }
 
@@ -1547,22 +1486,12 @@
         });
       });
 
-      roleButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const roleCode = (button.dataset.roleFilter || "").toLowerCase();
-          if (!roleCode) {
-            return;
-          }
-
-          if (activeRoles.has(roleCode)) {
-            activeRoles.delete(roleCode);
-          } else {
-            activeRoles.add(roleCode);
-          }
-
+      if (clearTeamFiltersButton) {
+        clearTeamFiltersButton.addEventListener("click", () => {
+          activeTeams.clear();
           applyTeamHighlights();
         });
-      });
+      }
     </script>
   </body>
 </html>
