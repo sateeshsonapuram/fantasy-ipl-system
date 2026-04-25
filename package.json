@@ -5,6 +5,7 @@
   "main": "src/app/index.js",
   "scripts": {
     "fantasy:login": "node src/sources/ipl-fantasy/loginSession.js",
+    "telegram:bot": "node src/app/telegramBot.js",
     "score:official:last": "powershell -Command \"$env:PLAYER_POINTS_SOURCE='official-cache'; node src/app/index.js\"",
     "score:official": "node src/sources/ipl-fantasy/scoreOfficialAuto.js",
     "score:official:alt12": "powershell -Command \"$env:OWNER_SET='alt12'; $env:OWNER_TEAM_SIZE='12'; node src/sources/ipl-fantasy/scoreOfficialAuto.js\"",

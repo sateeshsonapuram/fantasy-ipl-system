@@ -788,7 +788,6 @@ function buildOwnersHtml(ownerLeaderboard, options = {}) {
       <section class="top-ribbon">
         <nav class="ribbon-nav" aria-label="Info links">
           <a href="./${escapeHtml(playerDetailsFileName)}">Player Points</a>
-          <a href="#team-points">Team Totals</a>
           <a href="#points-system">Points System</a>
           <a href="#rules">Rules</a>
           <a href="#injury-replacements">Injury Replacements</a>
@@ -917,8 +916,38 @@ function buildTrackedPlayers(ownerLeaderboard) {
   );
 }
 
+function buildPlayerOwnerMap(ownerLeaderboard) {
+  const playerOwners = new Map();
+
+  ownerLeaderboard.forEach((owner) => {
+    owner.squadPlayers.forEach((player) => {
+      const playerKey =
+        player.id && !String(player.id).startsWith("missing-")
+          ? `id:${player.id}`
+          : `name:${String(player.team || "UNKNOWN").toUpperCase()}|${normalizePlayerName(player.name)}`;
+
+      if (!playerOwners.has(playerKey)) {
+        playerOwners.set(playerKey, []);
+      }
+
+      playerOwners.get(playerKey).push(owner.name);
+    });
+  });
+
+  return playerOwners;
+}
+
 function buildPlayerDetailsHtml(players, options = {}) {
   const ownersFileName = options.ownersFileName || "owners.html";
+  const ownerLeaderboard = options.ownerLeaderboard || [];
+  const playerOwnerMap = buildPlayerOwnerMap(ownerLeaderboard);
+  const ownerNames = ownerLeaderboard.map((owner) => owner.name);
+  const ownerFilterButtons = ownerNames
+    .map(
+      (ownerName) =>
+        `<button class="owner-filter" type="button" data-owner-filter="${escapeHtml(ownerName)}">${escapeHtml(ownerName)}</button>`
+    )
+    .join("");
   const playersByTeam = players.reduce((groupedPlayers, player) => {
     const teamCode = String(player.team || "Unknown").toUpperCase();
     if (!groupedPlayers.has(teamCode)) {
@@ -929,73 +958,104 @@ function buildPlayerDetailsHtml(players, options = {}) {
   }, new Map());
 
   const playerSections = Array.from(playersByTeam.entries())
-    .sort((firstTeam, secondTeam) => firstTeam[0].localeCompare(secondTeam[0]))
     .map(([teamCode, teamPlayers]) => {
-      const teamPlayerCards = teamPlayers
+      const teamPlayerRows = teamPlayers
         .sort((firstPlayer, secondPlayer) => secondPlayer.totalPoints - firstPlayer.totalPoints)
-        .map((player) => {
-      const matchCards = [...player.matchBreakdowns]
-        .sort((firstMatch, secondMatch) => secondMatch.matchId.localeCompare(firstMatch.matchId))
-        .map((matchBreakdown) => {
-          const items = [
-            ["Starting XI", matchBreakdown.breakdown.startingXI],
-            ["Runs", matchBreakdown.breakdown.runs],
-            ["4s", matchBreakdown.breakdown.fours],
-            ["6s", matchBreakdown.breakdown.sixes],
-            ["Bat Bonus", matchBreakdown.breakdown.battingBonus],
-            ["Duck", matchBreakdown.breakdown.duckPenalty],
-            ["Wickets", matchBreakdown.breakdown.wickets],
-            ["LBW/Bowled", matchBreakdown.breakdown.lbwBowledBonus],
-            ["Maiden", matchBreakdown.breakdown.maidenOvers],
-            ["Wkt Bonus", matchBreakdown.breakdown.wicketBonus],
-            ["Catches", matchBreakdown.breakdown.catches],
-            ["3 Catch Bonus", matchBreakdown.breakdown.catchBonus],
-            ["Stumpings", matchBreakdown.breakdown.stumpings],
-            ["Direct RO", matchBreakdown.breakdown.directRunOuts],
-            ["Indirect RO", matchBreakdown.breakdown.indirectRunOuts],
-            ["S/R", matchBreakdown.breakdown.strikeRate],
-            ["E/R", matchBreakdown.breakdown.economyRate]
-          ]
-            .filter(([, value]) => value !== 0)
-            .map(
-              ([label, value]) =>
-                `<span class="breakdown-chip"><strong>${escapeHtml(label)}</strong> ${value}</span>`
-            )
+        .map((player, index) => {
+          const playerKey =
+            player.id && !String(player.id).startsWith("missing-")
+              ? `id:${player.id}`
+              : `name:${String(player.team || "UNKNOWN").toUpperCase()}|${normalizePlayerName(player.name)}`;
+          const playerOwners = playerOwnerMap.get(playerKey) || [];
+          const matchCards = [...player.matchBreakdowns]
+            .sort((firstMatch, secondMatch) => secondMatch.matchId.localeCompare(firstMatch.matchId))
+            .map((matchBreakdown) => {
+              const items = [
+                ["Starting XI", matchBreakdown.breakdown.startingXI],
+                ["Runs", matchBreakdown.breakdown.runs],
+                ["4s", matchBreakdown.breakdown.fours],
+                ["6s", matchBreakdown.breakdown.sixes],
+                ["Bat Bonus", matchBreakdown.breakdown.battingBonus],
+                ["Duck", matchBreakdown.breakdown.duckPenalty],
+                ["Wickets", matchBreakdown.breakdown.wickets],
+                ["LBW/Bowled", matchBreakdown.breakdown.lbwBowledBonus],
+                ["Maiden", matchBreakdown.breakdown.maidenOvers],
+                ["Wkt Bonus", matchBreakdown.breakdown.wicketBonus],
+                ["Catches", matchBreakdown.breakdown.catches],
+                ["3 Catch Bonus", matchBreakdown.breakdown.catchBonus],
+                ["Stumpings", matchBreakdown.breakdown.stumpings],
+                ["Direct RO", matchBreakdown.breakdown.directRunOuts],
+                ["Indirect RO", matchBreakdown.breakdown.indirectRunOuts],
+                ["S/R", matchBreakdown.breakdown.strikeRate],
+                ["E/R", matchBreakdown.breakdown.economyRate]
+              ]
+                .filter(([, value]) => value !== 0)
+                .map(
+                  ([label, value]) =>
+                    `<span class="breakdown-chip"><strong>${escapeHtml(label)}</strong> ${value}</span>`
+                )
+                .join("");
+
+              return `
+                <details class="match-card">
+                  <summary>
+                    <span class="match-name">${escapeHtml(matchBreakdown.match)}</span>
+                    <span class="match-points">${matchBreakdown.points} pts</span>
+                  </summary>
+                  <div class="match-meta">${escapeHtml(matchBreakdown.status)}</div>
+                  <div class="breakdown-grid">${items || '<span class="breakdown-chip">No scoring events</span>'}</div>
+                </details>
+              `;
+            })
             .join("");
 
           return `
-            <details class="match-card">
-              <summary>
-                <span class="match-name">${escapeHtml(matchBreakdown.match)}</span>
-                <span class="match-points">${matchBreakdown.points} pts</span>
+            <details
+              id="${slugify(`${player.team}-${player.name}`)}"
+              class="player-row-card"
+              data-owners="${escapeHtml(playerOwners.join("|"))}"
+            >
+              <summary class="player-row-summary">
+                <span class="player-rank">#${index + 1}</span>
+                <span class="player-name">${escapeHtml(player.name)}</span>
+                <span class="player-total">${player.totalPoints} pts</span>
               </summary>
-              <div class="match-meta">${escapeHtml(matchBreakdown.status)}</div>
-              <div class="breakdown-grid">${items || '<span class="breakdown-chip">No scoring events</span>'}</div>
+              <div class="player-row-body">
+                ${matchCards}
+              </div>
             </details>
           `;
         })
         .join("");
 
-          return `
-            <section id="${slugify(`${player.team}-${player.name}`)}" class="player-card">
-              <div class="player-top">
-                <div>
-                  <h2>${escapeHtml(player.name)}</h2>
-                  <p>${escapeHtml(player.team)} · Matches ${player.matchesPlayed}</p>
-                </div>
-                <div class="player-total">${player.totalPoints} pts</div>
-              </div>
-              ${matchCards}
-            </section>
-          `;
-        })
-        .join("");
-
-      return `
-        <h2 class="team-heading">${escapeHtml(teamCode)}</h2>
-        ${teamPlayerCards}
+      const sectionHtml = `
+        <section class="team-section">
+          <h2 class="team-heading">${escapeHtml(teamCode)}</h2>
+          <div class="team-player-list">
+            ${teamPlayerRows}
+          </div>
+        </section>
       `;
+      return {
+        teamCode,
+        playerCount: teamPlayers.length,
+        html: sectionHtml
+      };
     })
+    .sort((firstTeam, secondTeam) => {
+      if (secondTeam.playerCount !== firstTeam.playerCount) {
+        return secondTeam.playerCount - firstTeam.playerCount;
+      }
+      return firstTeam.teamCode.localeCompare(secondTeam.teamCode);
+    });
+
+  const columnCount = 5;
+  const topRowTeams = playerSections.slice(0, columnCount);
+  const bottomRowTeams = playerSections.slice(columnCount);
+  const orderedSections = [...topRowTeams, ...bottomRowTeams];
+
+  const playerGridItems = orderedSections
+    .map((item) => item.html)
     .join("");
 
   return `<!DOCTYPE html>
@@ -1024,97 +1084,218 @@ function buildPlayerDetailsHtml(players, options = {}) {
           radial-gradient(circle at top right, #bfdbfe 0%, transparent 24%),
           linear-gradient(180deg, #fffaf4 0%, var(--bg) 100%);
       }
-      .page { max-width: 1200px; margin: 0 auto; padding: 16px; }
+      .page { width: 100%; margin: 0 auto; padding: 6px 8px 8px; }
       .header {
-        margin-bottom: 14px;
-        padding: 14px 16px;
+        margin-bottom: 6px;
+        padding: 7px 10px;
         border: 1px solid rgba(15, 118, 110, 0.15);
-        border-radius: 14px;
+        border-radius: 10px;
         background: rgba(255,255,255,0.88);
       }
-      .header h1 { margin: 0 0 4px; font-size: 1.35rem; }
-      .header p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+      .header h1 { margin: 0 0 1px; font-size: 0.96rem; }
+      .header-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .header p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.7rem;
+        flex: 1 1 auto;
+      }
       .nav-link {
         display: inline-block;
-        margin-top: 10px;
         color: var(--accent);
         font-weight: 700;
         text-decoration: none;
+        font-size: 0.75rem;
+        white-space: nowrap;
       }
       .players-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 12px;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 4px;
+        align-items: start;
       }
+      .team-section { margin-top: 0; }
       .team-heading {
-        grid-column: 1 / -1;
-        margin: 12px 0 2px;
-        padding: 8px 12px;
+        margin: 0 0 3px;
+        padding: 3px 6px;
         border-left: 4px solid var(--accent);
-        border-radius: 8px;
+        border-radius: 6px;
         background: rgba(255, 255, 255, 0.78);
-        font-size: 1rem;
+        font-size: 0.72rem;
+        line-height: 1.1;
       }
-      .player-card {
-        padding: 14px;
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        background: var(--surface);
-        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
-      }
-      .player-top {
+      .team-player-list {
         display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 12px;
-        margin-bottom: 10px;
+        flex-direction: column;
+        gap: 2px;
       }
-      .player-top h2 { margin: 0 0 2px; font-size: 1.05rem; }
-      .player-top p { margin: 0; color: var(--muted); font-size: 0.86rem; }
+      .player-row-card {
+        border: 1px solid var(--border);
+        border-radius: 7px;
+        background: var(--surface);
+        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+        overflow: hidden;
+      }
+      .player-row-summary {
+        display: grid;
+        grid-template-columns: 24px minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 4px;
+        padding: 3px 5px;
+        cursor: pointer;
+        list-style: none;
+        font-weight: 700;
+        font-size: 0.6rem;
+        line-height: 1.1;
+      }
+      .player-rank {
+        width: 24px;
+        text-align: left;
+        font-weight: 800;
+        color: var(--accent);
+      }
+      .player-name {
+        min-width: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
       .player-total {
-        min-width: 76px;
-        padding: 8px 10px;
-        border-radius: 12px;
+        min-width: 44px;
+        padding: 2px 4px;
+        border-radius: 999px;
         background: var(--accent-soft);
         color: #115e59;
         font-weight: 800;
         text-align: center;
+        font-size: 0.58rem;
+      }
+      .player-row-body {
+        padding: 0 5px 5px;
       }
       .match-card {
-        margin-top: 8px;
+        margin-top: 4px;
         border: 1px solid var(--border);
-        border-radius: 12px;
+        border-radius: 8px;
         overflow: hidden;
         background: #fcfdfd;
       }
       .match-card summary {
         display: flex;
         justify-content: space-between;
-        gap: 10px;
-        padding: 10px 12px;
+        gap: 4px;
+        padding: 4px 5px;
         cursor: pointer;
         list-style: none;
         font-weight: 700;
+        font-size: 0.58rem;
+        line-height: 1.1;
       }
       .match-meta {
-        padding: 0 12px 8px;
+        padding: 0 5px 4px;
         color: var(--muted);
-        font-size: 0.82rem;
+        font-size: 0.56rem;
       }
       .breakdown-grid {
         display: flex;
         flex-wrap: wrap;
-        gap: 6px;
-        padding: 0 12px 12px;
+        gap: 3px;
+        padding: 0 5px 5px;
       }
       .breakdown-chip {
         display: inline-flex;
-        gap: 4px;
-        padding: 6px 8px;
+        gap: 3px;
+        padding: 2px 4px;
         border-radius: 999px;
         background: #eef7f6;
         color: #164e63;
-        font-size: 0.8rem;
+        font-size: 0.54rem;
+      }
+      .player-row-card.owner-highlight {
+        border-color: #f59e0b;
+        box-shadow:
+          0 0 0 2px rgba(245, 158, 11, 0.24),
+          0 6px 14px rgba(120, 53, 15, 0.08);
+        background:
+          linear-gradient(90deg, rgba(254, 243, 199, 0.78) 0%, rgba(255, 255, 255, 0.96) 18%),
+          #ffffff;
+      }
+      .owner-filters {
+        margin-top: 6px;
+        padding: 6px 8px;
+        border: 1px solid rgba(15, 118, 110, 0.14);
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.82);
+      }
+      .owner-filters-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        margin-bottom: 4px;
+      }
+      .owner-filters-title {
+        margin: 0;
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: var(--text);
+      }
+      .owner-filters-help {
+        margin: 0;
+        font-size: 0.6rem;
+        color: var(--muted);
+      }
+      .owner-filters-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        align-items: center;
+      }
+      .owner-filter,
+      .clear-owner-filters {
+        appearance: none;
+        border: 1px solid rgba(15, 118, 110, 0.2);
+        background: #ffffff;
+        color: #0f766e;
+        border-radius: 999px;
+        padding: 3px 8px;
+        font-size: 0.62rem;
+        font-weight: 800;
+        cursor: pointer;
+      }
+      .owner-filter.active {
+        background: #0f766e;
+        color: #ffffff;
+        border-color: #0f766e;
+      }
+      @media (max-width: 1450px) {
+        .players-grid {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+      }
+      @media (max-width: 1100px) {
+        .players-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+      @media (max-width: 820px) {
+        .players-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+      @media (max-width: 700px) {
+        .players-grid {
+          grid-template-columns: 1fr;
+        }
+        .player-row-summary {
+          grid-template-columns: 26px 1fr auto;
+          align-items: center;
+        }
       }
     </style>
   </head>
@@ -1122,13 +1303,66 @@ function buildPlayerDetailsHtml(players, options = {}) {
     <main class="page">
       <section class="header">
         <h1>Player Match Points</h1>
-        <p>Match-by-match fantasy points and scoring breakdown for every player processed so far.</p>
-        <a class="nav-link" href="./${escapeHtml(ownersFileName)}">Back to Owners</a>
+        <div class="header-row">
+          <p>Match-by-match fantasy points and scoring breakdown for every player processed so far.</p>
+          <a class="nav-link" href="./${escapeHtml(ownersFileName)}">Back to Owners</a>
+        </div>
       </section>
       <section class="players-grid">
-        ${playerSections}
+        ${playerGridItems}
+      </section>
+      <section class="owner-filters">
+        <div class="owner-filters-header">
+          <p class="owner-filters-title">Highlight Owners</p>
+          <p class="owner-filters-help">Select one owner to highlight their players on this page.</p>
+        </div>
+        <div class="owner-filters-grid">
+          ${ownerFilterButtons}
+          <button class="clear-owner-filters" type="button" id="clear-owner-filters">Clear All</button>
+        </div>
       </section>
     </main>
+    <script>
+      let activeOwner = "";
+      const ownerButtons = Array.from(document.querySelectorAll("[data-owner-filter]"));
+      const playerCards = Array.from(document.querySelectorAll(".player-row-card[data-owners]"));
+      const clearOwnerFiltersButton = document.getElementById("clear-owner-filters");
+
+      function applyOwnerHighlights() {
+        playerCards.forEach((card) => {
+          const owners = String(card.dataset.owners || "")
+            .split("|")
+            .filter(Boolean);
+          const isActive = activeOwner ? owners.includes(activeOwner) : false;
+          card.classList.toggle("owner-highlight", isActive);
+        });
+
+        ownerButtons.forEach((button) => {
+          const ownerName = button.dataset.ownerFilter || "";
+          button.classList.toggle("active", activeOwner === ownerName);
+        });
+      }
+
+      ownerButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const ownerName = button.dataset.ownerFilter || "";
+          if (!ownerName) {
+            return;
+          }
+
+          activeOwner = activeOwner === ownerName ? "" : ownerName;
+
+          applyOwnerHighlights();
+        });
+      });
+
+      if (clearOwnerFiltersButton) {
+        clearOwnerFiltersButton.addEventListener("click", () => {
+          activeOwner = "";
+          applyOwnerHighlights();
+        });
+      }
+    </script>
   </body>
 </html>`;
 }
@@ -1274,7 +1508,8 @@ async function printLeaderboard() {
   });
   const playerDetailsPath = writePlayerDetailsHtml(trackedPlayers, {
     fileName: playerDetailsFileName,
-    ownersFileName
+    ownersFileName,
+    ownerLeaderboard
   });
   const openedIn = openHtmlInBrowser(htmlPath);
 

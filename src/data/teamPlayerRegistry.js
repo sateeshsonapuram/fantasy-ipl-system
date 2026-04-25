@@ -165,6 +165,7 @@
     "Jaydev Unadkat",
     "Liam Livingstone",
     "Nitish Kumar Reddy",
+    "Pat Cummins",
     "Salil Arora",
     "Shivang Kumar",
     "Travis Head"

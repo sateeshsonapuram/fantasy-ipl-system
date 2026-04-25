@@ -393,14 +393,24 @@ async function scrapeLatestCrexMatch(url, existingMatches = []) {
     );
 
     const unseenUrls = matchUrls.filter((matchUrl) => !existingUrlSet.has(matchUrl));
-    const latestUrl =
-      unseenUrls[unseenUrls.length - 1] || matchUrls[matchUrls.length - 1];
+    const urlsToScrape = unseenUrls.length > 0 ? unseenUrls : [matchUrls[matchUrls.length - 1]];
+    const matches = [];
 
-    const match = await scrapeSingleCrexScorecard(page, latestUrl);
+    for (const matchUrl of urlsToScrape) {
+      try {
+        matches.push(await scrapeSingleCrexScorecard(page, matchUrl));
+      } catch (error) {
+        console.warn(`Skipping match URL due to parse error: ${matchUrl} (${error.message})`);
+      }
+    }
+
+    if (matches.length === 0) {
+      throw new Error("No CREX scorecards could be parsed from discovered latest match URLs.");
+    }
 
     return {
       source: `playwright-crex:${sourceUrl}`,
-      matches: [match]
+      matches
     };
   } finally {
     await browser.close();
