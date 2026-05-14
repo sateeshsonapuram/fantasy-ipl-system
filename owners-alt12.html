@@ -333,6 +333,44 @@
         border-top: 2px solid #86efac;
       }
 
+      .points-range-row td {
+        background: #f8fafc;
+        color: #334155;
+        border-top: 1px solid rgba(148, 163, 184, 0.35);
+        padding: 4px 5px;
+      }
+
+      .points-range-summary {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      .points-band-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 2px 5px;
+        border: 1px solid rgba(139, 92, 246, 0.2);
+        border-radius: 999px;
+        background: #ffffff;
+        line-height: 1;
+      }
+
+      .points-band-label {
+        color: #475569;
+        font-size: 0.57rem;
+        font-weight: 700;
+      }
+
+      .points-band-count {
+        min-width: 14px;
+        color: var(--accent-dark);
+        font-size: 0.6rem;
+        font-weight: 800;
+        text-align: center;
+      }
+
       .footer-note {
         margin-top: 6px;
         padding: 6px 8px;
@@ -506,7 +544,7 @@
           <a href="./player-details-alt12.html">Player Points</a>
           <a href="#points-system">Points System</a>
           <a href="#rules">Rules</a>
-          <a href="#injury-replacements">Injury Replacements</a>
+          <a href="./injury-replacements-alt12.html">Injury Replacements</a>
         </nav>
       </section>
       <section id="teams" class="teams-grid">
@@ -529,93 +567,93 @@
           </thead>
           <tbody>
             
-            <tr class="selected-player" data-team="RR">
+            <tr class="selected-player" data-team="GT">
               <td>1</td>
-              <td><span>Vaibhav Sooryavanshi</span> </td>
-              <td>560</td>
+              <td><span>Sai Sudharsan</span> </td>
+              <td>758</td>
             </tr>
           
             <tr class="selected-player" data-team="RCB">
               <td>2</td>
               <td><span>Virat Kohli</span> </td>
-              <td>508</td>
+              <td>757</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="RR">
+              <td>3</td>
+              <td><span>Vaibhav Sooryavanshi</span> </td>
+              <td>698</td>
             </tr>
           
             <tr class="selected-player" data-team="PBKS">
-              <td>3</td>
-              <td><span>Priyansh Arya</span> </td>
-              <td>392</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="GT">
               <td>4</td>
-              <td><span>Sai Sudharsan</span> </td>
-              <td>365</td>
+              <td><span>Priyansh Arya</span> </td>
+              <td>573</td>
             </tr>
           
             <tr class="selected-player" data-team="GT">
               <td>5</td>
               <td><span>Mohammed Siraj</span> </td>
-              <td>227</td>
+              <td>421</td>
             </tr>
           
             <tr class="selected-player" data-team="PBKS">
               <td>6</td>
-              <td><span>Shashank Singh</span> </td>
-              <td>203</td>
+              <td><span>Marco Jansen</span> </td>
+              <td>319</td>
             </tr>
           
-            <tr class="selected-player" data-team="MI">
+            <tr class="selected-player" data-team="RCB">
               <td>7</td>
-              <td><span>Mitchell Santner</span> </td>
-              <td>194</td>
+              <td><span>Jitesh Sharma</span> </td>
+              <td>275</td>
             </tr>
           
             <tr class="selected-player" data-team="PBKS">
               <td>8</td>
-              <td><span>Marco Jansen</span> </td>
-              <td>185</td>
+              <td><span>Shashank Singh</span> </td>
+              <td>220</td>
             </tr>
           
-            <tr class="selected-player" data-team="RCB">
+            <tr class="selected-player" data-team="MI">
               <td>9</td>
-              <td><span>Jitesh Sharma</span> </td>
-              <td>157</td>
+              <td><span>Mitchell Santner</span> </td>
+              <td>194</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="MI">
+              <td>10</td>
+              <td><span>Will Jacks</span> <span class="overseas-badge" title="Overseas player">&#9992;</span></td>
+              <td>148</td>
             </tr>
           
             <tr class="selected-player" data-team="GT">
-              <td>10</td>
+              <td>11</td>
               <td><span>Shahrukh Khan</span> </td>
-              <td>87</td>
+              <td>112</td>
             </tr>
           
             <tr class="selected-player" data-team="DC">
-              <td>11</td>
-              <td><span>Vipraj Nigam</span> </td>
-              <td>74</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="CSK">
               <td>12</td>
-              <td><span>Matt Henry</span> </td>
-              <td>68</td>
+              <td><span>Vipraj Nigam</span> </td>
+              <td>75</td>
             </tr>
           
             <tr class="" data-team="CSK">
               <td>13</td>
-              <td><span>MS Dhoni</span> </td>
-              <td>0</td>
+              <td><span>Matt Henry</span> </td>
+              <td>68</td>
             </tr>
           
             <tr class="" data-team="DC">
               <td>14</td>
               <td><span>Abishek Porel</span> </td>
-              <td>0</td>
+              <td>51</td>
             </tr>
           
-            <tr class="" data-team="MI">
+            <tr class="" data-team="CSK">
               <td>15</td>
-              <td><span>Will Jacks</span> <span class="overseas-badge" title="Overseas player">&#9992;</span></td>
+              <td><span>MS Dhoni</span> </td>
               <td>0</td>
             </tr>
           
@@ -628,8 +666,40 @@
           </tbody>
           <tfoot>
             <tr>
-              <td colspan="2">Top 11 Total</td>
-              <td>3020</td>
+              <td colspan="2">Top 12 Total</td>
+              <td>4550</td>
+            </tr>
+            <tr class="points-range-row">
+              <td colspan="3">
+                <div class="points-range-summary">
+                  
+            <span class="points-band-chip">
+              <span class="points-band-label">700+</span>
+              <span class="points-band-count">2</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">500-699</span>
+              <span class="points-band-count">2</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">300-499</span>
+              <span class="points-band-count">2</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">200-299</span>
+              <span class="points-band-count">2</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">100-199</span>
+              <span class="points-band-count">3</span>
+            </span>
+          
+                </div>
+              </td>
             </tr>
           </tfoot>
         </table>
@@ -655,91 +725,91 @@
             <tr class="selected-player" data-team="SRH">
               <td>1</td>
               <td><span>Heinrich Klaasen</span> </td>
-              <td>552</td>
+              <td>824</td>
             </tr>
           
             <tr class="selected-player" data-team="GT">
               <td>2</td>
               <td><span>Shubman Gill</span> </td>
-              <td>460</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="RCB">
-              <td>3</td>
-              <td><span>Rajat Patidar</span> </td>
-              <td>408</td>
+              <td>752</td>
             </tr>
           
             <tr class="selected-player" data-team="MI">
-              <td>4</td>
-              <td><span>Tilak Varma</span> </td>
-              <td>328</td>
+              <td>3</td>
+              <td><span>Ryan Rickelton</span> </td>
+              <td>709</td>
             </tr>
           
-            <tr class="selected-player" data-team="DC">
+            <tr class="selected-player" data-team="RCB">
+              <td>4</td>
+              <td><span>Rajat Patidar</span> </td>
+              <td>587</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="MI">
               <td>5</td>
-              <td><span>Axar Patel</span> </td>
-              <td>253</td>
+              <td><span>Tilak Varma</span> </td>
+              <td>538</td>
             </tr>
           
             <tr class="selected-player" data-team="DC">
               <td>6</td>
-              <td><span>Kuldeep Yadav</span> </td>
-              <td>237</td>
+              <td><span>Axar Patel</span> </td>
+              <td>465</td>
             </tr>
           
-            <tr class="selected-player" data-team="MI">
+            <tr class="selected-player" data-team="CSK">
               <td>7</td>
-              <td><span>Quinton de Kock</span> </td>
-              <td>221</td>
+              <td><span>Ruturaj Gaikwad</span> </td>
+              <td>457</td>
             </tr>
           
-            <tr class="selected-player" data-team="MI">
+            <tr class="selected-player" data-team="KKR">
               <td>8</td>
-              <td><span>Ryan Rickelton</span> </td>
-              <td>220</td>
+              <td><span>Vaibhav Arora</span> </td>
+              <td>330</td>
             </tr>
           
             <tr class="selected-player" data-team="KKR">
               <td>9</td>
-              <td><span>Vaibhav Arora</span> </td>
-              <td>210</td>
+              <td><span>Varun Chakaravarthy</span> </td>
+              <td>308</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="DC">
+              <td>10</td>
+              <td><span>Kuldeep Yadav</span> </td>
+              <td>244</td>
             </tr>
           
             <tr class="selected-player" data-team="CSK">
-              <td>10</td>
-              <td><span>Ruturaj Gaikwad</span> </td>
-              <td>179</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="KKR">
               <td>11</td>
-              <td><span>Varun Chakaravarthy</span> </td>
-              <td>167</td>
+              <td><span>Dewald Brevis</span> </td>
+              <td>242</td>
             </tr>
           
-            <tr class="selected-player" data-team="RR">
+            <tr class="selected-player" data-team="MI">
               <td>12</td>
+              <td><span>Quinton de Kock</span> </td>
+              <td>221</td>
+            </tr>
+          
+            <tr class="" data-team="RR">
+              <td>13</td>
               <td><span>Sandeep Sharma</span> </td>
               <td>163</td>
-            </tr>
-          
-            <tr class="" data-team="CSK">
-              <td>13</td>
-              <td><span>Dewald Brevis</span> </td>
-              <td>161</td>
             </tr>
           
             <tr class="" data-team="DC">
               <td>14</td>
               <td><span>T Natarajan</span> </td>
-              <td>127</td>
+              <td>160</td>
             </tr>
           
             <tr class="" data-team="CSK">
               <td>15</td>
               <td><span>Prashant Veer</span> </td>
-              <td>72</td>
+              <td>97</td>
             </tr>
           
             <tr class="" data-team="CSK">
@@ -751,8 +821,40 @@
           </tbody>
           <tfoot>
             <tr>
-              <td colspan="2">Top 11 Total</td>
-              <td>3398</td>
+              <td colspan="2">Top 12 Total</td>
+              <td>5677</td>
+            </tr>
+            <tr class="points-range-row">
+              <td colspan="3">
+                <div class="points-range-summary">
+                  
+            <span class="points-band-chip">
+              <span class="points-band-label">700+</span>
+              <span class="points-band-count">3</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">500-699</span>
+              <span class="points-band-count">2</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">300-499</span>
+              <span class="points-band-count">4</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">200-299</span>
+              <span class="points-band-count">3</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">100-199</span>
+              <span class="points-band-count">0</span>
+            </span>
+          
+                </div>
+              </td>
             </tr>
           </tfoot>
         </table>
@@ -775,88 +877,88 @@
           </thead>
           <tbody>
             
-            <tr class="selected-player" data-team="CSK">
+            <tr class="selected-player" data-team="GT">
               <td>1</td>
-              <td><span>Sanju Samson</span> </td>
-              <td>458</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="GT">
-              <td>2</td>
               <td><span>Jos Buttler</span> </td>
-              <td>436</td>
+              <td>735</td>
             </tr>
           
-            <tr class="selected-player" data-team="RR">
-              <td>3</td>
-              <td><span>Ravi Bishnoi</span> </td>
-              <td>361</td>
+            <tr class="selected-player" data-team="CSK">
+              <td>2</td>
+              <td><span>Sanju Samson</span> </td>
+              <td>685</td>
             </tr>
           
             <tr class="selected-player" data-team="GT">
-              <td>4</td>
+              <td>3</td>
               <td><span>Kagiso Rabada</span> </td>
-              <td>360</td>
+              <td>681</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="KKR">
+              <td>4</td>
+              <td><span>Angkrish Raghuvanshi</span> </td>
+              <td>538</td>
             </tr>
           
             <tr class="selected-player" data-team="KKR">
               <td>5</td>
-              <td><span>Angkrish Raghuvanshi</span> </td>
-              <td>313</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="CSK">
-              <td>6</td>
-              <td><span>Ayush Mhatre</span> </td>
-              <td>311</td>
+              <td><span>Rinku Singh</span> </td>
+              <td>501</td>
             </tr>
           
             <tr class="selected-player" data-team="DC">
-              <td>7</td>
+              <td>6</td>
               <td><span>Pathum Nissanka</span> </td>
-              <td>246</td>
+              <td>445</td>
             </tr>
           
-            <tr class="selected-player" data-team="KKR">
+            <tr class="selected-player" data-team="PBKS">
+              <td>7</td>
+              <td><span>Arshdeep Singh</span> </td>
+              <td>406</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="RR">
               <td>8</td>
-              <td><span>Rinku Singh</span> </td>
-              <td>241</td>
+              <td><span>Ravi Bishnoi</span> </td>
+              <td>359</td>
             </tr>
           
             <tr class="selected-player" data-team="CSK">
               <td>9</td>
-              <td><span>Shivam Dube</span> </td>
-              <td>238</td>
+              <td><span>Ayush Mhatre / A Madhwal</span> </td>
+              <td>311</td>
             </tr>
           
             <tr class="selected-player" data-team="PBKS">
               <td>10</td>
-              <td><span>Arshdeep Singh</span> </td>
-              <td>225</td>
+              <td><span>Yuzvendra Chahal</span> </td>
+              <td>297</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="CSK">
+              <td>11</td>
+              <td><span>Shivam Dube</span> </td>
+              <td>296</td>
             </tr>
           
             <tr class="selected-player" data-team="RR">
-              <td>11</td>
-              <td><span>Shimron Hetmyer</span> </td>
-              <td>158</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="PBKS">
               <td>12</td>
-              <td><span>Yuzvendra Chahal</span> </td>
-              <td>132</td>
-            </tr>
-          
-            <tr class="" data-team="PBKS">
-              <td>13</td>
-              <td><span>Nehal Wadhera</span> </td>
-              <td>121</td>
+              <td><span>Shimron Hetmyer</span> </td>
+              <td>169</td>
             </tr>
           
             <tr class="" data-team="MI">
-              <td>14</td>
+              <td>13</td>
               <td><span>Jasprit Bumrah</span> </td>
-              <td>110</td>
+              <td>151</td>
+            </tr>
+          
+            <tr class="" data-team="PBKS">
+              <td>14</td>
+              <td><span>Nehal Wadhera</span> </td>
+              <td>127</td>
             </tr>
           
             <tr class="empty-row">
@@ -874,8 +976,40 @@
           </tbody>
           <tfoot>
             <tr>
-              <td colspan="2">Top 11 Total</td>
-              <td>3479</td>
+              <td colspan="2">Top 12 Total</td>
+              <td>5423</td>
+            </tr>
+            <tr class="points-range-row">
+              <td colspan="3">
+                <div class="points-range-summary">
+                  
+            <span class="points-band-chip">
+              <span class="points-band-label">700+</span>
+              <span class="points-band-count">1</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">500-699</span>
+              <span class="points-band-count">4</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">300-499</span>
+              <span class="points-band-count">4</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">200-299</span>
+              <span class="points-band-count">2</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">100-199</span>
+              <span class="points-band-count">1</span>
+            </span>
+          
+                </div>
+              </td>
             </tr>
           </tfoot>
         </table>
@@ -901,55 +1035,55 @@
             <tr class="selected-player" data-team="SRH">
               <td>1</td>
               <td><span>Ishan Kishan</span> </td>
-              <td>517</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="RR">
-              <td>2</td>
-              <td><span>Ravindra Jadeja</span> </td>
-              <td>371</td>
+              <td>712</td>
             </tr>
           
             <tr class="selected-player" data-team="LSG">
-              <td>3</td>
+              <td>2</td>
               <td><span>Mitchell Marsh</span> </td>
-              <td>320</td>
+              <td>582</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="GT">
+              <td>3</td>
+              <td><span>Jason Holder</span> </td>
+              <td>529</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="RR">
+              <td>4</td>
+              <td><span>Ravindra Jadeja</span> </td>
+              <td>515</td>
             </tr>
           
             <tr class="selected-player" data-team="RCB">
-              <td>4</td>
-              <td><span>Krunal Pandya</span> </td>
-              <td>279</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="MI">
               <td>5</td>
-              <td><span>Suryakumar Yadav</span> </td>
-              <td>242</td>
+              <td><span>Krunal Pandya</span> </td>
+              <td>515</td>
             </tr>
           
             <tr class="selected-player" data-team="CSK">
               <td>6</td>
               <td><span>Noor Ahmad</span> </td>
-              <td>222</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="MI">
-              <td>7</td>
-              <td><span>Sherfane Rutherford</span> </td>
-              <td>183</td>
+              <td>392</td>
             </tr>
           
             <tr class="selected-player" data-team="LSG">
-              <td>8</td>
+              <td>7</td>
               <td><span>Nicholas Pooran</span> </td>
-              <td>148</td>
+              <td>330</td>
             </tr>
           
-            <tr class="selected-player" data-team="GT">
+            <tr class="selected-player" data-team="MI">
+              <td>8</td>
+              <td><span>Suryakumar Yadav</span> </td>
+              <td>324</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="MI">
               <td>9</td>
-              <td><span>Jason Holder</span> </td>
-              <td>71</td>
+              <td><span>Sherfane Rutherford</span> </td>
+              <td>210</td>
             </tr>
           
             <tr class="selected-player" data-team="CSK">
@@ -961,13 +1095,13 @@
             <tr class="selected-player" data-team="DC">
               <td>11</td>
               <td><span>Auqib Nabi</span> </td>
-              <td>5</td>
+              <td>30</td>
             </tr>
           
             <tr class="selected-player" data-team="GT">
               <td>12</td>
               <td><span>Sai Kishore</span> </td>
-              <td>0</td>
+              <td>4</td>
             </tr>
           
             <tr class="" data-team="KKR">
@@ -997,8 +1131,40 @@
           </tbody>
           <tfoot>
             <tr>
-              <td colspan="2">Top 11 Total</td>
-              <td>2428</td>
+              <td colspan="2">Top 12 Total</td>
+              <td>4213</td>
+            </tr>
+            <tr class="points-range-row">
+              <td colspan="3">
+                <div class="points-range-summary">
+                  
+            <span class="points-band-chip">
+              <span class="points-band-label">700+</span>
+              <span class="points-band-count">1</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">500-699</span>
+              <span class="points-band-count">4</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">300-499</span>
+              <span class="points-band-count">3</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">200-299</span>
+              <span class="points-band-count">1</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">100-199</span>
+              <span class="points-band-count">0</span>
+            </span>
+          
+                </div>
+              </td>
             </tr>
           </tfoot>
         </table>
@@ -1024,79 +1190,79 @@
             <tr class="selected-player" data-team="SRH">
               <td>1</td>
               <td><span>Abhishek Sharma</span> </td>
-              <td>598</td>
+              <td>780</td>
             </tr>
           
             <tr class="selected-player" data-team="PBKS">
               <td>2</td>
               <td><span>Prabhsimran Singh</span> </td>
-              <td>476</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="RR">
-              <td>3</td>
-              <td><span>Yashasvi Jaiswal</span> </td>
-              <td>398</td>
+              <td>707</td>
             </tr>
           
             <tr class="selected-player" data-team="KKR">
-              <td>4</td>
+              <td>3</td>
               <td><span>Cameron Green</span> </td>
-              <td>285</td>
+              <td>529</td>
             </tr>
           
-            <tr class="selected-player" data-team="DC">
-              <td>5</td>
-              <td><span>Nitish Rana</span> </td>
-              <td>281</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="LSG">
-              <td>6</td>
-              <td><span>Mohammad Shami</span> </td>
-              <td>244</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="DC">
-              <td>7</td>
-              <td><span>Lungi Ngidi</span> </td>
-              <td>230</td>
+            <tr class="selected-player" data-team="RR">
+              <td>4</td>
+              <td><span>Yashasvi Jaiswal</span> </td>
+              <td>503</td>
             </tr>
           
             <tr class="selected-player" data-team="MI">
-              <td>8</td>
+              <td>5</td>
               <td><span>Rohit Sharma</span> </td>
-              <td>204</td>
+              <td>397</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="DC">
+              <td>6</td>
+              <td><span>Nitish Rana</span> </td>
+              <td>374</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="LSG">
+              <td>7</td>
+              <td><span>Mohammad Shami</span> </td>
+              <td>326</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="DC">
+              <td>8</td>
+              <td><span>David Miller</span> </td>
+              <td>305</td>
             </tr>
           
             <tr class="selected-player" data-team="DC">
               <td>9</td>
-              <td><span>David Miller</span> </td>
-              <td>191</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="LSG">
-              <td>10</td>
-              <td><span>Digvesh Singh</span> </td>
-              <td>115</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="MI">
-              <td>11</td>
-              <td><span>Trent Boult</span> </td>
-              <td>40</td>
+              <td><span>Lungi Ngidi</span> </td>
+              <td>270</td>
             </tr>
           
             <tr class="selected-player" data-team="SRH">
-              <td>12</td>
+              <td>10</td>
               <td><span>Pat Cummins</span> </td>
-              <td>39</td>
+              <td>207</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="LSG">
+              <td>11</td>
+              <td><span>Digvesh Singh</span> </td>
+              <td>187</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="MI">
+              <td>12</td>
+              <td><span>Trent Boult</span> </td>
+              <td>84</td>
             </tr>
           
             <tr class="" data-team="RR">
               <td>13</td>
-              <td><span>Sam Curran</span> <span class="overseas-badge" title="Overseas player">&#9992;</span></td>
-              <td>0</td>
+              <td><span>Sam Curran / D Shanaka</span> </td>
+              <td>28</td>
             </tr>
           
             <tr class="empty-row">
@@ -1120,8 +1286,40 @@
           </tbody>
           <tfoot>
             <tr>
-              <td colspan="2">Top 11 Total</td>
-              <td>3101</td>
+              <td colspan="2">Top 12 Total</td>
+              <td>4669</td>
+            </tr>
+            <tr class="points-range-row">
+              <td colspan="3">
+                <div class="points-range-summary">
+                  
+            <span class="points-band-chip">
+              <span class="points-band-label">700+</span>
+              <span class="points-band-count">2</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">500-699</span>
+              <span class="points-band-count">2</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">300-499</span>
+              <span class="points-band-count">4</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">200-299</span>
+              <span class="points-band-count">2</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">100-199</span>
+              <span class="points-band-count">1</span>
+            </span>
+          
+                </div>
+              </td>
             </tr>
           </tfoot>
         </table>
@@ -1144,94 +1342,94 @@
           </thead>
           <tbody>
             
-            <tr class="selected-player" data-team="RR">
+            <tr class="selected-player" data-team="RCB">
               <td>1</td>
-              <td><span>Dhruv Jurel</span> </td>
-              <td>471</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="RCB">
-              <td>2</td>
               <td><span>Bhuvneshwar Kumar</span> </td>
-              <td>354</td>
+              <td>731</td>
             </tr>
           
-            <tr class="selected-player" data-team="RCB">
+            <tr class="selected-player" data-team="RR">
+              <td>2</td>
+              <td><span>Dhruv Jurel</span> </td>
+              <td>608</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="SRH">
               <td>3</td>
-              <td><span>Phil Salt</span> </td>
-              <td>348</td>
+              <td><span>Travis Head</span> </td>
+              <td>551</td>
             </tr>
           
             <tr class="selected-player" data-team="GT">
               <td>4</td>
-              <td><span>Prasidh Krishna</span> </td>
-              <td>334</td>
+              <td><span>Washington Sundar</span> </td>
+              <td>531</td>
             </tr>
           
-            <tr class="selected-player" data-team="GT">
+            <tr class="selected-player" data-team="KKR">
               <td>5</td>
-              <td><span>Washington Sundar</span> </td>
-              <td>285</td>
+              <td><span>Sunil Narine</span> </td>
+              <td>425</td>
             </tr>
           
             <tr class="selected-player" data-team="LSG">
               <td>6</td>
               <td><span>Aiden Markram</span> </td>
-              <td>281</td>
+              <td>411</td>
             </tr>
           
-            <tr class="selected-player" data-team="SRH">
+            <tr class="selected-player" data-team="KKR">
               <td>7</td>
-              <td><span>Travis Head</span> </td>
-              <td>280</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="KKR">
-              <td>8</td>
-              <td><span>Sunil Narine</span> </td>
-              <td>246</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="KKR">
-              <td>9</td>
               <td><span>Ajinkya Rahane</span> </td>
-              <td>240</td>
+              <td>401</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="GT">
+              <td>8</td>
+              <td><span>Prasidh Krishna</span> </td>
+              <td>388</td>
             </tr>
           
             <tr class="selected-player" data-team="RCB">
-              <td>10</td>
+              <td>9</td>
               <td><span>Josh Hazlewood</span> </td>
-              <td>146</td>
+              <td>367</td>
             </tr>
           
             <tr class="selected-player" data-team="KKR">
-              <td>11</td>
+              <td>10</td>
               <td><span>Finn Allen</span> <span class="overseas-badge" title="Overseas player">&#9992;</span></td>
-              <td>138</td>
+              <td>362</td>
             </tr>
           
             <tr class="selected-player" data-team="PBKS">
-              <td>12</td>
+              <td>11</td>
               <td><span>Marcus Stoinis</span> </td>
-              <td>104</td>
+              <td>349</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="RCB">
+              <td>12</td>
+              <td><span>Phil Salt</span> </td>
+              <td>348</td>
             </tr>
           
             <tr class="" data-team="MI">
               <td>13</td>
               <td><span>Deepak Chahar</span> </td>
-              <td>48</td>
-            </tr>
-          
-            <tr class="" data-team="SRH">
-              <td>14</td>
-              <td><span>Harshal Patel</span> </td>
-              <td>9</td>
+              <td>167</td>
             </tr>
           
             <tr class="" data-team="DC">
-              <td>15</td>
+              <td>14</td>
               <td><span>Mitchell Starc</span> </td>
-              <td>0</td>
+              <td>155</td>
+            </tr>
+          
+            <tr class="" data-team="SRH">
+              <td>15</td>
+              <td><span>Harshal Patel</span> </td>
+              <td>20</td>
             </tr>
           
             <tr class="empty-row">
@@ -1243,8 +1441,40 @@
           </tbody>
           <tfoot>
             <tr>
-              <td colspan="2">Top 11 Total</td>
-              <td>3227</td>
+              <td colspan="2">Top 12 Total</td>
+              <td>5472</td>
+            </tr>
+            <tr class="points-range-row">
+              <td colspan="3">
+                <div class="points-range-summary">
+                  
+            <span class="points-band-chip">
+              <span class="points-band-label">700+</span>
+              <span class="points-band-count">1</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">500-699</span>
+              <span class="points-band-count">3</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">300-499</span>
+              <span class="points-band-count">8</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">200-299</span>
+              <span class="points-band-count">0</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">100-199</span>
+              <span class="points-band-count">0</span>
+            </span>
+          
+                </div>
+              </td>
             </tr>
           </tfoot>
         </table>
@@ -1270,91 +1500,91 @@
             <tr class="selected-player" data-team="DC">
               <td>1</td>
               <td><span>KL Rahul</span> </td>
-              <td>541</td>
+              <td>735</td>
             </tr>
           
-            <tr class="selected-player" data-team="RR">
+            <tr class="selected-player" data-team="RCB">
               <td>2</td>
-              <td><span>Jofra Archer</span> </td>
-              <td>461</td>
+              <td><span>Devdutt Padikkal</span> </td>
+              <td>657</td>
             </tr>
           
             <tr class="selected-player" data-team="PBKS">
               <td>3</td>
               <td><span>Shreyas Iyer</span> </td>
-              <td>450</td>
+              <td>646</td>
             </tr>
           
             <tr class="selected-player" data-team="SRH">
               <td>4</td>
               <td><span>Nitish Kumar Reddy</span> </td>
-              <td>448</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="RCB">
-              <td>5</td>
-              <td><span>Devdutt Padikkal</span> </td>
-              <td>385</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="DC">
-              <td>6</td>
-              <td><span>Tristan Stubbs</span> </td>
-              <td>310</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="RCB">
-              <td>7</td>
-              <td><span>Tim David</span> <span class="overseas-badge" title="Overseas player">&#9992;</span></td>
-              <td>293</td>
+              <td>583</td>
             </tr>
           
             <tr class="selected-player" data-team="GT">
-              <td>8</td>
+              <td>5</td>
               <td><span>Rashid Khan</span> </td>
-              <td>285</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="LSG">
-              <td>9</td>
-              <td><span>Rishabh Pant</span> </td>
-              <td>281</td>
-            </tr>
-          
-            <tr class="selected-player" data-team="MI">
-              <td>10</td>
-              <td><span>Hardik Pandya</span> </td>
-              <td>232</td>
+              <td>583</td>
             </tr>
           
             <tr class="selected-player" data-team="RR">
-              <td>11</td>
+              <td>6</td>
+              <td><span>Jofra Archer</span> </td>
+              <td>526</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="LSG">
+              <td>7</td>
+              <td><span>Rishabh Pant</span> </td>
+              <td>462</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="DC">
+              <td>8</td>
+              <td><span>Tristan Stubbs</span> </td>
+              <td>431</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="RR">
+              <td>9</td>
               <td><span>Riyan Parag</span> </td>
-              <td>216</td>
+              <td>395</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="RCB">
+              <td>10</td>
+              <td><span>Tim David</span> <span class="overseas-badge" title="Overseas player">&#9992;</span></td>
+              <td>384</td>
+            </tr>
+          
+            <tr class="selected-player" data-team="MI">
+              <td>11</td>
+              <td><span>Hardik Pandya</span> </td>
+              <td>330</td>
             </tr>
           
             <tr class="selected-player" data-team="RCB">
               <td>12</td>
               <td><span>Suyash Sharma</span> </td>
-              <td>147</td>
-            </tr>
-          
-            <tr class="" data-team="SRH">
-              <td>13</td>
-              <td><span>Liam Livingstone</span> </td>
-              <td>57</td>
+              <td>231</td>
             </tr>
           
             <tr class="" data-team="RCB">
-              <td>14</td>
+              <td>13</td>
               <td><span>Venkatesh Iyer</span> </td>
-              <td>44</td>
+              <td>65</td>
+            </tr>
+          
+            <tr class="" data-team="SRH">
+              <td>14</td>
+              <td><span>Liam Livingstone</span> </td>
+              <td>57</td>
             </tr>
           
             <tr class="" data-team="PBKS">
               <td>15</td>
               <td><span>Lockie Ferguson</span> </td>
-              <td>0</td>
+              <td>25</td>
             </tr>
           
             <tr class="empty-row">
@@ -1366,8 +1596,40 @@
           </tbody>
           <tfoot>
             <tr>
-              <td colspan="2">Top 11 Total</td>
-              <td>4049</td>
+              <td colspan="2">Top 12 Total</td>
+              <td>5963</td>
+            </tr>
+            <tr class="points-range-row">
+              <td colspan="3">
+                <div class="points-range-summary">
+                  
+            <span class="points-band-chip">
+              <span class="points-band-label">700+</span>
+              <span class="points-band-count">1</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">500-699</span>
+              <span class="points-band-count">5</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">300-499</span>
+              <span class="points-band-count">5</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">200-299</span>
+              <span class="points-band-count">1</span>
+            </span>
+          
+            <span class="points-band-chip">
+              <span class="points-band-label">100-199</span>
+              <span class="points-band-count">0</span>
+            </span>
+          
+                </div>
+              </td>
             </tr>
           </tfoot>
         </table>
@@ -1387,43 +1649,43 @@
         <tr class="winner-rank">
           <td><span class="rank-pill rank-1"></span></td>
           <td>Susheel</td>
-          <td>4049</td>
+          <td>5963</td>
         </tr>
       
         <tr class="winner-rank">
           <td><span class="rank-pill rank-2"></span></td>
-          <td>Sateesh</td>
-          <td>3479</td>
+          <td>Kamal</td>
+          <td>5677</td>
         </tr>
       
         <tr class="">
           <td><span class="rank-pill rank-3"></span></td>
-          <td>Kamal</td>
-          <td>3398</td>
+          <td>Suresh</td>
+          <td>5472</td>
         </tr>
       
         <tr class="">
           <td><span class="rank-pill rank-4"></span></td>
-          <td>Suresh</td>
-          <td>3227</td>
+          <td>Sateesh</td>
+          <td>5423</td>
         </tr>
       
         <tr class="">
           <td><span class="rank-pill rank-5"></span></td>
           <td>Subhash</td>
-          <td>3101</td>
+          <td>4669</td>
         </tr>
       
         <tr class="">
           <td><span class="rank-pill rank-6"></span></td>
           <td>Bharath</td>
-          <td>3020</td>
+          <td>4550</td>
         </tr>
       
         <tr class="">
           <td><span class="rank-pill rank-7"></span></td>
           <td>Sriram</td>
-          <td>2428</td>
+          <td>4213</td>
         </tr>
       
           </tbody>

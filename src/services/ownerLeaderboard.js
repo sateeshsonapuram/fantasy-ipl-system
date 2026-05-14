@@ -1,5 +1,6 @@
 const { calculateTeamPoints } = require("./teamSelector");
 const { resolveTeamPlayerName, teamPlayerRegistry } = require("./playerRegistry");
+const injuryReplacements = require("../data/injuryReplacements");
 
 function normalizePlayerName(name) {
   return String(name)
@@ -13,6 +14,26 @@ function normalizePlayerName(name) {
 
 function toTitleCase(name) {
   return String(name || "").replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
+
+function toShortDisplayName(name) {
+  const tokens = String(name || "")
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
+
+  if (tokens.length < 2) {
+    return toTitleCase(name);
+  }
+
+  return `${tokens[0].charAt(0).toUpperCase()} ${tokens[tokens.length - 1]}`;
+}
+
+function clonePlayerRecord(player) {
+  return {
+    ...player,
+    matchBreakdowns: [...(player.matchBreakdowns || [])]
+  };
 }
 
 function buildPlayerIndex(players) {
@@ -52,6 +73,43 @@ function findUniqueCandidate(candidates) {
   }
 
   return candidates[0];
+}
+
+function buildInjuryReplacementMap() {
+  return injuryReplacements.reduce((map, rule) => {
+    const injuredKey = normalizePlayerName(rule.injuredPlayer);
+    if (!injuredKey) {
+      return map;
+    }
+
+    map.set(injuredKey, {
+      injuredPlayer: rule.injuredPlayer,
+      replacementPlayer: rule.replacementPlayer
+    });
+    return map;
+  }, new Map());
+}
+
+function mergeReplacementIntoSlot(basePlayer, replacementPlayer) {
+  const mergedBase = clonePlayerRecord(basePlayer);
+
+  if (!replacementPlayer || replacementPlayer.isMissingStat) {
+    return mergedBase;
+  }
+
+  mergedBase.totalPoints = (mergedBase.totalPoints || 0) + (replacementPlayer.totalPoints || 0);
+  mergedBase.matchesPlayed = (mergedBase.matchesPlayed || 0) + (replacementPlayer.matchesPlayed || 0);
+  mergedBase.matchBreakdowns = [
+    ...(mergedBase.matchBreakdowns || []),
+    ...(replacementPlayer.matchBreakdowns || [])
+  ];
+  mergedBase.replacementPlayers = [
+    ...(mergedBase.replacementPlayers || []),
+    replacementPlayer.name
+  ];
+  mergedBase.name = `${mergedBase.name} / ${toShortDisplayName(replacementPlayer.name)}`;
+
+  return mergedBase;
 }
 
 function resolveOwnerPlayerFromPool(playerName, players) {
@@ -182,31 +240,64 @@ function resolveOwnerSquadPlayer(playerName, players) {
 
 function calculateOwnerLeaderboard(owners, players, teamSize) {
   const playerIndex = buildPlayerIndex(players);
+  const injuryReplacementMap = buildInjuryReplacementMap();
 
   return owners
     .map((owner) => {
+      const trackedPlayers = [];
       const squadPlayers = owner.squadPlayerNames.map((playerName) => {
         const resolved = resolveOwnerSquadPlayer(playerName, players);
 
         if (resolved.matchedPlayer) {
-          return resolved.matchedPlayer;
+          trackedPlayers.push(resolved.matchedPlayer);
         }
 
-        const indexKey = `${resolved.team}|${normalizePlayerName(resolved.canonicalName)}`;
-        const matchedPlayer = playerIndex.byTeamAndName.get(indexKey);
+        const normalizedPlayerName = normalizePlayerName(playerName);
+        let basePlayer;
 
-        if (matchedPlayer) {
-          return matchedPlayer;
+        if (resolved.matchedPlayer) {
+          basePlayer = clonePlayerRecord(resolved.matchedPlayer);
+        } else {
+          const indexKey = `${resolved.team}|${normalizePlayerName(resolved.canonicalName)}`;
+          const matchedPlayer = playerIndex.byTeamAndName.get(indexKey);
+
+          if (matchedPlayer) {
+            trackedPlayers.push(matchedPlayer);
+            basePlayer = clonePlayerRecord(matchedPlayer);
+          }
         }
 
-        return {
-          id: `missing-${owner.id}-${normalizePlayerName(playerName)}`,
-          name: playerName,
-          team: resolved.team,
-          totalPoints: 0,
-          matchesPlayed: 0,
-          isMissingStat: true
-        };
+        if (!basePlayer) {
+          basePlayer = {
+            id: `missing-${owner.id}-${normalizePlayerName(playerName)}`,
+            name: playerName,
+            team: resolved.team,
+            totalPoints: 0,
+            matchesPlayed: 0,
+            isMissingStat: true,
+            matchBreakdowns: []
+          };
+        }
+
+        const replacementRule = injuryReplacementMap.get(normalizedPlayerName);
+        if (replacementRule) {
+          const replacementResolved = resolveOwnerSquadPlayer(replacementRule.replacementPlayer, players);
+          let replacementMatch = replacementResolved.matchedPlayer;
+
+          if (!replacementMatch) {
+            const replacementKey = `${replacementResolved.team}|${normalizePlayerName(
+              replacementResolved.canonicalName
+            )}`;
+            replacementMatch = playerIndex.byTeamAndName.get(replacementKey) || null;
+          }
+
+          if (replacementMatch) {
+            trackedPlayers.push(replacementMatch);
+            basePlayer = mergeReplacementIntoSlot(basePlayer, replacementMatch);
+          }
+        }
+
+        return basePlayer;
       });
 
       const teamSelection = calculateTeamPoints(squadPlayers, teamSize);
@@ -220,6 +311,7 @@ function calculateOwnerLeaderboard(owners, players, teamSize) {
         playersWithStats,
         missingPlayers,
         squadPlayers,
+        trackedPlayers,
         selectedPlayers: teamSelection.selectedPlayers,
         totalPoints: teamSelection.totalPoints
       };

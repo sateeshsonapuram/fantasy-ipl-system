@@ -1,5 +1,6 @@
 ﻿module.exports = {
   CSK: [
+    "Akash Madhwal",
     "Anshul Kamboj",
     "Ayush Mhatre",
     "Dewald Brevis",

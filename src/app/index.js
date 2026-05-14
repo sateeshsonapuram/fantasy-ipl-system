@@ -3,6 +3,7 @@ const path = require("path");
 const { spawn } = require("child_process");
 const { fetchMatches } = require("../data/matches");
 const { fetchOwners } = require("../data/owners");
+const injuryReplacements = require("../data/injuryReplacements");
 const {
   aggregatePlayerPoints
 } = require("../services/playerAggregation");
@@ -88,7 +89,8 @@ function buildTrackedPlayers(ownerLeaderboard) {
   const trackedPlayersByKey = new Map();
 
   ownerLeaderboard.forEach((owner) => {
-    owner.squadPlayers.forEach((player) => {
+    const sourcePlayers = owner.trackedPlayers || owner.squadPlayers;
+    sourcePlayers.forEach((player) => {
       const playerKey =
         player.id && !String(player.id).startsWith("missing-")
           ? `id:${player.id}`
@@ -115,8 +117,29 @@ function buildTrackedPlayers(ownerLeaderboard) {
   );
 }
 
+function buildPointThresholds(selectedPlayers) {
+  const ranges = [
+    { label: "700+", min: 700, max: Infinity },
+    { label: "500-699", min: 500, max: 699 },
+    { label: "300-499", min: 300, max: 499 },
+    { label: "200-299", min: 200, max: 299 },
+    { label: "100-199", min: 100, max: 199 }
+  ];
+
+  return ranges.map((range) => ({
+    label: range.label,
+    count: selectedPlayers.filter((player) => {
+      const totalPoints = Number(player.totalPoints) || 0;
+      return totalPoints >= range.min && totalPoints <= range.max;
+    }).length
+  }));
+}
+
 function buildOwnersHtml(ownerLeaderboard, options = {}) {
   const playerDetailsFileName = options.playerDetailsFileName || "player-details.html";
+  const injuryReplacementsFileName =
+    options.injuryReplacementsFileName || "injury-replacements.html";
+  const ownerTeamSize = Math.max(1, Number(options.ownerTeamSize || 11));
   const alphabeticalTeams = [...ownerLeaderboard].sort((firstOwner, secondOwner) =>
     firstOwner.name.localeCompare(secondOwner.name)
   );
@@ -156,7 +179,6 @@ function buildOwnersHtml(ownerLeaderboard, options = {}) {
   const pointsColumnWidth = 24;
   const numberColumnWidth = 12;
   const nameColumnWidth = 100 - pointsColumnWidth - numberColumnWidth;
-
   const rankRows = ownerLeaderboard
     .map(
       (owner, index) => `
@@ -213,6 +235,17 @@ function buildOwnersHtml(ownerLeaderboard, options = {}) {
       const sortedSquadPlayers = [...owner.squadPlayers].sort(
         (firstPlayer, secondPlayer) => secondPlayer.totalPoints - firstPlayer.totalPoints
       );
+      const pointThresholds = buildPointThresholds(owner.selectedPlayers);
+      const pointBandSummary = pointThresholds
+        .map(
+          (threshold) => `
+            <span class="points-band-chip">
+              <span class="points-band-label">${threshold.label}</span>
+              <span class="points-band-count">${threshold.count}</span>
+            </span>
+          `
+        )
+        .join("");
       const playerRows = Array.from({ length: maxSquadSize }, (_, index) => {
         const player = sortedSquadPlayers[index];
 
@@ -264,8 +297,15 @@ function buildOwnersHtml(ownerLeaderboard, options = {}) {
           </tbody>
           <tfoot>
             <tr>
-              <td colspan="2">Top 11 Total</td>
+              <td colspan="2">Top ${ownerTeamSize} Total</td>
               <td>${owner.totalPoints}</td>
+            </tr>
+            <tr class="points-range-row">
+              <td colspan="3">
+                <div class="points-range-summary">
+                  ${pointBandSummary}
+                </div>
+              </td>
             </tr>
           </tfoot>
         </table>
@@ -281,7 +321,6 @@ function buildOwnersHtml(ownerLeaderboard, options = {}) {
       })
       .join("");
   const teamColorScript = JSON.stringify(teamColorMap);
-
   return `<!DOCTYPE html>
 <html lang="en">
   <head>
@@ -617,6 +656,44 @@ function buildOwnersHtml(ownerLeaderboard, options = {}) {
         border-top: 2px solid #86efac;
       }
 
+      .points-range-row td {
+        background: #f8fafc;
+        color: #334155;
+        border-top: 1px solid rgba(148, 163, 184, 0.35);
+        padding: 4px 5px;
+      }
+
+      .points-range-summary {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      .points-band-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 2px 5px;
+        border: 1px solid rgba(139, 92, 246, 0.2);
+        border-radius: 999px;
+        background: #ffffff;
+        line-height: 1;
+      }
+
+      .points-band-label {
+        color: #475569;
+        font-size: 0.57rem;
+        font-weight: 700;
+      }
+
+      .points-band-count {
+        min-width: 14px;
+        color: var(--accent-dark);
+        font-size: 0.6rem;
+        font-weight: 800;
+        text-align: center;
+      }
+
       .footer-note {
         margin-top: 6px;
         padding: 6px 8px;
@@ -790,7 +867,7 @@ function buildOwnersHtml(ownerLeaderboard, options = {}) {
           <a href="./${escapeHtml(playerDetailsFileName)}">Player Points</a>
           <a href="#points-system">Points System</a>
           <a href="#rules">Rules</a>
-          <a href="#injury-replacements">Injury Replacements</a>
+          <a href="./${escapeHtml(injuryReplacementsFileName)}">Injury Replacements</a>
         </nav>
       </section>
       <section id="teams" class="teams-grid">
@@ -939,6 +1016,8 @@ function buildPlayerOwnerMap(ownerLeaderboard) {
 
 function buildPlayerDetailsHtml(players, options = {}) {
   const ownersFileName = options.ownersFileName || "owners.html";
+  const injuryReplacementsFileName =
+    options.injuryReplacementsFileName || "injury-replacements.html";
   const ownerLeaderboard = options.ownerLeaderboard || [];
   const playerOwnerMap = buildPlayerOwnerMap(ownerLeaderboard);
   const ownerNames = ownerLeaderboard.map((owner) => owner.name);
@@ -1098,6 +1177,12 @@ function buildPlayerDetailsHtml(players, options = {}) {
         align-items: center;
         justify-content: space-between;
         gap: 10px;
+      }
+      .header-links {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex: 0 0 auto;
       }
       .header p {
         margin: 0;
@@ -1289,6 +1374,13 @@ function buildPlayerDetailsHtml(players, options = {}) {
         }
       }
       @media (max-width: 700px) {
+        .header-row {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+        .header-links {
+          gap: 8px;
+        }
         .players-grid {
           grid-template-columns: 1fr;
         }
@@ -1305,7 +1397,10 @@ function buildPlayerDetailsHtml(players, options = {}) {
         <h1>Player Match Points</h1>
         <div class="header-row">
           <p>Match-by-match fantasy points and scoring breakdown for every player processed so far.</p>
-          <a class="nav-link" href="./${escapeHtml(ownersFileName)}">Back to Owners</a>
+          <div class="header-links">
+            <a class="nav-link" href="./${escapeHtml(injuryReplacementsFileName)}">Injury Replacements</a>
+            <a class="nav-link" href="./${escapeHtml(ownersFileName)}">Back to Owners</a>
+          </div>
         </div>
       </section>
       <section class="players-grid">
@@ -1371,6 +1466,142 @@ function writePlayerDetailsHtml(players, options = {}) {
   const fileName = options.fileName || "player-details.html";
   const htmlPath = path.resolve(__dirname, `../../${fileName}`);
   const html = buildPlayerDetailsHtml(players, options);
+  fs.writeFileSync(htmlPath, html, "utf8");
+  return htmlPath;
+}
+
+function buildInjuryReplacementsHtml(options = {}) {
+  const ownersFileName = options.ownersFileName || "owners.html";
+  const replacementRows = injuryReplacements.length
+    ? injuryReplacements
+        .map(
+          (entry, index) => `
+            <tr>
+              <td>${index + 1}</td>
+              <td>${escapeHtml(entry.injuredPlayer)}</td>
+              <td>${escapeHtml(entry.replacementPlayer)}</td>
+            </tr>
+          `
+        )
+        .join("")
+    : `
+      <tr>
+        <td colspan="3">No official injury replacements have been added yet.</td>
+      </tr>
+    `;
+
+  return `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Injury Replacements</title>
+    <style>
+      :root {
+        --bg: #f8f5ef;
+        --surface: #ffffff;
+        --text: #1f2937;
+        --muted: #6b7280;
+        --accent: #8b5cf6;
+        --border: #ddd6fe;
+        --header: #f5f3ff;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        background:
+          radial-gradient(circle at top left, #fef3c7 0%, transparent 22%),
+          radial-gradient(circle at top right, #e9d5ff 0%, transparent 26%),
+          linear-gradient(180deg, #fffaf5 0%, var(--bg) 100%);
+        color: var(--text);
+      }
+      .page {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 12px;
+      }
+      .header {
+        margin-bottom: 10px;
+        padding: 12px 14px;
+        border: 1px solid rgba(139, 92, 246, 0.16);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.88);
+      }
+      .header h1 {
+        margin: 0 0 4px;
+        font-size: 1.1rem;
+      }
+      .header p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+      .nav-link {
+        display: inline-block;
+        margin-top: 8px;
+        color: var(--accent);
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 0.82rem;
+      }
+      .table-wrap {
+        border: 1px solid rgba(139, 92, 246, 0.14);
+        border-radius: 12px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.9);
+      }
+      .stats-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.86rem;
+      }
+      .stats-table th,
+      .stats-table td {
+        border: 1px solid var(--border);
+        padding: 8px 10px;
+        text-align: left;
+      }
+      .stats-table thead th {
+        background: var(--header);
+      }
+      .stats-table th:first-child,
+      .stats-table td:first-child {
+        width: 48px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="header">
+        <h1>Injury Replacements</h1>
+        <p>Official team-announced injury replacements tracked in this fantasy system.</p>
+        <a class="nav-link" href="./${escapeHtml(ownersFileName)}">Back to Owners</a>
+      </section>
+      <section class="table-wrap">
+        <table class="stats-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Original Player</th>
+              <th>Official Replacement</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${replacementRows}
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>`;
+}
+
+function writeInjuryReplacementsHtml(options = {}) {
+  const fileName = options.fileName || "injury-replacements.html";
+  const htmlPath = path.resolve(__dirname, `../../${fileName}`);
+  const html = buildInjuryReplacementsHtml(options);
   fs.writeFileSync(htmlPath, html, "utf8");
   return htmlPath;
 }
@@ -1493,12 +1724,15 @@ async function printLeaderboard() {
   const outputSuffix = buildOutputSuffix(ownerSet);
   const ownersFileName = `owners${outputSuffix}.html`;
   const playerDetailsFileName = `player-details${outputSuffix}.html`;
+  const injuryReplacementsFileName = `injury-replacements${outputSuffix}.html`;
   const playerPointsFileName = `player-points${outputSuffix}.json`;
   const ownerLeaderboard = calculateOwnerLeaderboard(owners, players, teamSize);
   const trackedPlayers = buildTrackedPlayers(ownerLeaderboard);
   const htmlPath = writeOwnersHtml(ownerLeaderboard, {
     fileName: ownersFileName,
-    playerDetailsFileName
+    playerDetailsFileName,
+    injuryReplacementsFileName,
+    ownerTeamSize: teamSize
   });
   const playerPointsPath = writeIncrementalPlayerPointsJson({
     processedMatchIds: matches.map((match) => match.id),
@@ -1509,7 +1743,12 @@ async function printLeaderboard() {
   const playerDetailsPath = writePlayerDetailsHtml(trackedPlayers, {
     fileName: playerDetailsFileName,
     ownersFileName,
+    injuryReplacementsFileName,
     ownerLeaderboard
+  });
+  const injuryReplacementsPath = writeInjuryReplacementsHtml({
+    fileName: injuryReplacementsFileName,
+    ownersFileName
   });
   const openedIn = openHtmlInBrowser(htmlPath);
 
@@ -1547,6 +1786,7 @@ async function printLeaderboard() {
   console.log(`Owners HTML Generated: ${htmlPath}`);
   console.log(`Player Points JSON Generated: ${playerPointsPath}`);
   console.log(`Player Details HTML Generated: ${playerDetailsPath}`);
+  console.log(`Injury Replacements HTML Generated: ${injuryReplacementsPath}`);
   console.log(
     `Player Cache Mode: ${
       playerPointsSource === "official"

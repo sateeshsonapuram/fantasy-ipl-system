@@ -39,6 +39,12 @@
         justify-content: space-between;
         gap: 10px;
       }
+      .header-links {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex: 0 0 auto;
+      }
       .header p {
         margin: 0;
         color: var(--muted);
@@ -229,6 +235,13 @@
         }
       }
       @media (max-width: 700px) {
+        .header-row {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+        .header-links {
+          gap: 8px;
+        }
         .players-grid {
           grid-template-columns: 1fr;
         }
@@ -245,7 +258,10 @@
         <h1>Player Match Points</h1>
         <div class="header-row">
           <p>Match-by-match fantasy points and scoring breakdown for every player processed so far.</p>
-          <a class="nav-link" href="./owners-alt12.html">Back to Owners</a>
+          <div class="header-links">
+            <a class="nav-link" href="./injury-replacements-alt12.html">Injury Replacements</a>
+            <a class="nav-link" href="./owners-alt12.html">Back to Owners</a>
+          </div>
         </div>
       </section>
       <section class="players-grid">
@@ -262,62 +278,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#1</span>
                 <span class="player-name">KL Rahul</span>
-                <span class="player-total">541 pts</span>
+                <span class="player-total">735 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">541 pts</span>
-                  </summary>
-                  <div class="match-meta">Official IPL Fantasy</div>
-                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
-                </details>
-              
-              </div>
-            </details>
-          
-            <details
-              id="dc-tristan-stubbs"
-              class="player-row-card"
-              data-owners="Susheel"
-            >
-              <summary class="player-row-summary">
-                <span class="player-rank">#2</span>
-                <span class="player-name">Tristan Stubbs</span>
-                <span class="player-total">310 pts</span>
-              </summary>
-              <div class="player-row-body">
-                
-                <details class="match-card">
-                  <summary>
-                    <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">310 pts</span>
-                  </summary>
-                  <div class="match-meta">Official IPL Fantasy</div>
-                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
-                </details>
-              
-              </div>
-            </details>
-          
-            <details
-              id="dc-nitish-rana"
-              class="player-row-card"
-              data-owners="Subhash"
-            >
-              <summary class="player-row-summary">
-                <span class="player-rank">#3</span>
-                <span class="player-name">Nitish Rana</span>
-                <span class="player-total">281 pts</span>
-              </summary>
-              <div class="player-row-body">
-                
-                <details class="match-card">
-                  <summary>
-                    <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">281 pts</span>
+                    <span class="match-points">735 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -332,16 +300,16 @@
               data-owners="Kamal"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#4</span>
+                <span class="player-rank">#2</span>
                 <span class="player-name">Axar Patel</span>
-                <span class="player-total">253 pts</span>
+                <span class="player-total">465 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">253 pts</span>
+                    <span class="match-points">465 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -356,16 +324,16 @@
               data-owners="Sateesh"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#5</span>
+                <span class="player-rank">#3</span>
                 <span class="player-name">Pathum Nissanka</span>
-                <span class="player-total">246 pts</span>
+                <span class="player-total">445 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">246 pts</span>
+                    <span class="match-points">445 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -375,21 +343,69 @@
             </details>
           
             <details
-              id="dc-kuldeep-yadav"
+              id="dc-tristan-stubbs"
               class="player-row-card"
-              data-owners="Kamal"
+              data-owners="Susheel"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#6</span>
-                <span class="player-name">Kuldeep Yadav</span>
-                <span class="player-total">237 pts</span>
+                <span class="player-rank">#4</span>
+                <span class="player-name">Tristan Stubbs</span>
+                <span class="player-total">431 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">237 pts</span>
+                    <span class="match-points">431 pts</span>
+                  </summary>
+                  <div class="match-meta">Official IPL Fantasy</div>
+                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
+                </details>
+              
+              </div>
+            </details>
+          
+            <details
+              id="dc-nitish-rana"
+              class="player-row-card"
+              data-owners="Subhash"
+            >
+              <summary class="player-row-summary">
+                <span class="player-rank">#5</span>
+                <span class="player-name">Nitish Rana</span>
+                <span class="player-total">374 pts</span>
+              </summary>
+              <div class="player-row-body">
+                
+                <details class="match-card">
+                  <summary>
+                    <span class="match-name">Official IPL Fantasy Total</span>
+                    <span class="match-points">374 pts</span>
+                  </summary>
+                  <div class="match-meta">Official IPL Fantasy</div>
+                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
+                </details>
+              
+              </div>
+            </details>
+          
+            <details
+              id="dc-david-miller"
+              class="player-row-card"
+              data-owners="Subhash"
+            >
+              <summary class="player-row-summary">
+                <span class="player-rank">#6</span>
+                <span class="player-name">David Miller</span>
+                <span class="player-total">305 pts</span>
+              </summary>
+              <div class="player-row-body">
+                
+                <details class="match-card">
+                  <summary>
+                    <span class="match-name">Official IPL Fantasy Total</span>
+                    <span class="match-points">305 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -406,14 +422,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#7</span>
                 <span class="player-name">Lungi Ngidi</span>
-                <span class="player-total">230 pts</span>
+                <span class="player-total">270 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">230 pts</span>
+                    <span class="match-points">270 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -423,21 +439,21 @@
             </details>
           
             <details
-              id="dc-david-miller"
+              id="dc-kuldeep-yadav"
               class="player-row-card"
-              data-owners="Subhash"
+              data-owners="Kamal"
             >
               <summary class="player-row-summary">
                 <span class="player-rank">#8</span>
-                <span class="player-name">David Miller</span>
-                <span class="player-total">191 pts</span>
+                <span class="player-name">Kuldeep Yadav</span>
+                <span class="player-total">244 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">191 pts</span>
+                    <span class="match-points">244 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -454,62 +470,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#9</span>
                 <span class="player-name">T Natarajan</span>
-                <span class="player-total">127 pts</span>
+                <span class="player-total">160 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">127 pts</span>
-                  </summary>
-                  <div class="match-meta">Official IPL Fantasy</div>
-                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
-                </details>
-              
-              </div>
-            </details>
-          
-            <details
-              id="dc-vipraj-nigam"
-              class="player-row-card"
-              data-owners="Bharath"
-            >
-              <summary class="player-row-summary">
-                <span class="player-rank">#10</span>
-                <span class="player-name">Vipraj Nigam</span>
-                <span class="player-total">74 pts</span>
-              </summary>
-              <div class="player-row-body">
-                
-                <details class="match-card">
-                  <summary>
-                    <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">74 pts</span>
-                  </summary>
-                  <div class="match-meta">Official IPL Fantasy</div>
-                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
-                </details>
-              
-              </div>
-            </details>
-          
-            <details
-              id="dc-auqib-nabi"
-              class="player-row-card"
-              data-owners="Sriram"
-            >
-              <summary class="player-row-summary">
-                <span class="player-rank">#11</span>
-                <span class="player-name">Auqib Nabi</span>
-                <span class="player-total">5 pts</span>
-              </summary>
-              <div class="player-row-body">
-                
-                <details class="match-card">
-                  <summary>
-                    <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">5 pts</span>
+                    <span class="match-points">160 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -524,16 +492,40 @@
               data-owners="Suresh"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#12</span>
+                <span class="player-rank">#10</span>
                 <span class="player-name">Mitchell Starc</span>
-                <span class="player-total">0 pts</span>
+                <span class="player-total">155 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">0 pts</span>
+                    <span class="match-points">155 pts</span>
+                  </summary>
+                  <div class="match-meta">Official IPL Fantasy</div>
+                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
+                </details>
+              
+              </div>
+            </details>
+          
+            <details
+              id="dc-vipraj-nigam"
+              class="player-row-card"
+              data-owners="Bharath"
+            >
+              <summary class="player-row-summary">
+                <span class="player-rank">#11</span>
+                <span class="player-name">Vipraj Nigam</span>
+                <span class="player-total">75 pts</span>
+              </summary>
+              <div class="player-row-body">
+                
+                <details class="match-card">
+                  <summary>
+                    <span class="match-name">Official IPL Fantasy Total</span>
+                    <span class="match-points">75 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -548,16 +540,40 @@
               data-owners="Bharath"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#13</span>
+                <span class="player-rank">#12</span>
                 <span class="player-name">Abishek Porel</span>
-                <span class="player-total">0 pts</span>
+                <span class="player-total">51 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">0 pts</span>
+                    <span class="match-points">51 pts</span>
+                  </summary>
+                  <div class="match-meta">Official IPL Fantasy</div>
+                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
+                </details>
+              
+              </div>
+            </details>
+          
+            <details
+              id="dc-auqib-nabi"
+              class="player-row-card"
+              data-owners="Sriram"
+            >
+              <summary class="player-row-summary">
+                <span class="player-rank">#13</span>
+                <span class="player-name">Auqib Nabi</span>
+                <span class="player-total">30 pts</span>
+              </summary>
+              <div class="player-row-body">
+                
+                <details class="match-card">
+                  <summary>
+                    <span class="match-name">Official IPL Fantasy Total</span>
+                    <span class="match-points">30 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -574,21 +590,21 @@
           <div class="team-player-list">
             
             <details
-              id="mi-tilak-varma"
+              id="mi-ryan-rickelton"
               class="player-row-card"
               data-owners="Kamal"
             >
               <summary class="player-row-summary">
                 <span class="player-rank">#1</span>
-                <span class="player-name">Tilak Varma</span>
-                <span class="player-total">328 pts</span>
+                <span class="player-name">Ryan Rickelton</span>
+                <span class="player-total">709 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">328 pts</span>
+                    <span class="match-points">709 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -598,21 +614,45 @@
             </details>
           
             <details
-              id="mi-suryakumar-yadav"
+              id="mi-tilak-varma"
               class="player-row-card"
-              data-owners="Sriram"
+              data-owners="Kamal"
             >
               <summary class="player-row-summary">
                 <span class="player-rank">#2</span>
-                <span class="player-name">Suryakumar Yadav</span>
-                <span class="player-total">242 pts</span>
+                <span class="player-name">Tilak Varma</span>
+                <span class="player-total">538 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">242 pts</span>
+                    <span class="match-points">538 pts</span>
+                  </summary>
+                  <div class="match-meta">Official IPL Fantasy</div>
+                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
+                </details>
+              
+              </div>
+            </details>
+          
+            <details
+              id="mi-rohit-sharma"
+              class="player-row-card"
+              data-owners="Subhash"
+            >
+              <summary class="player-row-summary">
+                <span class="player-rank">#3</span>
+                <span class="player-name">Rohit Sharma</span>
+                <span class="player-total">397 pts</span>
+              </summary>
+              <div class="player-row-body">
+                
+                <details class="match-card">
+                  <summary>
+                    <span class="match-name">Official IPL Fantasy Total</span>
+                    <span class="match-points">397 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -627,16 +667,40 @@
               data-owners="Susheel"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#3</span>
+                <span class="player-rank">#4</span>
                 <span class="player-name">Hardik Pandya</span>
-                <span class="player-total">232 pts</span>
+                <span class="player-total">330 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">232 pts</span>
+                    <span class="match-points">330 pts</span>
+                  </summary>
+                  <div class="match-meta">Official IPL Fantasy</div>
+                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
+                </details>
+              
+              </div>
+            </details>
+          
+            <details
+              id="mi-suryakumar-yadav"
+              class="player-row-card"
+              data-owners="Sriram"
+            >
+              <summary class="player-row-summary">
+                <span class="player-rank">#5</span>
+                <span class="player-name">Suryakumar Yadav</span>
+                <span class="player-total">324 pts</span>
+              </summary>
+              <div class="player-row-body">
+                
+                <details class="match-card">
+                  <summary>
+                    <span class="match-name">Official IPL Fantasy Total</span>
+                    <span class="match-points">324 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -651,7 +715,7 @@
               data-owners="Kamal"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#4</span>
+                <span class="player-rank">#6</span>
                 <span class="player-name">Quinton de Kock</span>
                 <span class="player-total">221 pts</span>
               </summary>
@@ -670,45 +734,21 @@
             </details>
           
             <details
-              id="mi-ryan-rickelton"
+              id="mi-sherfane-rutherford"
               class="player-row-card"
-              data-owners="Kamal"
+              data-owners="Sriram"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#5</span>
-                <span class="player-name">Ryan Rickelton</span>
-                <span class="player-total">220 pts</span>
+                <span class="player-rank">#7</span>
+                <span class="player-name">Sherfane Rutherford</span>
+                <span class="player-total">210 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">220 pts</span>
-                  </summary>
-                  <div class="match-meta">Official IPL Fantasy</div>
-                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
-                </details>
-              
-              </div>
-            </details>
-          
-            <details
-              id="mi-rohit-sharma"
-              class="player-row-card"
-              data-owners="Subhash"
-            >
-              <summary class="player-row-summary">
-                <span class="player-rank">#6</span>
-                <span class="player-name">Rohit Sharma</span>
-                <span class="player-total">204 pts</span>
-              </summary>
-              <div class="player-row-body">
-                
-                <details class="match-card">
-                  <summary>
-                    <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">204 pts</span>
+                    <span class="match-points">210 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -723,7 +763,7 @@
               data-owners="Bharath"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#7</span>
+                <span class="player-rank">#8</span>
                 <span class="player-name">Mitchell Santner</span>
                 <span class="player-total">194 pts</span>
               </summary>
@@ -742,21 +782,21 @@
             </details>
           
             <details
-              id="mi-sherfane-rutherford"
+              id="mi-deepak-chahar"
               class="player-row-card"
-              data-owners="Sriram"
+              data-owners="Suresh"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#8</span>
-                <span class="player-name">Sherfane Rutherford</span>
-                <span class="player-total">183 pts</span>
+                <span class="player-rank">#9</span>
+                <span class="player-name">Deepak Chahar</span>
+                <span class="player-total">167 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">183 pts</span>
+                    <span class="match-points">167 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -771,64 +811,16 @@
               data-owners="Sateesh"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#9</span>
-                <span class="player-name">Jasprit Bumrah</span>
-                <span class="player-total">110 pts</span>
-              </summary>
-              <div class="player-row-body">
-                
-                <details class="match-card">
-                  <summary>
-                    <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">110 pts</span>
-                  </summary>
-                  <div class="match-meta">Official IPL Fantasy</div>
-                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
-                </details>
-              
-              </div>
-            </details>
-          
-            <details
-              id="mi-deepak-chahar"
-              class="player-row-card"
-              data-owners="Suresh"
-            >
-              <summary class="player-row-summary">
                 <span class="player-rank">#10</span>
-                <span class="player-name">Deepak Chahar</span>
-                <span class="player-total">48 pts</span>
+                <span class="player-name">Jasprit Bumrah</span>
+                <span class="player-total">151 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">48 pts</span>
-                  </summary>
-                  <div class="match-meta">Official IPL Fantasy</div>
-                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
-                </details>
-              
-              </div>
-            </details>
-          
-            <details
-              id="mi-trent-boult"
-              class="player-row-card"
-              data-owners="Subhash"
-            >
-              <summary class="player-row-summary">
-                <span class="player-rank">#11</span>
-                <span class="player-name">Trent Boult</span>
-                <span class="player-total">40 pts</span>
-              </summary>
-              <div class="player-row-body">
-                
-                <details class="match-card">
-                  <summary>
-                    <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">40 pts</span>
+                    <span class="match-points">151 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -843,16 +835,40 @@
               data-owners="Bharath"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#12</span>
+                <span class="player-rank">#11</span>
                 <span class="player-name">Will Jacks</span>
-                <span class="player-total">0 pts</span>
+                <span class="player-total">148 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">0 pts</span>
+                    <span class="match-points">148 pts</span>
+                  </summary>
+                  <div class="match-meta">Official IPL Fantasy</div>
+                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
+                </details>
+              
+              </div>
+            </details>
+          
+            <details
+              id="mi-trent-boult"
+              class="player-row-card"
+              data-owners="Subhash"
+            >
+              <summary class="player-row-summary">
+                <span class="player-rank">#12</span>
+                <span class="player-name">Trent Boult</span>
+                <span class="player-total">84 pts</span>
+              </summary>
+              <div class="player-row-body">
+                
+                <details class="match-card">
+                  <summary>
+                    <span class="match-name">Official IPL Fantasy Total</span>
+                    <span class="match-points">84 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -876,14 +892,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#1</span>
                 <span class="player-name">Virat Kohli</span>
-                <span class="player-total">508 pts</span>
+                <span class="player-total">757 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">508 pts</span>
+                    <span class="match-points">757 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -893,21 +909,21 @@
             </details>
           
             <details
-              id="rcb-rajat-patidar"
+              id="rcb-bhuvneshwar-kumar"
               class="player-row-card"
-              data-owners="Kamal"
+              data-owners="Suresh"
             >
               <summary class="player-row-summary">
                 <span class="player-rank">#2</span>
-                <span class="player-name">Rajat Patidar</span>
-                <span class="player-total">408 pts</span>
+                <span class="player-name">Bhuvneshwar Kumar</span>
+                <span class="player-total">731 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">408 pts</span>
+                    <span class="match-points">731 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -924,14 +940,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#3</span>
                 <span class="player-name">Devdutt Padikkal</span>
-                <span class="player-total">385 pts</span>
+                <span class="player-total">657 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">385 pts</span>
+                    <span class="match-points">657 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -941,21 +957,93 @@
             </details>
           
             <details
-              id="rcb-bhuvneshwar-kumar"
+              id="rcb-rajat-patidar"
               class="player-row-card"
-              data-owners="Suresh"
+              data-owners="Kamal"
             >
               <summary class="player-row-summary">
                 <span class="player-rank">#4</span>
-                <span class="player-name">Bhuvneshwar Kumar</span>
-                <span class="player-total">354 pts</span>
+                <span class="player-name">Rajat Patidar</span>
+                <span class="player-total">587 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">354 pts</span>
+                    <span class="match-points">587 pts</span>
+                  </summary>
+                  <div class="match-meta">Official IPL Fantasy</div>
+                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
+                </details>
+              
+              </div>
+            </details>
+          
+            <details
+              id="rcb-krunal-pandya"
+              class="player-row-card"
+              data-owners="Sriram"
+            >
+              <summary class="player-row-summary">
+                <span class="player-rank">#5</span>
+                <span class="player-name">Krunal Pandya</span>
+                <span class="player-total">515 pts</span>
+              </summary>
+              <div class="player-row-body">
+                
+                <details class="match-card">
+                  <summary>
+                    <span class="match-name">Official IPL Fantasy Total</span>
+                    <span class="match-points">515 pts</span>
+                  </summary>
+                  <div class="match-meta">Official IPL Fantasy</div>
+                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
+                </details>
+              
+              </div>
+            </details>
+          
+            <details
+              id="rcb-tim-david"
+              class="player-row-card"
+              data-owners="Susheel"
+            >
+              <summary class="player-row-summary">
+                <span class="player-rank">#6</span>
+                <span class="player-name">Tim David</span>
+                <span class="player-total">384 pts</span>
+              </summary>
+              <div class="player-row-body">
+                
+                <details class="match-card">
+                  <summary>
+                    <span class="match-name">Official IPL Fantasy Total</span>
+                    <span class="match-points">384 pts</span>
+                  </summary>
+                  <div class="match-meta">Official IPL Fantasy</div>
+                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
+                </details>
+              
+              </div>
+            </details>
+          
+            <details
+              id="rcb-josh-hazlewood"
+              class="player-row-card"
+              data-owners="Suresh"
+            >
+              <summary class="player-row-summary">
+                <span class="player-rank">#7</span>
+                <span class="player-name">Josh Hazlewood</span>
+                <span class="player-total">367 pts</span>
+              </summary>
+              <div class="player-row-body">
+                
+                <details class="match-card">
+                  <summary>
+                    <span class="match-name">Official IPL Fantasy Total</span>
+                    <span class="match-points">367 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -970,7 +1058,7 @@
               data-owners="Suresh"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#5</span>
+                <span class="player-rank">#8</span>
                 <span class="player-name">Phil Salt</span>
                 <span class="player-total">348 pts</span>
               </summary>
@@ -989,69 +1077,21 @@
             </details>
           
             <details
-              id="rcb-tim-david"
-              class="player-row-card"
-              data-owners="Susheel"
-            >
-              <summary class="player-row-summary">
-                <span class="player-rank">#6</span>
-                <span class="player-name">Tim David</span>
-                <span class="player-total">293 pts</span>
-              </summary>
-              <div class="player-row-body">
-                
-                <details class="match-card">
-                  <summary>
-                    <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">293 pts</span>
-                  </summary>
-                  <div class="match-meta">Official IPL Fantasy</div>
-                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
-                </details>
-              
-              </div>
-            </details>
-          
-            <details
-              id="rcb-krunal-pandya"
-              class="player-row-card"
-              data-owners="Sriram"
-            >
-              <summary class="player-row-summary">
-                <span class="player-rank">#7</span>
-                <span class="player-name">Krunal Pandya</span>
-                <span class="player-total">279 pts</span>
-              </summary>
-              <div class="player-row-body">
-                
-                <details class="match-card">
-                  <summary>
-                    <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">279 pts</span>
-                  </summary>
-                  <div class="match-meta">Official IPL Fantasy</div>
-                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
-                </details>
-              
-              </div>
-            </details>
-          
-            <details
               id="rcb-jitesh-sharma"
               class="player-row-card"
               data-owners="Bharath"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#8</span>
+                <span class="player-rank">#9</span>
                 <span class="player-name">Jitesh Sharma</span>
-                <span class="player-total">157 pts</span>
+                <span class="player-total">275 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">157 pts</span>
+                    <span class="match-points">275 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -1066,40 +1106,16 @@
               data-owners="Susheel"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#9</span>
-                <span class="player-name">Suyash Sharma</span>
-                <span class="player-total">147 pts</span>
-              </summary>
-              <div class="player-row-body">
-                
-                <details class="match-card">
-                  <summary>
-                    <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">147 pts</span>
-                  </summary>
-                  <div class="match-meta">Official IPL Fantasy</div>
-                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
-                </details>
-              
-              </div>
-            </details>
-          
-            <details
-              id="rcb-josh-hazlewood"
-              class="player-row-card"
-              data-owners="Suresh"
-            >
-              <summary class="player-row-summary">
                 <span class="player-rank">#10</span>
-                <span class="player-name">Josh Hazlewood</span>
-                <span class="player-total">146 pts</span>
+                <span class="player-name">Suyash Sharma</span>
+                <span class="player-total">231 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">146 pts</span>
+                    <span class="match-points">231 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -1116,14 +1132,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#11</span>
                 <span class="player-name">Venkatesh Iyer</span>
-                <span class="player-total">44 pts</span>
+                <span class="player-total">65 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">44 pts</span>
+                    <span class="match-points">65 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -1171,86 +1187,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#1</span>
                 <span class="player-name">Sanju Samson</span>
-                <span class="player-total">458 pts</span>
+                <span class="player-total">685 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">458 pts</span>
-                  </summary>
-                  <div class="match-meta">Official IPL Fantasy</div>
-                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
-                </details>
-              
-              </div>
-            </details>
-          
-            <details
-              id="csk-ayush-mhatre"
-              class="player-row-card"
-              data-owners="Sateesh"
-            >
-              <summary class="player-row-summary">
-                <span class="player-rank">#2</span>
-                <span class="player-name">Ayush Mhatre</span>
-                <span class="player-total">311 pts</span>
-              </summary>
-              <div class="player-row-body">
-                
-                <details class="match-card">
-                  <summary>
-                    <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">311 pts</span>
-                  </summary>
-                  <div class="match-meta">Official IPL Fantasy</div>
-                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
-                </details>
-              
-              </div>
-            </details>
-          
-            <details
-              id="csk-shivam-dube"
-              class="player-row-card"
-              data-owners="Sateesh"
-            >
-              <summary class="player-row-summary">
-                <span class="player-rank">#3</span>
-                <span class="player-name">Shivam Dube</span>
-                <span class="player-total">238 pts</span>
-              </summary>
-              <div class="player-row-body">
-                
-                <details class="match-card">
-                  <summary>
-                    <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">238 pts</span>
-                  </summary>
-                  <div class="match-meta">Official IPL Fantasy</div>
-                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
-                </details>
-              
-              </div>
-            </details>
-          
-            <details
-              id="csk-noor-ahmad"
-              class="player-row-card"
-              data-owners="Sriram"
-            >
-              <summary class="player-row-summary">
-                <span class="player-rank">#4</span>
-                <span class="player-name">Noor Ahmad</span>
-                <span class="player-total">222 pts</span>
-              </summary>
-              <div class="player-row-body">
-                
-                <details class="match-card">
-                  <summary>
-                    <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">222 pts</span>
+                    <span class="match-points">685 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -1265,16 +1209,97 @@
               data-owners="Kamal"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#5</span>
+                <span class="player-rank">#2</span>
                 <span class="player-name">Ruturaj Gaikwad</span>
-                <span class="player-total">179 pts</span>
+                <span class="player-total">457 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">179 pts</span>
+                    <span class="match-points">457 pts</span>
+                  </summary>
+                  <div class="match-meta">Official IPL Fantasy</div>
+                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
+                </details>
+              
+              </div>
+            </details>
+          
+            <details
+              id="csk-noor-ahmad"
+              class="player-row-card"
+              data-owners="Sriram"
+            >
+              <summary class="player-row-summary">
+                <span class="player-rank">#3</span>
+                <span class="player-name">Noor Ahmad</span>
+                <span class="player-total">392 pts</span>
+              </summary>
+              <div class="player-row-body">
+                
+                <details class="match-card">
+                  <summary>
+                    <span class="match-name">Official IPL Fantasy Total</span>
+                    <span class="match-points">392 pts</span>
+                  </summary>
+                  <div class="match-meta">Official IPL Fantasy</div>
+                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
+                </details>
+              
+              </div>
+            </details>
+          
+            <details
+              id="csk-ayush-mhatre-a-madhwal"
+              class="player-row-card"
+              data-owners="Sateesh"
+            >
+              <summary class="player-row-summary">
+                <span class="player-rank">#4</span>
+                <span class="player-name">Ayush Mhatre / A Madhwal</span>
+                <span class="player-total">311 pts</span>
+              </summary>
+              <div class="player-row-body">
+                
+                <details class="match-card">
+                  <summary>
+                    <span class="match-name">Official IPL Fantasy Total</span>
+                    <span class="match-points">311 pts</span>
+                  </summary>
+                  <div class="match-meta">Official IPL Fantasy</div>
+                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
+                </details>
+              
+                <details class="match-card">
+                  <summary>
+                    <span class="match-name">Official IPL Fantasy Total</span>
+                    <span class="match-points">0 pts</span>
+                  </summary>
+                  <div class="match-meta">Official IPL Fantasy</div>
+                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
+                </details>
+              
+              </div>
+            </details>
+          
+            <details
+              id="csk-shivam-dube"
+              class="player-row-card"
+              data-owners="Sateesh"
+            >
+              <summary class="player-row-summary">
+                <span class="player-rank">#5</span>
+                <span class="player-name">Shivam Dube</span>
+                <span class="player-total">296 pts</span>
+              </summary>
+              <div class="player-row-body">
+                
+                <details class="match-card">
+                  <summary>
+                    <span class="match-name">Official IPL Fantasy Total</span>
+                    <span class="match-points">296 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -1291,14 +1316,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#6</span>
                 <span class="player-name">Dewald Brevis</span>
-                <span class="player-total">161 pts</span>
+                <span class="player-total">242 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">161 pts</span>
+                    <span class="match-points">242 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -1315,14 +1340,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#7</span>
                 <span class="player-name">Prashant Veer</span>
-                <span class="player-total">72 pts</span>
+                <span class="player-total">97 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">72 pts</span>
+                    <span class="match-points">97 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -1435,21 +1460,45 @@
           <div class="team-player-list">
             
             <details
-              id="gt-shubman-gill"
+              id="gt-sai-sudharsan"
               class="player-row-card"
-              data-owners="Kamal"
+              data-owners="Bharath"
             >
               <summary class="player-row-summary">
                 <span class="player-rank">#1</span>
-                <span class="player-name">Shubman Gill</span>
-                <span class="player-total">460 pts</span>
+                <span class="player-name">Sai Sudharsan</span>
+                <span class="player-total">758 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">460 pts</span>
+                    <span class="match-points">758 pts</span>
+                  </summary>
+                  <div class="match-meta">Official IPL Fantasy</div>
+                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
+                </details>
+              
+              </div>
+            </details>
+          
+            <details
+              id="gt-shubman-gill"
+              class="player-row-card"
+              data-owners="Kamal"
+            >
+              <summary class="player-row-summary">
+                <span class="player-rank">#2</span>
+                <span class="player-name">Shubman Gill</span>
+                <span class="player-total">752 pts</span>
+              </summary>
+              <div class="player-row-body">
+                
+                <details class="match-card">
+                  <summary>
+                    <span class="match-name">Official IPL Fantasy Total</span>
+                    <span class="match-points">752 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -1464,40 +1513,16 @@
               data-owners="Sateesh"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#2</span>
-                <span class="player-name">Jos Buttler</span>
-                <span class="player-total">436 pts</span>
-              </summary>
-              <div class="player-row-body">
-                
-                <details class="match-card">
-                  <summary>
-                    <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">436 pts</span>
-                  </summary>
-                  <div class="match-meta">Official IPL Fantasy</div>
-                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
-                </details>
-              
-              </div>
-            </details>
-          
-            <details
-              id="gt-sai-sudharsan"
-              class="player-row-card"
-              data-owners="Bharath"
-            >
-              <summary class="player-row-summary">
                 <span class="player-rank">#3</span>
-                <span class="player-name">Sai Sudharsan</span>
-                <span class="player-total">365 pts</span>
+                <span class="player-name">Jos Buttler</span>
+                <span class="player-total">735 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">365 pts</span>
+                    <span class="match-points">735 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -1514,38 +1539,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#4</span>
                 <span class="player-name">Kagiso Rabada</span>
-                <span class="player-total">360 pts</span>
+                <span class="player-total">681 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">360 pts</span>
-                  </summary>
-                  <div class="match-meta">Official IPL Fantasy</div>
-                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
-                </details>
-              
-              </div>
-            </details>
-          
-            <details
-              id="gt-prasidh-krishna"
-              class="player-row-card"
-              data-owners="Suresh"
-            >
-              <summary class="player-row-summary">
-                <span class="player-rank">#5</span>
-                <span class="player-name">Prasidh Krishna</span>
-                <span class="player-total">334 pts</span>
-              </summary>
-              <div class="player-row-body">
-                
-                <details class="match-card">
-                  <summary>
-                    <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">334 pts</span>
+                    <span class="match-points">681 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -1560,16 +1561,16 @@
               data-owners="Susheel"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#6</span>
+                <span class="player-rank">#5</span>
                 <span class="player-name">Rashid Khan</span>
-                <span class="player-total">285 pts</span>
+                <span class="player-total">583 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">285 pts</span>
+                    <span class="match-points">583 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -1584,16 +1585,40 @@
               data-owners="Suresh"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#7</span>
+                <span class="player-rank">#6</span>
                 <span class="player-name">Washington Sundar</span>
-                <span class="player-total">285 pts</span>
+                <span class="player-total">531 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">285 pts</span>
+                    <span class="match-points">531 pts</span>
+                  </summary>
+                  <div class="match-meta">Official IPL Fantasy</div>
+                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
+                </details>
+              
+              </div>
+            </details>
+          
+            <details
+              id="gt-jason-holder"
+              class="player-row-card"
+              data-owners="Sriram"
+            >
+              <summary class="player-row-summary">
+                <span class="player-rank">#7</span>
+                <span class="player-name">Jason Holder</span>
+                <span class="player-total">529 pts</span>
+              </summary>
+              <div class="player-row-body">
+                
+                <details class="match-card">
+                  <summary>
+                    <span class="match-name">Official IPL Fantasy Total</span>
+                    <span class="match-points">529 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -1610,14 +1635,38 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#8</span>
                 <span class="player-name">Mohammed Siraj</span>
-                <span class="player-total">227 pts</span>
+                <span class="player-total">421 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">227 pts</span>
+                    <span class="match-points">421 pts</span>
+                  </summary>
+                  <div class="match-meta">Official IPL Fantasy</div>
+                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
+                </details>
+              
+              </div>
+            </details>
+          
+            <details
+              id="gt-prasidh-krishna"
+              class="player-row-card"
+              data-owners="Suresh"
+            >
+              <summary class="player-row-summary">
+                <span class="player-rank">#9</span>
+                <span class="player-name">Prasidh Krishna</span>
+                <span class="player-total">388 pts</span>
+              </summary>
+              <div class="player-row-body">
+                
+                <details class="match-card">
+                  <summary>
+                    <span class="match-name">Official IPL Fantasy Total</span>
+                    <span class="match-points">388 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -1632,40 +1681,16 @@
               data-owners="Bharath"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#9</span>
-                <span class="player-name">Shahrukh Khan</span>
-                <span class="player-total">87 pts</span>
-              </summary>
-              <div class="player-row-body">
-                
-                <details class="match-card">
-                  <summary>
-                    <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">87 pts</span>
-                  </summary>
-                  <div class="match-meta">Official IPL Fantasy</div>
-                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
-                </details>
-              
-              </div>
-            </details>
-          
-            <details
-              id="gt-jason-holder"
-              class="player-row-card"
-              data-owners="Sriram"
-            >
-              <summary class="player-row-summary">
                 <span class="player-rank">#10</span>
-                <span class="player-name">Jason Holder</span>
-                <span class="player-total">71 pts</span>
+                <span class="player-name">Shahrukh Khan</span>
+                <span class="player-total">112 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">71 pts</span>
+                    <span class="match-points">112 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -1682,14 +1707,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#11</span>
                 <span class="player-name">Sai Kishore</span>
-                <span class="player-total">0 pts</span>
+                <span class="player-total">4 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">0 pts</span>
+                    <span class="match-points">4 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -1713,14 +1738,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#1</span>
                 <span class="player-name">Prabhsimran Singh</span>
-                <span class="player-total">476 pts</span>
+                <span class="player-total">707 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">476 pts</span>
+                    <span class="match-points">707 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -1737,14 +1762,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#2</span>
                 <span class="player-name">Shreyas Iyer</span>
-                <span class="player-total">450 pts</span>
+                <span class="player-total">646 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">450 pts</span>
+                    <span class="match-points">646 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -1761,14 +1786,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#3</span>
                 <span class="player-name">Priyansh Arya</span>
-                <span class="player-total">392 pts</span>
+                <span class="player-total">573 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">392 pts</span>
+                    <span class="match-points">573 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -1785,14 +1810,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#4</span>
                 <span class="player-name">Arshdeep Singh</span>
-                <span class="player-total">225 pts</span>
+                <span class="player-total">406 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">225 pts</span>
+                    <span class="match-points">406 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -1802,21 +1827,21 @@
             </details>
           
             <details
-              id="pbks-shashank-singh"
+              id="pbks-marcus-stoinis"
               class="player-row-card"
-              data-owners="Bharath"
+              data-owners="Suresh"
             >
               <summary class="player-row-summary">
                 <span class="player-rank">#5</span>
-                <span class="player-name">Shashank Singh</span>
-                <span class="player-total">203 pts</span>
+                <span class="player-name">Marcus Stoinis</span>
+                <span class="player-total">349 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">203 pts</span>
+                    <span class="match-points">349 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -1833,14 +1858,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#6</span>
                 <span class="player-name">Marco Jansen</span>
-                <span class="player-total">185 pts</span>
+                <span class="player-total">319 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">185 pts</span>
+                    <span class="match-points">319 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -1857,14 +1882,38 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#7</span>
                 <span class="player-name">Yuzvendra Chahal</span>
-                <span class="player-total">132 pts</span>
+                <span class="player-total">297 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">132 pts</span>
+                    <span class="match-points">297 pts</span>
+                  </summary>
+                  <div class="match-meta">Official IPL Fantasy</div>
+                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
+                </details>
+              
+              </div>
+            </details>
+          
+            <details
+              id="pbks-shashank-singh"
+              class="player-row-card"
+              data-owners="Bharath"
+            >
+              <summary class="player-row-summary">
+                <span class="player-rank">#8</span>
+                <span class="player-name">Shashank Singh</span>
+                <span class="player-total">220 pts</span>
+              </summary>
+              <div class="player-row-body">
+                
+                <details class="match-card">
+                  <summary>
+                    <span class="match-name">Official IPL Fantasy Total</span>
+                    <span class="match-points">220 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -1879,40 +1928,16 @@
               data-owners="Sateesh"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#8</span>
-                <span class="player-name">Nehal Wadhera</span>
-                <span class="player-total">121 pts</span>
-              </summary>
-              <div class="player-row-body">
-                
-                <details class="match-card">
-                  <summary>
-                    <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">121 pts</span>
-                  </summary>
-                  <div class="match-meta">Official IPL Fantasy</div>
-                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
-                </details>
-              
-              </div>
-            </details>
-          
-            <details
-              id="pbks-marcus-stoinis"
-              class="player-row-card"
-              data-owners="Suresh"
-            >
-              <summary class="player-row-summary">
                 <span class="player-rank">#9</span>
-                <span class="player-name">Marcus Stoinis</span>
-                <span class="player-total">104 pts</span>
+                <span class="player-name">Nehal Wadhera</span>
+                <span class="player-total">127 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">104 pts</span>
+                    <span class="match-points">127 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -1929,14 +1954,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#10</span>
                 <span class="player-name">Lockie Ferguson</span>
-                <span class="player-total">0 pts</span>
+                <span class="player-total">25 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">0 pts</span>
+                    <span class="match-points">25 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -1960,14 +1985,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#1</span>
                 <span class="player-name">Vaibhav Sooryavanshi</span>
-                <span class="player-total">560 pts</span>
+                <span class="player-total">698 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">560 pts</span>
+                    <span class="match-points">698 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -1984,14 +2009,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#2</span>
                 <span class="player-name">Dhruv Jurel</span>
-                <span class="player-total">471 pts</span>
+                <span class="player-total">608 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">471 pts</span>
+                    <span class="match-points">608 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -2008,38 +2033,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#3</span>
                 <span class="player-name">Jofra Archer</span>
-                <span class="player-total">461 pts</span>
+                <span class="player-total">526 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">461 pts</span>
-                  </summary>
-                  <div class="match-meta">Official IPL Fantasy</div>
-                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
-                </details>
-              
-              </div>
-            </details>
-          
-            <details
-              id="rr-yashasvi-jaiswal"
-              class="player-row-card"
-              data-owners="Subhash"
-            >
-              <summary class="player-row-summary">
-                <span class="player-rank">#4</span>
-                <span class="player-name">Yashasvi Jaiswal</span>
-                <span class="player-total">398 pts</span>
-              </summary>
-              <div class="player-row-body">
-                
-                <details class="match-card">
-                  <summary>
-                    <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">398 pts</span>
+                    <span class="match-points">526 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -2054,16 +2055,16 @@
               data-owners="Sriram"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#5</span>
+                <span class="player-rank">#4</span>
                 <span class="player-name">Ravindra Jadeja</span>
-                <span class="player-total">371 pts</span>
+                <span class="player-total">515 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">371 pts</span>
+                    <span class="match-points">515 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -2073,21 +2074,21 @@
             </details>
           
             <details
-              id="rr-ravi-bishnoi"
+              id="rr-yashasvi-jaiswal"
               class="player-row-card"
-              data-owners="Sateesh"
+              data-owners="Subhash"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#6</span>
-                <span class="player-name">Ravi Bishnoi</span>
-                <span class="player-total">361 pts</span>
+                <span class="player-rank">#5</span>
+                <span class="player-name">Yashasvi Jaiswal</span>
+                <span class="player-total">503 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">361 pts</span>
+                    <span class="match-points">503 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -2102,16 +2103,64 @@
               data-owners="Susheel"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#7</span>
+                <span class="player-rank">#6</span>
                 <span class="player-name">Riyan Parag</span>
-                <span class="player-total">216 pts</span>
+                <span class="player-total">395 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">216 pts</span>
+                    <span class="match-points">395 pts</span>
+                  </summary>
+                  <div class="match-meta">Official IPL Fantasy</div>
+                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
+                </details>
+              
+              </div>
+            </details>
+          
+            <details
+              id="rr-ravi-bishnoi"
+              class="player-row-card"
+              data-owners="Sateesh"
+            >
+              <summary class="player-row-summary">
+                <span class="player-rank">#7</span>
+                <span class="player-name">Ravi Bishnoi</span>
+                <span class="player-total">359 pts</span>
+              </summary>
+              <div class="player-row-body">
+                
+                <details class="match-card">
+                  <summary>
+                    <span class="match-name">Official IPL Fantasy Total</span>
+                    <span class="match-points">359 pts</span>
+                  </summary>
+                  <div class="match-meta">Official IPL Fantasy</div>
+                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
+                </details>
+              
+              </div>
+            </details>
+          
+            <details
+              id="rr-shimron-hetmyer"
+              class="player-row-card"
+              data-owners="Sateesh"
+            >
+              <summary class="player-row-summary">
+                <span class="player-rank">#8</span>
+                <span class="player-name">Shimron Hetmyer</span>
+                <span class="player-total">169 pts</span>
+              </summary>
+              <div class="player-row-body">
+                
+                <details class="match-card">
+                  <summary>
+                    <span class="match-name">Official IPL Fantasy Total</span>
+                    <span class="match-points">169 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -2126,7 +2175,7 @@
               data-owners="Kamal"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#8</span>
+                <span class="player-rank">#9</span>
                 <span class="player-name">Sandeep Sharma</span>
                 <span class="player-total">163 pts</span>
               </summary>
@@ -2145,38 +2194,14 @@
             </details>
           
             <details
-              id="rr-shimron-hetmyer"
-              class="player-row-card"
-              data-owners="Sateesh"
-            >
-              <summary class="player-row-summary">
-                <span class="player-rank">#9</span>
-                <span class="player-name">Shimron Hetmyer</span>
-                <span class="player-total">158 pts</span>
-              </summary>
-              <div class="player-row-body">
-                
-                <details class="match-card">
-                  <summary>
-                    <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">158 pts</span>
-                  </summary>
-                  <div class="match-meta">Official IPL Fantasy</div>
-                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
-                </details>
-              
-              </div>
-            </details>
-          
-            <details
-              id="rr-sam-curran"
+              id="rr-sam-curran-d-shanaka"
               class="player-row-card"
               data-owners="Subhash"
             >
               <summary class="player-row-summary">
                 <span class="player-rank">#10</span>
-                <span class="player-name">Sam Curran</span>
-                <span class="player-total">0 pts</span>
+                <span class="player-name">Sam Curran / D Shanaka</span>
+                <span class="player-total">28 pts</span>
               </summary>
               <div class="player-row-body">
                 
@@ -2184,6 +2209,15 @@
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
                     <span class="match-points">0 pts</span>
+                  </summary>
+                  <div class="match-meta">Official IPL Fantasy</div>
+                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
+                </details>
+              
+                <details class="match-card">
+                  <summary>
+                    <span class="match-name">Official IPL Fantasy Total</span>
+                    <span class="match-points">28 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -2207,14 +2241,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#1</span>
                 <span class="player-name">Angkrish Raghuvanshi</span>
-                <span class="player-total">313 pts</span>
+                <span class="player-total">538 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">313 pts</span>
+                    <span class="match-points">538 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -2231,38 +2265,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#2</span>
                 <span class="player-name">Cameron Green</span>
-                <span class="player-total">285 pts</span>
+                <span class="player-total">529 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">285 pts</span>
-                  </summary>
-                  <div class="match-meta">Official IPL Fantasy</div>
-                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
-                </details>
-              
-              </div>
-            </details>
-          
-            <details
-              id="kkr-sunil-narine"
-              class="player-row-card"
-              data-owners="Suresh"
-            >
-              <summary class="player-row-summary">
-                <span class="player-rank">#3</span>
-                <span class="player-name">Sunil Narine</span>
-                <span class="player-total">246 pts</span>
-              </summary>
-              <div class="player-row-body">
-                
-                <details class="match-card">
-                  <summary>
-                    <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">246 pts</span>
+                    <span class="match-points">529 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -2277,16 +2287,40 @@
               data-owners="Sateesh"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#4</span>
+                <span class="player-rank">#3</span>
                 <span class="player-name">Rinku Singh</span>
-                <span class="player-total">241 pts</span>
+                <span class="player-total">501 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">241 pts</span>
+                    <span class="match-points">501 pts</span>
+                  </summary>
+                  <div class="match-meta">Official IPL Fantasy</div>
+                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
+                </details>
+              
+              </div>
+            </details>
+          
+            <details
+              id="kkr-sunil-narine"
+              class="player-row-card"
+              data-owners="Suresh"
+            >
+              <summary class="player-row-summary">
+                <span class="player-rank">#4</span>
+                <span class="player-name">Sunil Narine</span>
+                <span class="player-total">425 pts</span>
+              </summary>
+              <div class="player-row-body">
+                
+                <details class="match-card">
+                  <summary>
+                    <span class="match-name">Official IPL Fantasy Total</span>
+                    <span class="match-points">425 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -2303,62 +2337,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#5</span>
                 <span class="player-name">Ajinkya Rahane</span>
-                <span class="player-total">240 pts</span>
+                <span class="player-total">401 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">240 pts</span>
-                  </summary>
-                  <div class="match-meta">Official IPL Fantasy</div>
-                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
-                </details>
-              
-              </div>
-            </details>
-          
-            <details
-              id="kkr-vaibhav-arora"
-              class="player-row-card"
-              data-owners="Kamal"
-            >
-              <summary class="player-row-summary">
-                <span class="player-rank">#6</span>
-                <span class="player-name">Vaibhav Arora</span>
-                <span class="player-total">210 pts</span>
-              </summary>
-              <div class="player-row-body">
-                
-                <details class="match-card">
-                  <summary>
-                    <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">210 pts</span>
-                  </summary>
-                  <div class="match-meta">Official IPL Fantasy</div>
-                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
-                </details>
-              
-              </div>
-            </details>
-          
-            <details
-              id="kkr-varun-chakaravarthy"
-              class="player-row-card"
-              data-owners="Kamal"
-            >
-              <summary class="player-row-summary">
-                <span class="player-rank">#7</span>
-                <span class="player-name">Varun Chakaravarthy</span>
-                <span class="player-total">167 pts</span>
-              </summary>
-              <div class="player-row-body">
-                
-                <details class="match-card">
-                  <summary>
-                    <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">167 pts</span>
+                    <span class="match-points">401 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -2373,16 +2359,64 @@
               data-owners="Suresh"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#8</span>
+                <span class="player-rank">#6</span>
                 <span class="player-name">Finn Allen</span>
-                <span class="player-total">138 pts</span>
+                <span class="player-total">362 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">138 pts</span>
+                    <span class="match-points">362 pts</span>
+                  </summary>
+                  <div class="match-meta">Official IPL Fantasy</div>
+                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
+                </details>
+              
+              </div>
+            </details>
+          
+            <details
+              id="kkr-vaibhav-arora"
+              class="player-row-card"
+              data-owners="Kamal"
+            >
+              <summary class="player-row-summary">
+                <span class="player-rank">#7</span>
+                <span class="player-name">Vaibhav Arora</span>
+                <span class="player-total">330 pts</span>
+              </summary>
+              <div class="player-row-body">
+                
+                <details class="match-card">
+                  <summary>
+                    <span class="match-name">Official IPL Fantasy Total</span>
+                    <span class="match-points">330 pts</span>
+                  </summary>
+                  <div class="match-meta">Official IPL Fantasy</div>
+                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
+                </details>
+              
+              </div>
+            </details>
+          
+            <details
+              id="kkr-varun-chakaravarthy"
+              class="player-row-card"
+              data-owners="Kamal"
+            >
+              <summary class="player-row-summary">
+                <span class="player-rank">#8</span>
+                <span class="player-name">Varun Chakaravarthy</span>
+                <span class="player-total">308 pts</span>
+              </summary>
+              <div class="player-row-body">
+                
+                <details class="match-card">
+                  <summary>
+                    <span class="match-name">Official IPL Fantasy Total</span>
+                    <span class="match-points">308 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -2423,21 +2457,21 @@
           <div class="team-player-list">
             
             <details
-              id="srh-abhishek-sharma"
+              id="srh-heinrich-klaasen"
               class="player-row-card"
-              data-owners="Subhash"
+              data-owners="Kamal"
             >
               <summary class="player-row-summary">
                 <span class="player-rank">#1</span>
-                <span class="player-name">Abhishek Sharma</span>
-                <span class="player-total">598 pts</span>
+                <span class="player-name">Heinrich Klaasen</span>
+                <span class="player-total">824 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">598 pts</span>
+                    <span class="match-points">824 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -2447,21 +2481,21 @@
             </details>
           
             <details
-              id="srh-heinrich-klaasen"
+              id="srh-abhishek-sharma"
               class="player-row-card"
-              data-owners="Kamal"
+              data-owners="Subhash"
             >
               <summary class="player-row-summary">
                 <span class="player-rank">#2</span>
-                <span class="player-name">Heinrich Klaasen</span>
-                <span class="player-total">552 pts</span>
+                <span class="player-name">Abhishek Sharma</span>
+                <span class="player-total">780 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">552 pts</span>
+                    <span class="match-points">780 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -2478,14 +2512,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#3</span>
                 <span class="player-name">Ishan Kishan</span>
-                <span class="player-total">517 pts</span>
+                <span class="player-total">712 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">517 pts</span>
+                    <span class="match-points">712 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -2502,14 +2536,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#4</span>
                 <span class="player-name">Nitish Kumar Reddy</span>
-                <span class="player-total">448 pts</span>
+                <span class="player-total">583 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">448 pts</span>
+                    <span class="match-points">583 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -2526,14 +2560,38 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#5</span>
                 <span class="player-name">Travis Head</span>
-                <span class="player-total">280 pts</span>
+                <span class="player-total">551 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">280 pts</span>
+                    <span class="match-points">551 pts</span>
+                  </summary>
+                  <div class="match-meta">Official IPL Fantasy</div>
+                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
+                </details>
+              
+              </div>
+            </details>
+          
+            <details
+              id="srh-pat-cummins"
+              class="player-row-card"
+              data-owners="Subhash"
+            >
+              <summary class="player-row-summary">
+                <span class="player-rank">#6</span>
+                <span class="player-name">Pat Cummins</span>
+                <span class="player-total">207 pts</span>
+              </summary>
+              <div class="player-row-body">
+                
+                <details class="match-card">
+                  <summary>
+                    <span class="match-name">Official IPL Fantasy Total</span>
+                    <span class="match-points">207 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -2548,7 +2606,7 @@
               data-owners="Susheel"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#6</span>
+                <span class="player-rank">#7</span>
                 <span class="player-name">Liam Livingstone</span>
                 <span class="player-total">57 pts</span>
               </summary>
@@ -2567,30 +2625,6 @@
             </details>
           
             <details
-              id="srh-pat-cummins"
-              class="player-row-card"
-              data-owners="Subhash"
-            >
-              <summary class="player-row-summary">
-                <span class="player-rank">#7</span>
-                <span class="player-name">Pat Cummins</span>
-                <span class="player-total">39 pts</span>
-              </summary>
-              <div class="player-row-body">
-                
-                <details class="match-card">
-                  <summary>
-                    <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">39 pts</span>
-                  </summary>
-                  <div class="match-meta">Official IPL Fantasy</div>
-                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
-                </details>
-              
-              </div>
-            </details>
-          
-            <details
               id="srh-harshal-patel"
               class="player-row-card"
               data-owners="Suresh"
@@ -2598,14 +2632,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#8</span>
                 <span class="player-name">Harshal Patel</span>
-                <span class="player-total">9 pts</span>
+                <span class="player-total">20 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">9 pts</span>
+                    <span class="match-points">20 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -2629,14 +2663,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#1</span>
                 <span class="player-name">Mitchell Marsh</span>
-                <span class="player-total">320 pts</span>
+                <span class="player-total">582 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">320 pts</span>
+                    <span class="match-points">582 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -2653,14 +2687,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#2</span>
                 <span class="player-name">Rishabh Pant</span>
-                <span class="player-total">281 pts</span>
+                <span class="player-total">462 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">281 pts</span>
+                    <span class="match-points">462 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -2677,38 +2711,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#3</span>
                 <span class="player-name">Aiden Markram</span>
-                <span class="player-total">281 pts</span>
+                <span class="player-total">411 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">281 pts</span>
-                  </summary>
-                  <div class="match-meta">Official IPL Fantasy</div>
-                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
-                </details>
-              
-              </div>
-            </details>
-          
-            <details
-              id="lsg-mohammad-shami"
-              class="player-row-card"
-              data-owners="Subhash"
-            >
-              <summary class="player-row-summary">
-                <span class="player-rank">#4</span>
-                <span class="player-name">Mohammad Shami</span>
-                <span class="player-total">244 pts</span>
-              </summary>
-              <div class="player-row-body">
-                
-                <details class="match-card">
-                  <summary>
-                    <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">244 pts</span>
+                    <span class="match-points">411 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -2723,16 +2733,40 @@
               data-owners="Sriram"
             >
               <summary class="player-row-summary">
-                <span class="player-rank">#5</span>
+                <span class="player-rank">#4</span>
                 <span class="player-name">Nicholas Pooran</span>
-                <span class="player-total">148 pts</span>
+                <span class="player-total">330 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">148 pts</span>
+                    <span class="match-points">330 pts</span>
+                  </summary>
+                  <div class="match-meta">Official IPL Fantasy</div>
+                  <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
+                </details>
+              
+              </div>
+            </details>
+          
+            <details
+              id="lsg-mohammad-shami"
+              class="player-row-card"
+              data-owners="Subhash"
+            >
+              <summary class="player-row-summary">
+                <span class="player-rank">#5</span>
+                <span class="player-name">Mohammad Shami</span>
+                <span class="player-total">326 pts</span>
+              </summary>
+              <div class="player-row-body">
+                
+                <details class="match-card">
+                  <summary>
+                    <span class="match-name">Official IPL Fantasy Total</span>
+                    <span class="match-points">326 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -2749,14 +2783,14 @@
               <summary class="player-row-summary">
                 <span class="player-rank">#6</span>
                 <span class="player-name">Digvesh Singh</span>
-                <span class="player-total">115 pts</span>
+                <span class="player-total">187 pts</span>
               </summary>
               <div class="player-row-body">
                 
                 <details class="match-card">
                   <summary>
                     <span class="match-name">Official IPL Fantasy Total</span>
-                    <span class="match-points">115 pts</span>
+                    <span class="match-points">187 pts</span>
                   </summary>
                   <div class="match-meta">Official IPL Fantasy</div>
                   <div class="breakdown-grid"><span class="breakdown-chip">No scoring events</span></div>
@@ -2775,7 +2809,7 @@
           <p class="owner-filters-help">Select one owner to highlight their players on this page.</p>
         </div>
         <div class="owner-filters-grid">
-          <button class="owner-filter" type="button" data-owner-filter="Susheel">Susheel</button><button class="owner-filter" type="button" data-owner-filter="Sateesh">Sateesh</button><button class="owner-filter" type="button" data-owner-filter="Kamal">Kamal</button><button class="owner-filter" type="button" data-owner-filter="Suresh">Suresh</button><button class="owner-filter" type="button" data-owner-filter="Subhash">Subhash</button><button class="owner-filter" type="button" data-owner-filter="Bharath">Bharath</button><button class="owner-filter" type="button" data-owner-filter="Sriram">Sriram</button>
+          <button class="owner-filter" type="button" data-owner-filter="Susheel">Susheel</button><button class="owner-filter" type="button" data-owner-filter="Kamal">Kamal</button><button class="owner-filter" type="button" data-owner-filter="Suresh">Suresh</button><button class="owner-filter" type="button" data-owner-filter="Sateesh">Sateesh</button><button class="owner-filter" type="button" data-owner-filter="Subhash">Subhash</button><button class="owner-filter" type="button" data-owner-filter="Bharath">Bharath</button><button class="owner-filter" type="button" data-owner-filter="Sriram">Sriram</button>
           <button class="clear-owner-filters" type="button" id="clear-owner-filters">Clear All</button>
         </div>
       </section>

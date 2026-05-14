@@ -1,87 +1,13 @@
 {
-  "updatedAt": "2026-04-25T19:42:56.466Z",
+  "updatedAt": "2026-05-14T18:21:04.894Z",
   "playerCount": 102,
   "processedMatchIds": [],
   "players": [
     {
-      "id": "ipl-66799",
-      "name": "Abhishek Sharma",
-      "team": "SRH",
-      "totalPoints": 598,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 598,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-114349",
-      "name": "Vaibhav Sooryavanshi",
-      "team": "RR",
-      "totalPoints": 560,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 560,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
       "id": "ipl-59736",
       "name": "Heinrich Klaasen",
       "team": "SRH",
-      "totalPoints": 552,
+      "totalPoints": 824,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -90,7 +16,7 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 552,
+          "points": 824,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -115,47 +41,10 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-60122",
-      "name": "KL Rahul",
-      "team": "DC",
-      "totalPoints": 541,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 541,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-64712",
-      "name": "Ishan Kishan",
+      "id": "ipl-66799",
+      "name": "Abhishek Sharma",
       "team": "SRH",
-      "totalPoints": 517,
+      "totalPoints": 780,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -164,7 +53,44 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 517,
+          "points": 780,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-69500",
+      "name": "Sai Sudharsan",
+      "team": "GT",
+      "totalPoints": 758,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 758,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -192,7 +118,7 @@
       "id": "ipl-3993",
       "name": "Virat Kohli",
       "team": "RCB",
-      "totalPoints": 508,
+      "totalPoints": 757,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -201,118 +127,7 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 508,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-70222",
-      "name": "Prabhsimran Singh",
-      "team": "PBKS",
-      "totalPoints": 476,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 476,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-71370",
-      "name": "Dhruv Jurel",
-      "team": "RR",
-      "totalPoints": 471,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 471,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-64254",
-      "name": "Jofra Archer",
-      "team": "RR",
-      "totalPoints": 461,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 461,
+          "points": 757,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -340,7 +155,7 @@
       "id": "ipl-66818",
       "name": "Shubman Gill",
       "team": "GT",
-      "totalPoints": 460,
+      "totalPoints": 752,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -349,7 +164,7 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 460,
+          "points": 752,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -374,10 +189,10 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-61837",
-      "name": "Sanju Samson",
-      "team": "CSK",
-      "totalPoints": 458,
+      "id": "ipl-60122",
+      "name": "KL Rahul",
+      "team": "DC",
+      "totalPoints": 735,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -386,81 +201,7 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 458,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-63961",
-      "name": "Shreyas Iyer",
-      "team": "PBKS",
-      "totalPoints": 450,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 450,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-74837",
-      "name": "Nitish Kumar Reddy",
-      "team": "SRH",
-      "totalPoints": 448,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 448,
+          "points": 735,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -488,7 +229,7 @@
       "id": "ipl-9782",
       "name": "Jos Buttler",
       "team": "GT",
-      "totalPoints": 436,
+      "totalPoints": 735,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -497,7 +238,377 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 436,
+          "points": 735,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-5132",
+      "name": "Bhuvneshwar Kumar",
+      "team": "RCB",
+      "totalPoints": 731,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 731,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-64712",
+      "name": "Ishan Kishan",
+      "team": "SRH",
+      "totalPoints": 712,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 712,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-64941",
+      "name": "Ryan Rickelton",
+      "team": "MI",
+      "totalPoints": 709,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 709,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-70222",
+      "name": "Prabhsimran Singh",
+      "team": "PBKS",
+      "totalPoints": 707,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 707,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-114349",
+      "name": "Vaibhav Sooryavanshi",
+      "team": "RR",
+      "totalPoints": 698,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 698,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-61837",
+      "name": "Sanju Samson",
+      "team": "CSK",
+      "totalPoints": 685,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 685,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-63611",
+      "name": "Kagiso Rabada",
+      "team": "GT",
+      "totalPoints": 681,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 681,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-67589",
+      "name": "Devdutt Padikkal",
+      "team": "RCB",
+      "totalPoints": 657,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 657,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-63961",
+      "name": "Shreyas Iyer",
+      "team": "PBKS",
+      "totalPoints": 646,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 646,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-71370",
+      "name": "Dhruv Jurel",
+      "team": "RR",
+      "totalPoints": 608,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 608,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -525,7 +636,7 @@
       "id": "ipl-65687",
       "name": "Rajat Patidar",
       "team": "RCB",
-      "totalPoints": 408,
+      "totalPoints": 587,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -534,7 +645,7 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 408,
+          "points": 587,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -559,10 +670,10 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-69238",
-      "name": "Yashasvi Jaiswal",
-      "team": "RR",
-      "totalPoints": 398,
+      "id": "ipl-74837",
+      "name": "Nitish Kumar Reddy",
+      "team": "SRH",
+      "totalPoints": 583,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -571,7 +682,81 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 398,
+          "points": 583,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-65748",
+      "name": "Rashid Khan",
+      "team": "GT",
+      "totalPoints": 583,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 583,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-10094",
+      "name": "Mitchell Marsh",
+      "team": "LSG",
+      "totalPoints": 582,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 582,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -599,6 +784,894 @@
       "id": "ipl-71366",
       "name": "Priyansh Arya",
       "team": "PBKS",
+      "totalPoints": 573,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 573,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-62023",
+      "name": "Travis Head",
+      "team": "SRH",
+      "totalPoints": 551,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 551,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-70761",
+      "name": "Tilak Varma",
+      "team": "MI",
+      "totalPoints": 538,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 538,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-88352",
+      "name": "Angkrish Raghuvanshi",
+      "team": "KKR",
+      "totalPoints": 538,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 538,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-65859",
+      "name": "Washington Sundar",
+      "team": "GT",
+      "totalPoints": 531,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 531,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-66870",
+      "name": "Cameron Green",
+      "team": "KKR",
+      "totalPoints": 529,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 529,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-10232",
+      "name": "Jason Holder",
+      "team": "GT",
+      "totalPoints": 529,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 529,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-64254",
+      "name": "Jofra Archer",
+      "team": "RR",
+      "totalPoints": 526,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 526,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-3850",
+      "name": "Ravindra Jadeja",
+      "team": "RR",
+      "totalPoints": 515,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 515,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-63788",
+      "name": "Krunal Pandya",
+      "team": "RCB",
+      "totalPoints": 515,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 515,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-69238",
+      "name": "Yashasvi Jaiswal",
+      "team": "RR",
+      "totalPoints": 503,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 503,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-64727",
+      "name": "Rinku Singh",
+      "team": "KKR",
+      "totalPoints": 501,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 501,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-62576",
+      "name": "Axar Patel",
+      "team": "DC",
+      "totalPoints": 465,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 465,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-65756",
+      "name": "Rishabh Pant",
+      "team": "LSG",
+      "totalPoints": 462,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 462,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-66584",
+      "name": "Ruturaj Gaikwad",
+      "team": "CSK",
+      "totalPoints": 457,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 457,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-66368",
+      "name": "Pathum Nissanka",
+      "team": "DC",
+      "totalPoints": 445,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 445,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-74761",
+      "name": "Tristan Stubbs",
+      "team": "DC",
+      "totalPoints": 431,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 431,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-11229",
+      "name": "Sunil Narine",
+      "team": "KKR",
+      "totalPoints": 425,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 425,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-65799",
+      "name": "Mohammed Siraj",
+      "team": "GT",
+      "totalPoints": 421,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 421,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-64219",
+      "name": "Aiden Markram",
+      "team": "LSG",
+      "totalPoints": 411,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 411,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-67905",
+      "name": "Arshdeep Singh",
+      "team": "PBKS",
+      "totalPoints": 406,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 406,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-3991",
+      "name": "Ajinkya Rahane",
+      "team": "KKR",
+      "totalPoints": 401,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 401,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-3852",
+      "name": "Rohit Sharma",
+      "team": "MI",
+      "totalPoints": 397,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 397,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-66939",
+      "name": "Riyan Parag",
+      "team": "RR",
+      "totalPoints": 395,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 395,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-71411",
+      "name": "Noor Ahmad",
+      "team": "CSK",
       "totalPoints": 392,
       "matchesPlayed": 0,
       "matchBreakdowns": [
@@ -633,84 +1706,10 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-67589",
-      "name": "Devdutt Padikkal",
-      "team": "RCB",
-      "totalPoints": 385,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 385,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-3850",
-      "name": "Ravindra Jadeja",
-      "team": "RR",
-      "totalPoints": 371,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 371,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-69500",
-      "name": "Sai Sudharsan",
+      "id": "ipl-65702",
+      "name": "Prasidh Krishna",
       "team": "GT",
-      "totalPoints": 365,
+      "totalPoints": 388,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -719,7 +1718,155 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 365,
+          "points": 388,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-67402",
+      "name": "Tim David",
+      "team": "RCB",
+      "totalPoints": 384,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 384,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-63649",
+      "name": "Nitish Rana",
+      "team": "DC",
+      "totalPoints": 374,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 374,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-4255",
+      "name": "Josh Hazlewood",
+      "team": "RCB",
+      "totalPoints": 367,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 367,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-66046",
+      "name": "Finn Allen",
+      "team": "KKR",
+      "totalPoints": 362,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 362,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -747,7 +1894,7 @@
       "id": "ipl-71288",
       "name": "Ravi Bishnoi",
       "team": "RR",
-      "totalPoints": 361,
+      "totalPoints": 359,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -756,7 +1903,7 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 361,
+          "points": 359,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -781,10 +1928,10 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-63611",
-      "name": "Kagiso Rabada",
-      "team": "GT",
-      "totalPoints": 360,
+      "id": "ipl-4311",
+      "name": "Marcus Stoinis",
+      "team": "PBKS",
+      "totalPoints": 349,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -793,44 +1940,7 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 360,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-5132",
-      "name": "Bhuvneshwar Kumar",
-      "team": "RCB",
-      "totalPoints": 354,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 354,
+          "points": 349,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -892,47 +2002,10 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-65702",
-      "name": "Prasidh Krishna",
-      "team": "GT",
-      "totalPoints": 334,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 334,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-70761",
-      "name": "Tilak Varma",
+      "id": "ipl-63751",
+      "name": "Hardik Pandya",
       "team": "MI",
-      "totalPoints": 328,
+      "totalPoints": 330,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -941,7 +2014,7 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 328,
+          "points": 330,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -966,47 +2039,10 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-10094",
-      "name": "Mitchell Marsh",
-      "team": "LSG",
-      "totalPoints": 320,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 320,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-88352",
-      "name": "Angkrish Raghuvanshi",
+      "id": "ipl-74298",
+      "name": "Vaibhav Arora",
       "team": "KKR",
-      "totalPoints": 313,
+      "totalPoints": 330,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -1015,7 +2051,155 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 313,
+          "points": 330,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-63726",
+      "name": "Nicholas Pooran",
+      "team": "LSG",
+      "totalPoints": 330,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 330,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-28994",
+      "name": "Mohammad Shami",
+      "team": "LSG",
+      "totalPoints": 326,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 326,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-11803",
+      "name": "Suryakumar Yadav",
+      "team": "MI",
+      "totalPoints": 324,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 324,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-69409",
+      "name": "Marco Jansen",
+      "team": "PBKS",
+      "totalPoints": 319,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 319,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -1041,7 +2225,7 @@
     },
     {
       "id": "ipl-120157",
-      "name": "Ayush Mhatre",
+      "name": "Ayush Mhatre / A Madhwal",
       "team": "CSK",
       "totalPoints": 311,
       "matchesPlayed": 0,
@@ -1072,24 +2256,14 @@
             "strikeRate": 0,
             "economyRate": 0
           }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-74761",
-      "name": "Tristan Stubbs",
-      "team": "DC",
-      "totalPoints": 310,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
+        },
         {
           "matchId": "ipl-fantasy-total",
           "match": "Official IPL Fantasy Total",
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 310,
+          "points": 0,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -1114,121 +2288,10 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-67402",
-      "name": "Tim David",
-      "team": "RCB",
-      "totalPoints": 293,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 293,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-65748",
-      "name": "Rashid Khan",
-      "team": "GT",
-      "totalPoints": 285,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 285,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-65859",
-      "name": "Washington Sundar",
-      "team": "GT",
-      "totalPoints": 285,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 285,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-66870",
-      "name": "Cameron Green",
+      "id": "ipl-67469",
+      "name": "Varun Chakaravarthy",
       "team": "KKR",
-      "totalPoints": 285,
+      "totalPoints": 308,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -1237,7 +2300,7 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 285,
+          "points": 308,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -1262,84 +2325,10 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-65756",
-      "name": "Rishabh Pant",
-      "team": "LSG",
-      "totalPoints": 281,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 281,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-64219",
-      "name": "Aiden Markram",
-      "team": "LSG",
-      "totalPoints": 281,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 281,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-63649",
-      "name": "Nitish Rana",
+      "id": "ipl-5313",
+      "name": "David Miller",
       "team": "DC",
-      "totalPoints": 281,
+      "totalPoints": 305,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -1348,7 +2337,7 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 281,
+          "points": 305,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -1373,10 +2362,10 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-62023",
-      "name": "Travis Head",
-      "team": "SRH",
-      "totalPoints": 280,
+      "id": "ipl-9844",
+      "name": "Yuzvendra Chahal",
+      "team": "PBKS",
+      "totalPoints": 297,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -1385,7 +2374,7 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 280,
+          "points": 297,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -1410,10 +2399,47 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-63788",
-      "name": "Krunal Pandya",
+      "id": "ipl-66044",
+      "name": "Shivam Dube",
+      "team": "CSK",
+      "totalPoints": 296,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 296,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-64724",
+      "name": "Jitesh Sharma",
       "team": "RCB",
-      "totalPoints": 279,
+      "totalPoints": 275,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -1422,7 +2448,7 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 279,
+          "points": 275,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -1447,10 +2473,10 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-62576",
-      "name": "Axar Patel",
+      "id": "ipl-64225",
+      "name": "Lungi Ngidi",
       "team": "DC",
-      "totalPoints": 253,
+      "totalPoints": 270,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -1459,7 +2485,7 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 253,
+          "points": 270,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -1484,83 +2510,9 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-66368",
-      "name": "Pathum Nissanka",
+      "id": "ipl-63187",
+      "name": "Kuldeep Yadav",
       "team": "DC",
-      "totalPoints": 246,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 246,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-11229",
-      "name": "Sunil Narine",
-      "team": "KKR",
-      "totalPoints": 246,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 246,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-28994",
-      "name": "Mohammad Shami",
-      "team": "LSG",
       "totalPoints": 244,
       "matchesPlayed": 0,
       "matchBreakdowns": [
@@ -1595,9 +2547,9 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-11803",
-      "name": "Suryakumar Yadav",
-      "team": "MI",
+      "id": "ipl-84562",
+      "name": "Dewald Brevis",
+      "team": "CSK",
       "totalPoints": 242,
       "matchesPlayed": 0,
       "matchBreakdowns": [
@@ -1632,10 +2584,10 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-64727",
-      "name": "Rinku Singh",
-      "team": "KKR",
-      "totalPoints": 241,
+      "id": "ipl-100564",
+      "name": "Suyash Sharma",
+      "team": "RCB",
+      "totalPoints": 231,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -1644,303 +2596,7 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 241,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-3991",
-      "name": "Ajinkya Rahane",
-      "team": "KKR",
-      "totalPoints": 240,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 240,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-66044",
-      "name": "Shivam Dube",
-      "team": "CSK",
-      "totalPoints": 238,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 238,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-63187",
-      "name": "Kuldeep Yadav",
-      "team": "DC",
-      "totalPoints": 237,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 237,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-63751",
-      "name": "Hardik Pandya",
-      "team": "MI",
-      "totalPoints": 232,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 232,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-64225",
-      "name": "Lungi Ngidi",
-      "team": "DC",
-      "totalPoints": 230,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 230,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-65799",
-      "name": "Mohammed Siraj",
-      "team": "GT",
-      "totalPoints": 227,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 227,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-67905",
-      "name": "Arshdeep Singh",
-      "team": "PBKS",
-      "totalPoints": 225,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 225,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-71411",
-      "name": "Noor Ahmad",
-      "team": "CSK",
-      "totalPoints": 222,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 222,
+          "points": 231,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -2002,9 +2658,9 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-64941",
-      "name": "Ryan Rickelton",
-      "team": "MI",
+      "id": "ipl-63520",
+      "name": "Shashank Singh",
+      "team": "PBKS",
       "totalPoints": 220,
       "matchesPlayed": 0,
       "matchBreakdowns": [
@@ -2039,46 +2695,9 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-66939",
-      "name": "Riyan Parag",
-      "team": "RR",
-      "totalPoints": 216,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 216,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-74298",
-      "name": "Vaibhav Arora",
-      "team": "KKR",
+      "id": "ipl-67285",
+      "name": "Sherfane Rutherford",
+      "team": "MI",
       "totalPoints": 210,
       "matchesPlayed": 0,
       "matchBreakdowns": [
@@ -2113,10 +2732,10 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-3852",
-      "name": "Rohit Sharma",
-      "team": "MI",
-      "totalPoints": 204,
+      "id": "ipl-56964",
+      "name": "Pat Cummins",
+      "team": "SRH",
+      "totalPoints": 207,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -2125,44 +2744,7 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 204,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-63520",
-      "name": "Shashank Singh",
-      "team": "PBKS",
-      "totalPoints": 203,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 203,
+          "points": 207,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -2224,10 +2806,10 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-5313",
-      "name": "David Miller",
-      "team": "DC",
-      "totalPoints": 191,
+      "id": "ipl-100574",
+      "name": "Digvesh Singh",
+      "team": "LSG",
+      "totalPoints": 187,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -2236,7 +2818,7 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 191,
+          "points": 187,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -2261,10 +2843,10 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-69409",
-      "name": "Marco Jansen",
-      "team": "PBKS",
-      "totalPoints": 185,
+      "id": "ipl-64861",
+      "name": "Shimron Hetmyer",
+      "team": "RR",
+      "totalPoints": 169,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -2273,7 +2855,7 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 185,
+          "points": 169,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -2298,83 +2880,9 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-67285",
-      "name": "Sherfane Rutherford",
+      "id": "ipl-59547",
+      "name": "Deepak Chahar",
       "team": "MI",
-      "totalPoints": 183,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 183,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-66584",
-      "name": "Ruturaj Gaikwad",
-      "team": "CSK",
-      "totalPoints": 179,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 179,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-67469",
-      "name": "Varun Chakaravarthy",
-      "team": "KKR",
       "totalPoints": 167,
       "matchesPlayed": 0,
       "matchBreakdowns": [
@@ -2446,10 +2954,10 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-84562",
-      "name": "Dewald Brevis",
-      "team": "CSK",
-      "totalPoints": 161,
+      "id": "ipl-65160",
+      "name": "T Natarajan",
+      "team": "DC",
+      "totalPoints": 160,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -2458,7 +2966,7 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 161,
+          "points": 160,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -2483,10 +2991,10 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-64861",
-      "name": "Shimron Hetmyer",
-      "team": "RR",
-      "totalPoints": 158,
+      "id": "ipl-10053",
+      "name": "Mitchell Starc",
+      "team": "DC",
+      "totalPoints": 155,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -2495,7 +3003,7 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 158,
+          "points": 155,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -2520,10 +3028,10 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-64724",
-      "name": "Jitesh Sharma",
-      "team": "RCB",
-      "totalPoints": 157,
+      "id": "ipl-63755",
+      "name": "Jasprit Bumrah",
+      "team": "MI",
+      "totalPoints": 151,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -2532,7 +3040,7 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 157,
+          "points": 151,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -2557,9 +3065,9 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-63726",
-      "name": "Nicholas Pooran",
-      "team": "LSG",
+      "id": "ipl-66927",
+      "name": "Will Jacks",
+      "team": "MI",
       "totalPoints": 148,
       "matchesPlayed": 0,
       "matchBreakdowns": [
@@ -2594,157 +3102,9 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-100564",
-      "name": "Suyash Sharma",
-      "team": "RCB",
-      "totalPoints": 147,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 147,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-4255",
-      "name": "Josh Hazlewood",
-      "team": "RCB",
-      "totalPoints": 146,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 146,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-66046",
-      "name": "Finn Allen",
-      "team": "KKR",
-      "totalPoints": 138,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 138,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-9844",
-      "name": "Yuzvendra Chahal",
+      "id": "ipl-69657",
+      "name": "Nehal Wadhera",
       "team": "PBKS",
-      "totalPoints": 132,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 132,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-65160",
-      "name": "T Natarajan",
-      "team": "DC",
       "totalPoints": 127,
       "matchesPlayed": 0,
       "matchBreakdowns": [
@@ -2779,158 +3139,10 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-69657",
-      "name": "Nehal Wadhera",
-      "team": "PBKS",
-      "totalPoints": 121,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 121,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-100574",
-      "name": "Digvesh Singh",
-      "team": "LSG",
-      "totalPoints": 115,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 115,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-63755",
-      "name": "Jasprit Bumrah",
-      "team": "MI",
-      "totalPoints": 110,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 110,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-4311",
-      "name": "Marcus Stoinis",
-      "team": "PBKS",
-      "totalPoints": 104,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 104,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
       "id": "ipl-64721",
       "name": "Shahrukh Khan",
       "team": "GT",
-      "totalPoints": 87,
+      "totalPoints": 112,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -2939,44 +3151,7 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 87,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-88677",
-      "name": "Vipraj Nigam",
-      "team": "DC",
-      "totalPoints": 74,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 74,
+          "points": 112,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -3004,7 +3179,7 @@
       "id": "ipl-98636",
       "name": "Prashant Veer",
       "team": "CSK",
-      "totalPoints": 72,
+      "totalPoints": 97,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -3013,7 +3188,7 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 72,
+          "points": 97,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -3038,10 +3213,10 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-10232",
-      "name": "Jason Holder",
-      "team": "GT",
-      "totalPoints": 71,
+      "id": "ipl-4338",
+      "name": "Trent Boult",
+      "team": "MI",
+      "totalPoints": 84,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -3050,7 +3225,44 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 71,
+          "points": 84,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-88677",
+      "name": "Vipraj Nigam",
+      "team": "DC",
+      "totalPoints": 75,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 75,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -3149,6 +3361,43 @@
       "isMissingStat": false
     },
     {
+      "id": "ipl-65430",
+      "name": "Venkatesh Iyer",
+      "team": "RCB",
+      "totalPoints": 65,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 65,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
       "id": "ipl-63940",
       "name": "Liam Livingstone",
       "team": "SRH",
@@ -3186,10 +3435,10 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-59547",
-      "name": "Deepak Chahar",
-      "team": "MI",
-      "totalPoints": 48,
+      "id": "ipl-82442",
+      "name": "Abishek Porel",
+      "team": "DC",
+      "totalPoints": 51,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -3198,155 +3447,7 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 48,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-65430",
-      "name": "Venkatesh Iyer",
-      "team": "RCB",
-      "totalPoints": 44,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 44,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-4338",
-      "name": "Trent Boult",
-      "team": "MI",
-      "totalPoints": 40,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 40,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-56964",
-      "name": "Pat Cummins",
-      "team": "SRH",
-      "totalPoints": 39,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 39,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-5407",
-      "name": "Harshal Patel",
-      "team": "SRH",
-      "totalPoints": 9,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 9,
+          "points": 51,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -3374,7 +3475,7 @@
       "id": "ipl-70172",
       "name": "Auqib Nabi",
       "team": "DC",
-      "totalPoints": 5,
+      "totalPoints": 30,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -3383,7 +3484,71 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 5,
+          "points": 30,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-65584",
+      "name": "Sam Curran / D Shanaka",
+      "team": "RR",
+      "totalPoints": 28,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 0,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        },
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 28,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -3411,7 +3576,7 @@
       "id": "ipl-63719",
       "name": "Lockie Ferguson",
       "team": "PBKS",
-      "totalPoints": 0,
+      "totalPoints": 25,
       "matchesPlayed": 0,
       "matchBreakdowns": [
         {
@@ -3420,7 +3585,81 @@
           "status": "Official IPL Fantasy",
           "format": "T20",
           "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 0,
+          "points": 25,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-5407",
+      "name": "Harshal Patel",
+      "team": "SRH",
+      "totalPoints": 20,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 20,
+          "breakdown": {
+            "startingXI": 0,
+            "runs": 0,
+            "fours": 0,
+            "sixes": 0,
+            "battingBonus": 0,
+            "duckPenalty": 0,
+            "wickets": 0,
+            "lbwBowledBonus": 0,
+            "maidenOvers": 0,
+            "wicketBonus": 0,
+            "catches": 0,
+            "catchBonus": 0,
+            "stumpings": 0,
+            "directRunOuts": 0,
+            "indirectRunOuts": 0,
+            "strikeRate": 0,
+            "economyRate": 0
+          }
+        }
+      ],
+      "isMissingStat": false
+    },
+    {
+      "id": "ipl-66438",
+      "name": "Sai Kishore",
+      "team": "GT",
+      "totalPoints": 4,
+      "matchesPlayed": 0,
+      "matchBreakdowns": [
+        {
+          "matchId": "ipl-fantasy-total",
+          "match": "Official IPL Fantasy Total",
+          "status": "Official IPL Fantasy",
+          "format": "T20",
+          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
+          "points": 4,
           "breakdown": {
             "startingXI": 0,
             "runs": 0,
@@ -3448,80 +3687,6 @@
       "id": "ipl-70324",
       "name": "Nathan Ellis",
       "team": "CSK",
-      "totalPoints": 0,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 0,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-10053",
-      "name": "Mitchell Starc",
-      "team": "DC",
-      "totalPoints": 0,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 0,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-65584",
-      "name": "Sam Curran",
-      "team": "RR",
       "totalPoints": 0,
       "matchesPlayed": 0,
       "matchBreakdowns": [
@@ -3593,120 +3758,9 @@
       "isMissingStat": false
     },
     {
-      "id": "ipl-82442",
-      "name": "Abishek Porel",
-      "team": "DC",
-      "totalPoints": 0,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 0,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-66927",
-      "name": "Will Jacks",
-      "team": "MI",
-      "totalPoints": 0,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 0,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
       "id": "ipl-70155",
       "name": "Yash Dayal",
       "team": "RCB",
-      "totalPoints": 0,
-      "matchesPlayed": 0,
-      "matchBreakdowns": [
-        {
-          "matchId": "ipl-fantasy-total",
-          "match": "Official IPL Fantasy Total",
-          "status": "Official IPL Fantasy",
-          "format": "T20",
-          "sourceUrl": "https://fantasy.iplt20.com/classic/stats",
-          "points": 0,
-          "breakdown": {
-            "startingXI": 0,
-            "runs": 0,
-            "fours": 0,
-            "sixes": 0,
-            "battingBonus": 0,
-            "duckPenalty": 0,
-            "wickets": 0,
-            "lbwBowledBonus": 0,
-            "maidenOvers": 0,
-            "wicketBonus": 0,
-            "catches": 0,
-            "catchBonus": 0,
-            "stumpings": 0,
-            "directRunOuts": 0,
-            "indirectRunOuts": 0,
-            "strikeRate": 0,
-            "economyRate": 0
-          }
-        }
-      ],
-      "isMissingStat": false
-    },
-    {
-      "id": "ipl-66438",
-      "name": "Sai Kishore",
-      "team": "GT",
       "totalPoints": 0,
       "matchesPlayed": 0,
       "matchBreakdowns": [

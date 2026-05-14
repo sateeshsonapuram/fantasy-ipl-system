@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Injury Replacements</title>
+    <style>
+      :root {
+        --bg: #f8f5ef;
+        --surface: #ffffff;
+        --text: #1f2937;
+        --muted: #6b7280;
+        --accent: #8b5cf6;
+        --border: #ddd6fe;
+        --header: #f5f3ff;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        background:
+          radial-gradient(circle at top left, #fef3c7 0%, transparent 22%),
+          radial-gradient(circle at top right, #e9d5ff 0%, transparent 26%),
+          linear-gradient(180deg, #fffaf5 0%, var(--bg) 100%);
+        color: var(--text);
+      }
+      .page {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 12px;
+      }
+      .header {
+        margin-bottom: 10px;
+        padding: 12px 14px;
+        border: 1px solid rgba(139, 92, 246, 0.16);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.88);
+      }
+      .header h1 {
+        margin: 0 0 4px;
+        font-size: 1.1rem;
+      }
+      .header p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+      .nav-link {
+        display: inline-block;
+        margin-top: 8px;
+        color: var(--accent);
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 0.82rem;
+      }
+      .table-wrap {
+        border: 1px solid rgba(139, 92, 246, 0.14);
+        border-radius: 12px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.9);
+      }
+      .stats-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.86rem;
+      }
+      .stats-table th,
+      .stats-table td {
+        border: 1px solid var(--border);
+        padding: 8px 10px;
+        text-align: left;
+      }
+      .stats-table thead th {
+        background: var(--header);
+      }
+      .stats-table th:first-child,
+      .stats-table td:first-child {
+        width: 48px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="header">
+        <h1>Injury Replacements</h1>
+        <p>Official team-announced injury replacements tracked in this fantasy system.</p>
+        <a class="nav-link" href="./owners-alt12.html">Back to Owners</a>
+      </section>
+      <section class="table-wrap">
+        <table class="stats-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Original Player</th>
+              <th>Official Replacement</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td>1</td>
+              <td>Ayush Mhatre</td>
+              <td>Akash Madhwal</td>
+            </tr>
+          
+            <tr>
+              <td>2</td>
+              <td>Sam Curran</td>
+              <td>Dasun Shanaka</td>
+            </tr>
+          
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>

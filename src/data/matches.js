@@ -58,5 +58,7 @@ function fetchMatches() {
 }
 
 module.exports = {
-  fetchMatches
+  fetchMatches,
+  readGeneratedMatches,
+  isCompletedStatus
 };
