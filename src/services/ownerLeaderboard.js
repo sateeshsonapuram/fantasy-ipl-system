@@ -279,7 +279,10 @@ function calculateOwnerLeaderboard(owners, players, teamSize) {
           };
         }
 
-        const replacementRule = injuryReplacementMap.get(normalizedPlayerName);
+        const replacementRule =
+          injuryReplacementMap.get(normalizedPlayerName) ||
+          injuryReplacementMap.get(normalizePlayerName(basePlayer.name)) ||
+          injuryReplacementMap.get(normalizePlayerName(resolved.canonicalName));
         if (replacementRule) {
           const replacementResolved = resolveOwnerSquadPlayer(replacementRule.replacementPlayer, players);
           let replacementMatch = replacementResolved.matchedPlayer;
